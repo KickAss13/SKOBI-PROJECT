@@ -1,0 +1,33 @@
+security:
+    
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/membre, roles: [ ROLE_MEMBRE, ROLE_ADMIN ] }
+
+    providers:
+        mon_login:
+            entity:
+                class: App\Entity\User
+                property: username
+    firewalls:
+        main:
+            security: true
+            pattern: ^/
+            anonymous: ~
+            provider: mon_login
+            form_login:
+                login_path: login
+                check_path: login
+
+                use_referer: true
+                csrf_token_generator: security.csrf.token_manager
+            logout:
+                path:   logout
+                target: login
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+            
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt

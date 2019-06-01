@@ -1,0 +1,38 @@
+{% extends 'template-admin.html.twig' %}
+
+{% block title %}Message{% endblock %}
+
+{% block body %}
+    <h1>Message</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ message.id }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ message.username }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ message.email }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ message.content }}</td>
+            </tr>
+            <tr>
+                <th>DateMessage</th>
+                <td>{{ message.dateMessage ? message.dateMessage|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('message_index') }}">back to list</a>
+
+    <a href="{{ path('message_edit', {'id': message.id}) }}">edit</a>
+
+    {{ include('message/_delete_form.html.twig') }}
+{% endblock %}

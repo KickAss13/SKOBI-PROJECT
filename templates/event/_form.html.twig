@@ -1,0 +1,9 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_row(form.imageUpload) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+
+    <div>
+        {{ eventFeedback ?? "" }}
+    </div>
+{{ form_end(form) }}
