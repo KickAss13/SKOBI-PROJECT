@@ -9,6 +9,7 @@
 
         {% block stylesheets %}{% endblock %}
     </head>
+
     <body>
         <header>
             <nav>
@@ -21,6 +22,9 @@
                     <li><a href="{{ path('contact') }}">Contact</a></li>
                 </ul>
             </nav>
+
+    {% if app.user %}
+        {% if app.user.role == 'ROLE_ADMIN' %}
             <nav>
                 <ul>
                     <li><a href="{{ path('article_index') }}">Admin Article</a></li>
@@ -29,14 +33,27 @@
                     <li><a href="{{ path('message_index') }}">Admin Message</a></li>
                 </ul>
             </nav>
+        {% endif %}
+    {% endif %}
+
+        {% if app.user %}        
+            <nav>
+                <ul>
+                    <li> {{ app.user.username }}</li>
+                    <li><a href="{{ path('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        {% else %}
             <nav>
                 <ul>
                     <li><a href="{{ path('login') }}">Login</a></li>
-                    <li><a href="{{ path('logout') }}">Logout</a></li>
                     <li><a href="{{ path('subscribe') }}">Subscribe</a></li>
                 </ul>
             </nav>
+        {% endif %}
+
         </header>
+
         <main>
             {% block body %}{% endblock %}
         </main>
