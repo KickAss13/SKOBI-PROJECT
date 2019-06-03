@@ -15,7 +15,7 @@ class MessageType extends AbstractType
             ->add('username')
             ->add('email')
             ->add('content')
-            ->add('dateMessage')
+            // ->add('dateMessage')
         ;
     }
 

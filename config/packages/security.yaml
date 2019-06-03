@@ -1,7 +1,7 @@
 security:
     
     access_control:
-        - { path: ^/admin, roles: ROLE_ADMIN }
+       - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/membre, roles: [ ROLE_MEMBRE, ROLE_ADMIN ] }
 
     providers:

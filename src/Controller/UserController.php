@@ -37,7 +37,7 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             //CODE POUR GERER LA DATE
-            //$user->setDateInscription(new \DateTime);
+            $user->setDateInscription(new \DateTime);
 
             //CODE POUR GERER LE HASHAGE DU PASSWORD
             $password = $user->getPassword();
@@ -98,7 +98,7 @@ class UserController extends AbstractController
      */
     public function delete(Request $request, User $user): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($user);
             $entityManager->flush();

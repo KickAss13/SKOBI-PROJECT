@@ -37,7 +37,7 @@ class MessageController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             //CODE POUR GERER LA DATE
-            //$message->setDateMessage(new \DateTime);
+            $message->setDateMessage(new \DateTime);
 
             //CODE POUR GERER LE FEEDBACK
             $messageFeedback = "VOTRE MESSAGE A BIEN ETE ENVOYE";
@@ -46,7 +46,7 @@ class MessageController extends AbstractController
             $entityManager->persist($message);
             $entityManager->flush();
 
-            return $this->redirectToRoute('message_index');
+            //return $this->redirectToRoute('message_index');
         }
 
         return $this->render('message/new.html.twig', [
@@ -93,7 +93,7 @@ class MessageController extends AbstractController
      */
     public function delete(Request $request, Message $message): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$message->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $message->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($message);
             $entityManager->flush();

@@ -20,7 +20,7 @@ class UserType extends AbstractType
             ->add('adresse')
             ->add('telephone')
             ->add('role')
-            ->add('dateInscription')
+            //->add('dateInscription')
         ;
     }
 

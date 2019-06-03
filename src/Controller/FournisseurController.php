@@ -37,7 +37,7 @@ class FournisseurController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             //CODE POUR GERER LA DATE
-            //$fournisseur->setDatePublication(new \DateTime);
+            $fournisseur->setDatePublication(new \DateTime);
 
             //CODE POUR GERER L'UPLOAD
             $fichierUploade = $fournisseur->getImageUpload();
@@ -45,15 +45,16 @@ class FournisseurController extends AbstractController
             $fileName = $fichierUploade->getClientOriginalName();
             $fileName = strtolower($fileName);
             $nomSansExtension = pathinfo($fileName, PATHINFO_FILENAME);
-            $extension = pathinfo($fileName, PATHINFO_EXTENSION);            
+            $extension = pathinfo($fileName, PATHINFO_EXTENSION);
             $nomSansExtension = preg_replace("/[^a-zA-Z0-9-\.]/i", "-", $nomSansExtension);
             $nomSansExtension = trim($nomSansExtension);
             $extension = preg_replace("/[^a-zA-Z0-9-\.]/i", "-", $extension);
-            $extension = trim($extension);            
-            $fileName = "$nomSansExtension.$extension";           
+            $extension = trim($extension);
+            $fileName = "$nomSansExtension.$extension";
             $fichierUploade->move(
-                $this->getParameter('dossier_public') . "/assets/upload/fournisseur",  
-                $fileName);                                                
+                $this->getParameter('dossier_public') . "/assets/upload/fournisseur",
+                $fileName
+            );
             $fournisseur->setImageSrc("assets/upload/fournisseur/$fileName");
 
             //CODE POUR GERER LE FEEDBACK
@@ -110,7 +111,7 @@ class FournisseurController extends AbstractController
      */
     public function delete(Request $request, Fournisseur $fournisseur): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$fournisseur->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $fournisseur->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($fournisseur);
             $entityManager->flush();
