@@ -4,6 +4,14 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\ArticleRepository;
+use Symfony\Component\HttpFoundation\Response;
+
+use Symfony\Component\HttpFoundation\Request;
+use App\Entity\Message;
+use App\Form\MessageType;
+
+use App\Entity\Article;
 
 class VitrineController extends AbstractController
 {
@@ -60,10 +68,70 @@ class VitrineController extends AbstractController
     /**
      * @Route("/contact", name="contact")
      */
-    public function contact()
+    public function contact(Request $request): Response
     {
+        // $request CONTIENT LES INFORMATIONS PROVENANT DU NAVIGATEUR
+        // ($_GET, $_POST et $_REQUEST)
+        
+        // CET OBJET VA SERVIR A RECEVOIR LES INFOS DU FORMULAIRE
+        $message = new Message();
+        
+        // ENSUITE, ON CREE LE FORMULAIRE 
+        // ET ON ASSOCIE L'OBJET ENTITY AVEC LE FORMULAIRE
+        // ON CREE LE FORMULAIRE AVEC ContactType 
+        // QUI FOURNIT LES CHAMPS DU FORMULAIRE
+        // ET $contact QUI EST L'OBJET QUI VA RECEVOIR LES INFOS DU FORMULAIRE
+        $form = $this->createForm(MessageType::class, $message);
+        
+        dump($request);
+        
+        //$request->set("contact[dateMessage]", date"");
+        // ASSOCIER LE FORMULAIRE A LA REQUETE 
+        // $request FOURNIT LES INFOS DU FORMULAIRE
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()) 
+        {
+            $message->setDateMessage(new \DateTime);
+
+            // EST-CE QUE LE FORMULAIRE A ETE ENVOYE ?
+            if ($form->isValid()) 
+            {
+                // SECURITE: EST-CE QUE LES INFOS SONT VALIDES
+                // VERIFICATION DES CONTRAINTES Assert
+                
+                // OK ON A RECU LES INFOS DU FORMULAIRE
+                // ET ELLES SONT CORRECTES
+                // IL FAUT STOCKER LES INFOS EN BASE DE DONNEES
+                // => PERSISTENCE D'OBJET
+                // $contact CONTIENT LES INFOS DU FORMULAIRE
+                // ON VA DEMANDER A PERSISTER $contact
+                
+                // ON COMPLETE LES INFOS MANQUANTES
+                // dateMessage
+                // https://www.php.net/manual/fr/class.datetime.php
+                
+                // ET ENSUITE ON DEMANDE LA PERSISTANCE DES INFOS
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($message);  // PREPARE
+                
+                $entityManager->flush();            // EXECUTE: LANCE LA REQUETE SQL
+    
+                // OK TOUT S'EST BIEN PASSE
+                $messageFeedback = "MERCI POUR VOTRE MESSAGE";
+                
+                // JE NE VEUX PAS CHANGER DE PAGE
+                // return $this->redirectToRoute('contact_index');
+            }
+        }
+
         return $this->render('vitrine/contact.html.twig', [
-            'controller_name' => 'VitrineController',
+            // ICI IL FAUT RAJOUTER TOUTES LES VARIABLES 
+            // QUI SERONT TRANSMISES A TWIG
+            'messageFeedback'   => $messageFeedback ?? "",
+            'contact'           => $message,
+            'form'              => $form->createView(),
+            'controller_name'   => 'VitrineController',
         ]);
     }
 
