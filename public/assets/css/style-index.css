@@ -1,0 +1,75 @@
+body * {
+    box-sizing:border-box;
+}
+
+header {
+    background-image: url("../img/imageDeFond.jpeg"); 
+    height: 600px;
+}
+
+nav ul {
+    display:flex;
+    padding-left:0;
+    list-style:none;
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+nav li {
+    min-width:120px;
+    text-align:center;
+}
+
+nav a {
+    color: green;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-weight:900;
+    padding-top:2rem;
+
+}
+nav a:hover {
+    color: #CD853F;;
+}
+
+header nav li {
+    padding:0.25rem;
+    padding-top:4rem;
+    border-bottom: 4px solid transparent;
+    margin: 20px;
+}
+
+.logo img {
+    width: 100px;
+    margin-top: -15px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 80px;
+    color: green;
+}
+
+header .p1 {
+    color: #CD853F;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+}
+header .p2 {
+    color: #CD853F;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    
+}
+
+h2 {
+    font-size: 50px;
+    font-family: 'Ruge Boogie', cursive;
+}
+
+.bg-light {
+    background: #CD853F !important;
+}

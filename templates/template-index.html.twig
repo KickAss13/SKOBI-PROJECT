@@ -7,7 +7,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        <link ref="stylesheet" href="{{asset('assets/css/style-index.css') }}">
+        <link rel="stylesheet" href="{{asset('assets/css/style-index.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Ruge+Boogie&display=swap" rel="stylesheet">
 
         {% block stylesheets %}{% endblock %}
     </head>
@@ -15,13 +16,19 @@
     
         <header>
             <nav>
-                <ul>
-                    <li><a href="{{ path('index') }}">Accueil</a></li>
-                    <li><a href="{{ path('article') }}">Article</a></li>
-                    <li><a href="{{ path('event') }}">Event</a></li>
-                    <li><a href="{{ path('about') }}">About</a></li>
-                    <li><a href="{{ path('fournisseur') }}">Fournisseur</a></li>
-                    <li><a href="{{ path('contact') }}">Contact</a></li>
+                <ul>  
+                
+                    <li><a href="{{ path('article') }}">NOS PRODUITS</a></li>
+                    <li><a href="{{ path('fournisseur') }}">NOS FOURNISSEURS</a></li>
+                    <li> <figure class="logo"><a href="{{ path('index') }}"><img src="{{ asset('assets/img/logo.png') }}"></a></figure> </li>
+                    <li><a href="{{ path('event') }}">EVENEMENTS</a></li>
+                    <li><a href="{{ path('about') }}">A PROPOS</a></li>
+                    {% if app.user %}        
+                    <li> {{ app.user.username }}</li>
+                    <li><a href="{{ path('logout') }}">Logout</a></li>
+                    {% else %}
+                    <li><a href="{{ path('login') }}">Se connecter</a> - <a href="{{ path('subscribe') }}">S'inscrire</a></li>
+                    {% endif %}
                 </ul>
             </nav>
 
@@ -38,22 +45,9 @@
             </nav>
         {% endif %}
     {% endif %}
-
-        {% if app.user %}        
-            <nav>
-                <ul>
-                    <li> {{ app.user.username }}</li>
-                    <li><a href="{{ path('logout') }}">Logout</a></li>
-                </ul>
-            </nav>
-        {% else %}
-            <nav>
-                <ul>
-                    <li><a href="{{ path('login') }}">Login</a></li>
-                    <li><a href="{{ path('subscribe') }}">Subscribe</a></li>
-                </ul>
-            </nav>
-        {% endif %}
+        <h1> SKOBI </h1>
+        <p class="p1"> Miam, miam vous allez vous regalez avec SKOBI </p>
+        <p class="p2"> N'attendez plus passez vos commandes !!! </p>
 
         </header>
 
