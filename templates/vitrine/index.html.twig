@@ -1,20 +1,64 @@
 {% extends 'template-index.html.twig' %}
 
-{% block title %}Hello VitrineController!{% endblock %}
+{% block title %}SKOBI{% endblock %}
+
+{% block stylesheets %}<link rel="stylesheet" href="{{asset('assets/css/style-index.css') }}">{% endblock %}
+
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+  <div class="container">
+        <section class="bg-success">
+            <h2 class="text-center">Evènements</h2>
+            <p> A Venir: </P>
+            <div class= "row">
+                <div class="col-6">
+                    <img class="img-fluid" src="assets/img/evenement.jpg" alt="image de l'evenement" >
+                </div>
+                <div class="col-6">
+                    <p class="text-white">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                </div>
+        </div>
+    </section>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <section class="bg-light">
+        <div class="container">
+            <h2 class="text-center">A propos</h2>
+                <div >
+                    <p >Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                    <p>Plusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là, mais la majeure partie d'entre elles a été altérée par l'addition d'humour ou de mots aléatoires qui ne ressemblent pas une seconde à du texte standard. Si vous voulez utiliser un passage du Lorem Ipsum, vous devez être sûr qu'il n'y a rien d'embarrassant caché dans le texte. Tous les générateurs de Lorem Ipsum sur Internet tendent à reproduire le même extrait sans fin, ce qui fait de lipsum.com le seul vrai générateur de Lorem Ipsum. Iil utilise un dictionnaire de plus de 200 mots latins, en combinaison de plusieurs structures de phrases, pour générer un Lorem Ipsum irréprochable. Le Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient des mots farfelus, ou des touches d'humour.</p>
+                </div>
+        </div>
+    </section>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/SKOBI/src/Controller/VitrineController.php'|file_link(0) }}">src/Controller/VitrineController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/SKOBI/templates/vitrine/index.html.twig'|file_link(0) }}">templates/vitrine/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class="container">
+          <div class= "row">
+            <div class="col-6">
+                <section class="bg-success">
+                <h2 class="text-center">Nos produits</h2>
+                <p> A Venir: </P>
+                    <img class="img-fluid" src="assets/img/nosproduits.jpg" alt="image de l'evenement" >
+               
+                <div class="col-6">
+                    <p class="text-white">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                </div>
+                </div>
+        </div>
+    </div>
+        </section>
+
+    <div class="container">
+        <section class="bg-light">
+            <h2 class="text-center">Contact</h2>
+            <div class= "row">
+                <div class="col-4">
+                    <img class="img-fluid" src="assets/img/phone.png" alt="telephone" >
+                </div>
+                <div class="col-4">
+                    <a href="{{ path('contact') }}"><img class="img-fluid" src="assets/img/mail.png" alt="mail" ></a>
+                </div>
+                <div class="col-4">
+                       <img class="img-fluid" src="assets/img/adress.png" alt="adresse" >
+                </div>
+        </div>
+    </section>
 {% endblock %}
