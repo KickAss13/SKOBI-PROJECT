@@ -22,15 +22,18 @@
                     <li><a href="{{ path('fournisseur') }}">NOS FOURNISSEURS</a></li>
                     <li> <figure class="logo"><a href="{{ path('index') }}"><img src="{{ asset('assets/img/logo.png') }}"></a></figure> </li>
                     <li><a href="{{ path('event') }}">EVENEMENTS</a></li>
-                    <li><a href="{{ path('about') }}">A PROPOS</a></li>
-                    {% if app.user %}        
+                    <li><a href="{{ path('contact') }}">CONTACT</a></li>
+                </ul>
+            </nav> 
+            <div class="compte" text-color:"success">
+                    {% if app.user %}   
                     <li> {{ app.user.username }}</li>
                     <li><a href="{{ path('logout') }}">Logout</a></li>
                     {% else %}
-                    <li><a href="{{ path('login') }}">Se connecter</a> - <a href="{{ path('subscribe') }}">S'inscrire</a></li>
+                    <a href="{{ path('login') }}">Se connecter - </a>
+                    <a href="{{ path('subscribe') }}">S'inscrire</a>
                     {% endif %}
-                </ul>
-            </nav>
+                    </div>
 
     {% if app.user %}
         {% if app.user.role == 'ROLE_ADMIN' %}
@@ -46,7 +49,7 @@
         {% endif %}
     {% endif %}
         <h1> SKOBI </h1>
-        <p class="p1"> Miam, miam vous allez vous regalez avec SKOBI </p>
+        <p class="p1"> Régalez vos clients avec les produits SKOBI </p>
         <p class="p2"> N'attendez plus passez vos commandes !!! </p>
 
         </header>
