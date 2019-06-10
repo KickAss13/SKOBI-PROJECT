@@ -41,7 +41,6 @@ class FournisseurController extends AbstractController
 
             //CODE POUR GERER L'UPLOAD
             $fichierUploade = $fournisseur->getImageUpload();
-            $fileName = strtolower($fileName);
             $fileName = $fichierUploade->getClientOriginalName();
             $fileName = strtolower($fileName);
             $nomSansExtension = pathinfo($fileName, PATHINFO_FILENAME);

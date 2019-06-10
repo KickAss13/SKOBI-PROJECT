@@ -38,9 +38,8 @@ class ArticleController extends AbstractController
 
             //CODE POUR GERER L'UPLOAD1
             $fichierUploade1 = $article->getImageUpload1();
-            $fileName1 = strtolower($fileName1);
             $fileName1 = $fichierUploade1->getClientOriginalName();
-            $fileName1 = strtolower($fileName1);
+            $fileName1 = strtolower($fileName1);          
             $nomSansExtension1 = pathinfo($fileName1, PATHINFO_FILENAME);
             $extension1 = pathinfo($fileName1, PATHINFO_EXTENSION);            
             $nomSansExtension1 = preg_replace("/[^a-zA-Z0-9-\.]/i", "-", $nomSansExtension1);
@@ -55,7 +54,6 @@ class ArticleController extends AbstractController
 
             //CODE POUR GERER L'UPLOAD2
             $fichierUploade2 = $article->getImageUpload2();
-            $fileName2 = strtolower($fileName2);
             $fileName2 = $fichierUploade2->getClientOriginalName();
             $fileName2 = strtolower($fileName2);
             $nomSansExtension2 = pathinfo($fileName2, PATHINFO_FILENAME);
@@ -72,7 +70,6 @@ class ArticleController extends AbstractController
 
             //CODE POUR GERER L'UPLOAD3
             $fichierUploade3 = $article->getImageUpload3();
-            $fileName3 = strtolower($fileName3);
             $fileName3 = $fichierUploade3->getClientOriginalName();
             $fileName3 = strtolower($fileName3);
             $nomSansExtension3 = pathinfo($fileName3, PATHINFO_FILENAME);

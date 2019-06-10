@@ -7,60 +7,62 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        <link ref="stylesheet" href="{{asset('assets/css/style-admin.css') }}">
+        <link rel="stylesheet" href="{{asset('assets/css/style-admin.css') }}">
 
         {% block stylesheets %}{% endblock %}
     </head>
     
     <body>
         <header>
-            <nav>
-                <ul>
-                    <li><a href="{{ path('index') }}">Accueil</a></li>
-                    <li><a href="{{ path('article') }}">Article</a></li>
-                    <li><a href="{{ path('event') }}">Event</a></li>
-                    <li><a href="{{ path('about') }}">About</a></li>
-                    <li><a href="{{ path('fournisseur') }}">Fournisseur</a></li>
-                    <li><a href="{{ path('contact') }}">Contact</a></li>
-                </ul>
-            </nav>
+
+            <h1 class="font-weight-bolder text-center">SKOBI</h1>
+            <h2 class="text-center">Gestion Administrateur</h2>
+
+            <hr>
+            <hr>
+
+            <ul class="list-unstyled d-flex justify-content-end list-logout list-group list-group-horizontal">
+                <li class="font-italic list-group-item">Bienvenue {{ app.user.username }} !</li>
+                <li class="list-group-item"><a href="{{ path('logout') }}" id="id-logout">Se déconnecter</a></li>
+            </ul>
 
     {% if app.user %}
         {% if app.user.role == 'ROLE_ADMIN' %}
             <nav>
-                <ul>
-                    <li><a href="{{ path('article_index') }}">Admin Article</a></li>
-                    <li><a href="{{ path('event_index') }}">Admin Event</a></li>
-                    <li><a href="{{ path('fournisseur_index') }}">Admin Fournisseur</a></li>
-                    <li><a href="{{ path('message_index') }}">Admin Message</a></li>
-                    <li><a href="{{ path('user_index') }}">Admin User</a></li>
+                <ul class="list-unstyled d-flex flex-row justify-content-around">
+                    <li><a href="{{ path('index') }}" class="font-weight-bolder"><img src="{{ asset('assets/img/logo-back-index.svg') }}" width="30px"><span>Retour au site</span></a></li>
+                    <li><a href="{{ path('user_index') }}" class="font-weight-bolder">Gérer Utilisateurs</a></li>
+                    <li><a href="{{ path('article_index') }}" class="font-weight-bolder">Gérer Produits</a></li>
+                    <li><a href="{{ path('event_index') }}" class="font-weight-bolder">Gérer Evenements</a></li>
+                    <li><a href="{{ path('fournisseur_index') }}" class="font-weight-bolder">Gérer Fournisseurs</a></li>
+                    <li><a href="{{ path('message_index') }}" class="font-weight-bolder">Gérer Messages</a></li>                
                 </ul>
             </nav>
         {% endif %}
     {% endif %}
 
-        {% if app.user %}        
-            <nav>
-                <ul>
-                    <li> {{ app.user.username }}</li>
-                    <li><a href="{{ path('logout') }}">Logout</a></li>
-                </ul>
-            </nav>
-        {% else %}
-            <nav>
-                <ul>
-                    <li><a href="{{ path('login') }}">Login</a></li>
-                    <li><a href="{{ path('subscribe') }}">Subscribe</a></li>
-                </ul>
-            </nav>
-        {% endif %}
+     <br>
+    <hr>
 
         </header>
             
         <main>
             {% block body %}{% endblock %}
         </main>
+
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+
         <footer>
+
+            <div class="d-flex justify-content-center">
+                <a href="#"><img src="{{ asset('assets/img/logo-back-index.svg') }}" width="20px"><span>Retour au site</span></a>
+            </div>
+            
+
             
         </footer>
 

@@ -1,38 +1,48 @@
 {% extends 'template-admin.html.twig' %}
 
-{% block title %}Message{% endblock %}
+{% block title %}Profil message{% endblock %}
 
 {% block body %}
-    <h1>Message</h1>
+<br><br>
 
-    <table class="table">
+<div class="d-flex justify-content-center">
+    <h1>Profil message</h1>
+</div>
+
+    <br><br>
+
+<div class="container d-flex justify-content-center">
+    <table class="table table-bordered table-hover">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th class="bg-secondary text-white">Id</th>
                 <td>{{ message.id }}</td>
             </tr>
             <tr>
-                <th>Username</th>
+                <th class="bg-secondary text-white">Nom expéditeur</th>
                 <td>{{ message.username }}</td>
             </tr>
             <tr>
-                <th>Email</th>
+                <th class="bg-secondary text-white">Email</th>
                 <td>{{ message.email }}</td>
             </tr>
             <tr>
-                <th>Content</th>
+                <th class="bg-secondary text-white">Contenu message</th>
                 <td>{{ message.content }}</td>
             </tr>
             <tr>
-                <th>DateMessage</th>
+                <th class="bg-secondary text-white">Date Message</th>
                 <td>{{ message.dateMessage ? message.dateMessage|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>
+</div>
 
-    <a href="{{ path('message_index') }}">back to list</a>
-
-    <a href="{{ path('message_edit', {'id': message.id}) }}">edit</a>
+<div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-secondary"><a href="{{ path('message_index') }}" class="text-light">Retour à l'index</a></button>
+ 
+    <button type="button" class="btn btn-secondary"><a href="{{ path('message_edit', {'id': message.id}) }}" class="text-light">Modifier</a></button>
 
     {{ include('message/_delete_form.html.twig') }}
+</div>
 {% endblock %}

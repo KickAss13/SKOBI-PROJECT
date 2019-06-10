@@ -1,6 +1,10 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+
+<div class="d-flex justify-content-center">
+    <button class="btn btn-secondary">{{ button_label|default('Sauvegarder') }}</button>
+    <button type="button" class="btn btn-secondary"><a href="{{ path('fournisseur_index') }}" class="text-light">Retour à l'index</a></button>
+</div>
 
     <div>
         {{ fournisseurFeedback ?? "" }}

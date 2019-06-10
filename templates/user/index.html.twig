@@ -1,15 +1,23 @@
 {% extends 'template-admin.html.twig' %}
 
-{% block title %}User index{% endblock %}
+{% block title %}Index utilisateurs{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
 
-    <table class="table">
-        <thead>
+<br><br>
+
+<div class="d-flex justify-content-center">
+    <h1>Index utilisateurs</h1>
+</div>
+
+    <br><br>
+
+<div class="container d-flex justify-content-center">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
             <tr>
                 <th>Id</th>
-                <th>Username</th>
+                <th>Nom d'utilisateur</th>
                 <th>Email</th>
                 <th>Password</th>
                 <th>Nom</th>
@@ -17,7 +25,7 @@
                 <th>Adresse</th>
                 <th>Telephone</th>
                 <th>Role</th>
-                <th>DateInscription</th>
+                <th>Date Inscription</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -35,8 +43,9 @@
                 <td>{{ user.role }}</td>
                 <td>{{ user.dateInscription ? user.dateInscription|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                   <button type="button" class="btn btn-secondary"><a href="{{ path('user_show', {'id': user.id}) }}" class="text-light">Voir</a></button>
+                   <hr>
+                   <button type="button" class="btn btn-secondary"><a href="{{ path('user_edit', {'id': user.id}) }}" class="text-light">Modifier</a></button>
                 </td>
             </tr>
         {% else %}
@@ -46,6 +55,10 @@
         {% endfor %}
         </tbody>
     </table>
+ </div>
 
-    <a href="{{ path('user_new') }}">Create new</a>
+<div class="d-flex justify-content-center">
+ <button type="button" class="btn btn-secondary"><a href="{{ path('user_new') }}" class="text-light">Créer nouveau</a></button>
+ </div>
+
 {% endblock %}

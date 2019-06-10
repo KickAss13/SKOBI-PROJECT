@@ -1,38 +1,48 @@
 {% extends 'template-admin.html.twig' %}
 
-{% block title %}Fournisseur{% endblock %}
+{% block title %}Profil fournisseur{% endblock %}
 
 {% block body %}
-    <h1>Fournisseur</h1>
+<br><br>
 
-    <table class="table">
+<div class="d-flex justify-content-center">
+    <h1>Profil fournisseur</h1>
+</div>
+
+    <br><br>
+
+<div class="container d-flex justify-content-center">
+    <table class="table table-bordered table-hover">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th class="bg-secondary text-white">Id</th>
                 <td>{{ fournisseur.id }}</td>
             </tr>
             <tr>
-                <th>Nom</th>
+                <th class="bg-secondary text-white">Nom fournisseur</th>
                 <td>{{ fournisseur.nom }}</td>
             </tr>
             <tr>
-                <th>Content</th>
+                <th class="bg-secondary text-white">Description</th>
                 <td>{{ fournisseur.content }}</td>
             </tr>
             <tr>
-                <th>ImageSrc</th>
+                <th class="bg-secondary text-white">Source image</th>
                 <td>{{ fournisseur.imageSrc }}</td>
             </tr>
             <tr>
-                <th>DatePublication</th>
+                <th class="bg-secondary text-white">Date Publication</th>
                 <td>{{ fournisseur.datePublication ? fournisseur.datePublication|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>
+</div>
 
-    <a href="{{ path('fournisseur_index') }}">back to list</a>
-
-    <a href="{{ path('fournisseur_edit', {'id': fournisseur.id}) }}">edit</a>
+<div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-secondary"><a href="{{ path('fournisseur_index') }}" class="text-light">Retour à l'index</a></button>
+ 
+    <button type="button" class="btn btn-secondary"><a href="{{ path('fournisseur_edit', {'id': fournisseur.id}) }}" class="text-light">Modifier</a></button>
 
     {{ include('fournisseur/_delete_form.html.twig') }}
+</div>
 {% endblock %}

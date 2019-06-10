@@ -1,20 +1,28 @@
 {% extends 'template-admin.html.twig' %}
 
-{% block title %}Article index{% endblock %}
+{% block title %}Index article{% endblock %}
 
 {% block body %}
-    <h1>Article index</h1>
 
-    <table class="table">
-        <thead>
+<br><br>
+
+<div class="d-flex justify-content-center">
+    <h1>Index article</h1>
+</div>
+
+    <br><br>
+
+<div class="container d-flex justify-content-center">
+    <table class="table  table-bordered table-hover">
+        <thead class="thead-light">
             <tr>
                 <th>Id</th>
-                <th>Nom</th>
+                <th>Nom produit</th>
                 <th>Description</th>
                 <th>Prix</th>
-                <th>ImageSrc1</th>
-                <th>ImageSrc2</th>
-                <th>ImageSrc3</th>
+                <th>Source image 1</th>
+                <th>Source image 2</th>
+                <th>Source image 3</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -29,8 +37,9 @@
                 <td>{{ article.imageSrc2 }}</td>
                 <td>{{ article.imageSrc3 }}</td>
                 <td>
-                    <a href="{{ path('article_show', {'id': article.id}) }}">show</a>
-                    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+                    <button type="button" class="btn btn-secondary"><a href="{{ path('article_show', {'id': article.id}) }}" class="text-light">Voir</a></button>
+                    <hr>
+                    <button type="button" class="btn btn-secondary"><a href="{{ path('article_edit', {'id': article.id}) }}" class="text-light">Modifier</a></button>
                 </td>
             </tr>
         {% else %}
@@ -40,6 +49,8 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('article_new') }}">Create new</a>
+</div>
+<div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-secondary"><a href="{{ path('article_new') }}" class="text-light">Créer nouveau</a></button>
+</div>
 {% endblock %}

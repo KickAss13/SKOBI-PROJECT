@@ -1,18 +1,26 @@
 {% extends 'template-admin.html.twig' %}
 
-{% block title %}Event index{% endblock %}
+{% block title %}Index Evenement{% endblock %}
 
 {% block body %}
-    <h1>Event index</h1>
 
-    <table class="table">
-        <thead>
+<br><br>
+
+<div class="d-flex justify-content-center">
+    <h1>Index évènements</h1>
+</div>
+
+    <br><br>
+
+<div class="container d-flex justify-content-center">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
             <tr>
                 <th>Id</th>
                 <th>Titre</th>
-                <th>Content</th>
-                <th>ImageSrc</th>
-                <th>DatePublication</th>
+                <th>Description évènement/th>
+                <th>Source Image</th>
+                <th>Date Publication</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -25,8 +33,9 @@
                 <td>{{ event.imageSrc }}</td>
                 <td>{{ event.datePublication ? event.datePublication|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('event_show', {'id': event.id}) }}">show</a>
-                    <a href="{{ path('event_edit', {'id': event.id}) }}">edit</a>
+                    <button type="button" class="btn btn-secondary"><a href="{{ path('event_show', {'id': event.id}) }}" class="text-light">Voir</a></button>
+                    <hr>
+                    <button type="button" class="btn btn-secondary"><a href="{{ path('event_edit', {'id': event.id}) }}" class="text-light">Modifier</a></button>
                 </td>
             </tr>
         {% else %}
@@ -36,6 +45,9 @@
         {% endfor %}
         </tbody>
     </table>
+</div>
 
-    <a href="{{ path('event_new') }}">Create new</a>
+<div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-secondary"><a href="{{ path('event_new') }}" class="text-light">Créer nouveau</a></button>
+</div>
 {% endblock %}

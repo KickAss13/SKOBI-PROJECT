@@ -1,11 +1,19 @@
 {% extends 'template-admin.html.twig' %}
 
-{% block title %}New Fournisseur{% endblock %}
+{% block title %}Créer nouveau fournisseur{% endblock %}
 
 {% block body %}
-    <h1>Create new Fournisseur</h1>
 
+<br><br>
+
+<div class="d-flex justify-content-center">
+    <h1>Créer nouveau fournisseur</h1>
+</div>
+
+<br><br>
+
+<div class="container">
     {{ include('fournisseur/_form.html.twig') }}
+</div>
 
-    <a href="{{ path('fournisseur_index') }}">back to list</a>
 {% endblock %}

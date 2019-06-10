@@ -1,46 +1,56 @@
 {% extends 'template-admin.html.twig' %}
 
-{% block title %}Article{% endblock %}
+{% block title %}Profil produit{% endblock %}
 
 {% block body %}
-    <h1>Article</h1>
+<br><br>
 
-    <table class="table">
+<div class="d-flex justify-content-center">
+    <h1>Profil produit</h1>
+</div>
+
+    <br><br>
+
+<div class="container d-flex justify-content-center">
+    <table class="table table-bordered table-hover">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th class="bg-secondary text-white">Id</th>
                 <td>{{ article.id }}</td>
             </tr>
             <tr>
-                <th>Nom</th>
+                <th class="bg-secondary text-white">Nom produit</th>
                 <td>{{ article.nom }}</td>
             </tr>
             <tr>
-                <th>Description</th>
+                <th class="bg-secondary text-white">Description</th>
                 <td>{{ article.description }}</td>
             </tr>
             <tr>
-                <th>Prix</th>
+                <th class="bg-secondary text-white">Prix</th>
                 <td>{{ article.prix }}</td>
             </tr>
             <tr>
-                <th>ImageSrc1</th>
+                <th class="bg-secondary text-white">Source image 1</th>
                 <td>{{ article.imageSrc1 }}</td>
             </tr>
             <tr>
-                <th>ImageSrc2</th>
+                <th class="bg-secondary text-white">Source image 2</th>
                 <td>{{ article.imageSrc2 }}</td>
             </tr>
             <tr>
-                <th>ImageSrc3</th>
+                <th class="bg-secondary text-white">Source image 3</th>
                 <td>{{ article.imageSrc3 }}</td>
             </tr>
         </tbody>
     </table>
+</div>
 
-    <a href="{{ path('article_index') }}">back to list</a>
-
-    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+<div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-secondary"><a href="{{ path('article_index') }}" class="text-light">Retour à l'index</a></button>
+ 
+    <button type="button" class="btn btn-secondary"><a href="{{ path('article_edit', {'id': article.id}) }}" class="text-light">Modifier</a></button>
 
     {{ include('article/_delete_form.html.twig') }}
+</div>
 {% endblock %}

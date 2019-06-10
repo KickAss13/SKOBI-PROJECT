@@ -1,18 +1,26 @@
 {% extends 'template-admin.html.twig' %}
 
-{% block title %}Message index{% endblock %}
+{% block title %}Index messages{% endblock %}
 
 {% block body %}
-    <h1>Message index</h1>
 
-    <table class="table">
-        <thead>
+<br><br>
+
+<div class="d-flex justify-content-center">
+    <h1>Index messages</h1>
+</div>
+
+    <br><br>
+
+<div class="container d-flex justify-content-center">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
             <tr>
                 <th>Id</th>
-                <th>Username</th>
+                <th>Nom expéditeur</th>
                 <th>Email</th>
-                <th>Content</th>
-                <th>DateMessage</th>
+                <th>Contenu message</th>
+                <th>Date message</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -25,8 +33,9 @@
                 <td>{{ message.content }}</td>
                 <td>{{ message.dateMessage ? message.dateMessage|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('message_show', {'id': message.id}) }}">show</a>
-                    <a href="{{ path('message_edit', {'id': message.id}) }}">edit</a>
+                    <button type="button" class="btn btn-secondary"><a href="{{ path('message_show', {'id': message.id}) }}" class="text-light">Voir</a></button>
+                    <hr>
+                    <button type="button" class="btn btn-secondary"><a href="{{ path('message_edit', {'id': message.id}) }}" class="text-light">Modifier</a></button>
                 </td>
             </tr>
         {% else %}
@@ -36,6 +45,9 @@
         {% endfor %}
         </tbody>
     </table>
+</div>
 
-    <a href="{{ path('message_new') }}">Create new</a>
+<div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-secondary"><a href="{{ path('message_new') }}" class="text-light">Créer nouveau</a></button>
+</div>
 {% endblock %}

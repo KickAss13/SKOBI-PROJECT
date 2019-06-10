@@ -16,7 +16,7 @@ class FournisseurType extends AbstractType
             ->add('content')
             ->add('imageUpload')
            // ->add('imageSrc')
-            ->add('datePublication')
+           // ->add('datePublication')
         ;
     }
 

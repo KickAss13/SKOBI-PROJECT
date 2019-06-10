@@ -1,58 +1,69 @@
 {% extends 'template-admin.html.twig' %}
 
-{% block title %}User{% endblock %}
+{% block title %}Profil utilisateur{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
 
-    <table class="table">
+<br><br>
+
+<div class="d-flex justify-content-center">
+    <h1>Profil utilisateur</h1>
+</div>
+
+    <br><br>
+
+<div class="container d-flex justify-content-center">
+    <table class="table table-bordered table-hover">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th class="bg-secondary text-white">Id</th>
                 <td>{{ user.id }}</td>
             </tr>
             <tr>
-                <th>Username</th>
+                <th class="bg-secondary text-white">Nom d'utilisateur</th>
                 <td>{{ user.username }}</td>
             </tr>
             <tr>
-                <th>Email</th>
+                <th class="bg-secondary text-white">Email</th>
                 <td>{{ user.email }}</td>
             </tr>
             <tr>
-                <th>Password</th>
+                <th class="bg-secondary text-white">Password</th>
                 <td>{{ user.password }}</td>
             </tr>
             <tr>
-                <th>Nom</th>
+                <th class="bg-secondary text-white">Nom</th>
                 <td>{{ user.nom }}</td>
             </tr>
             <tr>
-                <th>Prenom</th>
+                <th class="bg-secondary text-white">Prenom</th>
                 <td>{{ user.prenom }}</td>
             </tr>
             <tr>
-                <th>Adresse</th>
+                <th class="bg-secondary text-white">Adresse</th>
                 <td>{{ user.adresse }}</td>
             </tr>
             <tr>
-                <th>Telephone</th>
+                <th class="bg-secondary text-white">Telephone</th>
                 <td>{{ user.telephone }}</td>
             </tr>
             <tr>
-                <th>Role</th>
+                <th class="bg-secondary text-white">Role</th>
                 <td>{{ user.role }}</td>
             </tr>
             <tr>
-                <th>DateInscription</th>
+                <th class="bg-secondary text-white">Date Inscription</th>
                 <td>{{ user.dateInscription ? user.dateInscription|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>
+</div>
 
-    <a href="{{ path('user_index') }}">back to list</a>
-
-    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+<div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-secondary"><a href="{{ path('user_index') }}" class="text-light">Retour à l'index</a></button>
+ 
+    <button type="button" class="btn btn-secondary"><a href="{{ path('user_edit', {'id': user.id}) }}" class="text-light">Modifier</a></button>
 
     {{ include('user/_delete_form.html.twig') }}
+</div>
 {% endblock %}
