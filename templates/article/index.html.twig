@@ -40,11 +40,13 @@
                     <button type="button" class="btn btn-secondary"><a href="{{ path('article_show', {'id': article.id}) }}" class="text-light">Voir</a></button>
                     <hr>
                     <button type="button" class="btn btn-secondary"><a href="{{ path('article_edit', {'id': article.id}) }}" class="text-light">Modifier</a></button>
+                    <hr>
+                    {{ include('article/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+                <td colspan="8">Aucun produit enregistré</td>
             </tr>
         {% endfor %}
         </tbody>

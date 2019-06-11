@@ -36,11 +36,13 @@
                     <button type="button" class="btn btn-secondary"><a href="{{ path('fournisseur_show', {'id': fournisseur.id}) }}" class="text-light">Voir</a></button>
                     <hr>
                     <button type="button" class="btn btn-secondary"><a href="{{ path('fournisseur_edit', {'id': fournisseur.id}) }}" class="text-light">Modifier</a></button>
+                    <hr>
+                    {{ include('fournisseur/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Aucun fournisseur enregistré</td>
             </tr>
         {% endfor %}
         </tbody>

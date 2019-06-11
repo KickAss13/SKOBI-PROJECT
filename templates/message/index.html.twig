@@ -34,20 +34,15 @@
                 <td>{{ message.dateMessage ? message.dateMessage|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <button type="button" class="btn btn-secondary"><a href="{{ path('message_show', {'id': message.id}) }}" class="text-light">Voir</a></button>
-                    <hr>
-                    <button type="button" class="btn btn-secondary"><a href="{{ path('message_edit', {'id': message.id}) }}" class="text-light">Modifier</a></button>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Aucun message enregistré</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 </div>
 
-<div class="d-flex justify-content-center">
-    <button type="button" class="btn btn-secondary"><a href="{{ path('message_new') }}" class="text-light">Créer nouveau</a></button>
-</div>
 {% endblock %}

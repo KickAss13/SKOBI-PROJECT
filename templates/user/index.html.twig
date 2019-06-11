@@ -26,7 +26,7 @@
                 <th>Telephone</th>
                 <th>Role</th>
                 <th>Date Inscription</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -46,11 +46,13 @@
                    <button type="button" class="btn btn-secondary"><a href="{{ path('user_show', {'id': user.id}) }}" class="text-light">Voir</a></button>
                    <hr>
                    <button type="button" class="btn btn-secondary"><a href="{{ path('user_edit', {'id': user.id}) }}" class="text-light">Modifier</a></button>
+                   <hr>
+                   {{ include('user/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="11">no records found</td>
+                <td colspan="11">Aucun utilisateur enregistré</td>
             </tr>
         {% endfor %}
         </tbody>

@@ -36,11 +36,13 @@
                     <button type="button" class="btn btn-secondary"><a href="{{ path('event_show', {'id': event.id}) }}" class="text-light">Voir</a></button>
                     <hr>
                     <button type="button" class="btn btn-secondary"><a href="{{ path('event_edit', {'id': event.id}) }}" class="text-light">Modifier</a></button>
+                    <hr>
+                    {{ include('event/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Aucun évènement enregistré</td>
             </tr>
         {% endfor %}
         </tbody>
