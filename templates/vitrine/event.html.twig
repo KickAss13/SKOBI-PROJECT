@@ -8,6 +8,7 @@
 
 <h3>Evènements à venir:</h3>
 
+{# Code pour afficher les évènements à venir #}
 {% for event in events %}
     {% if event.category == 'A_VENIR' %}
     <article>
@@ -26,6 +27,7 @@
 
 <h3>Evènements passés:</h3>
 
+{# Code pour afficher les évènements passés #}
 {% for event in events %}
     {% if event.category == 'E_PASSE' %}
     <article>
