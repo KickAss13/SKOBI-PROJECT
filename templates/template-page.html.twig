@@ -62,13 +62,12 @@
             {% block body %}{% endblock %}
         </main>
         <footer>
-            <div>
-                <a href="#"><img src="{{ asset('assets/img/facebook.png') }}"></a>
-                <a href="#"><img src="{{ asset('assets/img/Twitter.png') }}"></a>
-            </div>
+            <ul class="d-flex justify-content-center list-unstyled" >
+                <li><a href="#" class="facebook"><img src="{{ asset('assets/img/facebook.png') }}"></a></li>
+                <li><a href="#"><img src="{{ asset('assets/img/Twitter.png') }}"></a></li>
+            </ul>
 
-            <a id="white" href="#">Conditions d'utilisation</a>
-            
+            <a id="white" href="#" class="text-center"> @Conditions d'utilisation</a> 
         </footer>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
