@@ -12,6 +12,10 @@ use App\Form\UserSubscribeType;
 use App\Entity\Message;
 use App\Form\MessageType;
 use App\Repository\EventRepository;
+use App\Entity\Fournisseur;
+use App\Repository\FournisseurRepository;
+use App\Entity\Article;
+use App\Repository\ArticleRepository;
 
 
 class VitrineController extends AbstractController
@@ -27,12 +31,13 @@ class VitrineController extends AbstractController
     }
 
     /**
-     * @Route("/article", name="article")
+     * @Route("/article", name="article", methods={"GET"})
      */
-    public function article()
+    public function article(ArticleRepository $articleRepository): Response
     {
         return  $this->render('vitrine/article.html.twig', [
             'controller_name' => 'VitrineController',
+            'articles' => $articleRepository->findAll(),
         ]);
     }
 
@@ -58,12 +63,13 @@ class VitrineController extends AbstractController
     }
 
     /**
-     * @Route("/fournisseur", name="fournisseur")
+     * @Route("/fournisseur", name="fournisseur", methods={"GET"})
      */
-    public function fournisseur()
+    public function fournisseur(FournisseurRepository $fournisseurRepository): Response
     {
         return  $this->render('vitrine/fournisseur.html.twig', [
             'controller_name' => 'VitrineController',
+            'fournisseurs' => $fournisseurRepository->findAll(),
         ]);
     }
 
