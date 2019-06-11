@@ -1,1 +1,47 @@
 {% extends 'template-page.html.twig' %}
+
+{% block title %}Evènements{% endblock %}
+
+{% block body %}
+
+<h1>Evènements</h1>
+
+<h3>Evènements à venir:</h3>
+
+{# Code pour afficher les évènements à venir #}
+{% for event in events %}
+    {% if event.category == 'A_VENIR' %}
+    <article>
+        <div>{{event.titre}}</div>
+        <div>{{event.content}}</div>
+        <div>{{event.dateEvent ? event.dateEvent|date('d-m-Y H:i') : ''}}</div>
+        <figure><img src="{{event.imageSrc}}"></figure>
+    </article>
+    {% endif %}
+{% else %}
+    <article>
+        <p>Aucun évènement prévu</p>
+    </article>
+{% endfor %}
+
+
+<h3>Evènements passés:</h3>
+
+{# Code pour afficher les évènements passés #}
+{% for event in events %}
+    {% if event.category == 'E_PASSE' %}
+    <article>
+        <div>{{event.titre}}</div>
+        <div>{{event.content}}</div>
+        <div>{{event.dateEvent ? event.dateEvent|date('d-m-Y H:i') : ''}}</div>
+        <figure><img src="{{event.imageSrc}}"></figure>
+    </article>
+    {% endif %}
+{% else %}
+    <article>
+        <p>Aucun évènement prévu</p>
+    </article>
+{% endfor %}
+
+
+{% endblock %}
