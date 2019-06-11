@@ -11,17 +11,17 @@
 {# Code pour afficher les évènements à venir #}
 {% for event in events %}
     {% if event.category == 'A_VENIR' %}
-    <article>
+    <section>
         <div>{{event.titre}}</div>
         <div>{{event.content}}</div>
         <div>{{event.dateEvent ? event.dateEvent|date('d-m-Y H:i') : ''}}</div>
         <figure><img src="{{event.imageSrc}}"></figure>
-    </article>
+    </section>
     {% endif %}
 {% else %}
-    <article>
+    <section>
         <p>Aucun évènement prévu</p>
-    </article>
+    </section>
 {% endfor %}
 
 
@@ -30,17 +30,17 @@
 {# Code pour afficher les évènements passés #}
 {% for event in events %}
     {% if event.category == 'E_PASSE' %}
-    <article>
+    <section>
         <div>{{event.titre}}</div>
         <div>{{event.content}}</div>
         <div>{{event.dateEvent ? event.dateEvent|date('d-m-Y H:i') : ''}}</div>
         <figure><img src="{{event.imageSrc}}"></figure>
-    </article>
+    </section>
     {% endif %}
 {% else %}
-    <article>
+    <section>
         <p>Aucun évènement prévu</p>
-    </article>
+    </section>
 {% endfor %}
 
 

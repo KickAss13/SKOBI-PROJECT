@@ -1,19 +1,15 @@
 {% extends 'template-page.html.twig' %}
 
-
-{% block title %}Hello VitrineController!{% endblock %}
+{% block title %}Article{% endblock %}
 
 {% block body %}
-<div class="example-wrapper">
-    <h1>GALERIE</h1>
 
-    <section>
-        <h3>liste des articles categorie="galerie"</h3>
-        <div class="listeGalerie">
+    <h1>Nos produits</h1>
+
+{# Code pour afficher les différents articles #}
         {% for article in articles %}
-            <article>
-                <div>(id={{ article.id }})</div>
-                <h3>{{ article.nom }}</h3>
+            <section>
+                <div>{{ article.nom }}</div>
                 <div>{{ article.description }}</div>
                 <div>{{ article.prix }}</div>
 
@@ -22,16 +18,11 @@
                 <div>{{ article.imageSrc3 }}</div>
 
                 <figure><img src="{{ article.imageSrc1 }}"></figure>
-
-
-
-            </article>
+            </section>
         {% else %}
-            <article>
-                <h3>aucun article trouvé</h3>
-            </article>
+            <section>
+                <h3>Aucun article trouvé</h3>
+            </section>
         {% endfor %}
-        </div>
-    </section>
-</div>
+
 {% endblock %}

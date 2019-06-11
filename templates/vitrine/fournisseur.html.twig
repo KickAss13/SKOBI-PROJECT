@@ -10,13 +10,11 @@
 
 
 {% block body %}
-<div class="example-wrapper">
-    <h1>FOURNISSEURS</h1>
+    <h1>Fournisseurs</h1>
 
-    <section>
-        <div class="listeGalerie">
+{# Code pour afficher les fournisseurs #}
         {% for fournisseur in fournisseurs %}
-            <article>
+            <section>
                 <div>(id={{ fournisseur.id }})</div>
                 <h3>{{ fournisseur.nom }}</h3>
                 <div id="cache">{{ fournisseur.content }}</div>
@@ -25,18 +23,14 @@
                 <div>{{ fournisseur.datePublication ? fournisseur.datePublication|date('Y-m-d H:i:s') : '' }}</div>
                 <a data-fancybox="gallery" href="{{  asset('assets/upload/fournisseur/fournisseur1.png') }}"><img src="{{  asset('assets/upload/fournisseur/fournisseur1.png') }}"></a>
 
-
-
-
-            </article>
+            </section>
         {% else %}
-            <article>
-                <h3>aucun article trouvé</h3>
-            </article>
+            <section>
+                <h3>Aucun fournisseur trouvé</h3>
+            </section>
         {% endfor %}
-        </div>
-    </section>
-</div>
+
+
 {% block javascripts %}
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
