@@ -1,1 +1,46 @@
 {% extends 'template-page.html.twig' %}
+
+
+{% block title %}Fournisseurs{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<link rel="stylesheet" href="{{asset('assets/css/style-fournisseur.css') }}">
+{% endblock %}
+
+
+{% block body %}
+<div class="example-wrapper">
+    <h1>FOURNISSEURS</h1>
+
+    <section>
+        <div class="listeGalerie">
+        {% for fournisseur in fournisseurs %}
+            <article>
+                <div>(id={{ fournisseur.id }})</div>
+                <h3>{{ fournisseur.nom }}</h3>
+                <div id="cache">{{ fournisseur.content }}</div>
+
+                <figure><img class="fournisseur" src="{{  asset('assets/upload/fournisseur/fournisseur1.png') }}"></figure>
+                <div>{{ fournisseur.datePublication ? fournisseur.datePublication|date('Y-m-d H:i:s') : '' }}</div>
+                <a data-fancybox="gallery" href="{{  asset('assets/upload/fournisseur/fournisseur1.png') }}"><img src="{{  asset('assets/upload/fournisseur/fournisseur1.png') }}"></a>
+
+
+
+
+            </article>
+        {% else %}
+            <article>
+                <h3>aucun article trouvé</h3>
+            </article>
+        {% endfor %}
+        </div>
+    </section>
+</div>
+{% block javascripts %}
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="{{asset('assets/js/script-fournisseur.js') }}"></script>
+{% endblock %}
+
+{% endblock %}

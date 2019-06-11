@@ -1,56 +1,69 @@
 {% extends 'template-page.html.twig' %}
+
+{% block title %}A propos{% endblock %}
+
+{% block stylesheets %}<link rel="stylesheet" href="{{asset('assets/css/style-about.css') }}">{% endblock %}
+
 {% block body %}
 <section class="brown">
-
     <div class="container">
-        <div class="colonnes row ">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+
+        <div class="colonnes1 row ">
+            <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
                 <img class="about" src="{{ asset('assets/img/legumes.jpg') }}">
             </div>
-            <div class="texte_et_titre col-lg-8 col-md-6 col-sm-6 col-xs-12">
-                <h3>NOTRE ENGAGEMENT</h3>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus eleifend rhoncus. 
-                    Morbi ut diam eu enim lobortis imperdiet non dapibus dui. Ut tristique eget velit vitae imperdiet.
-                    Vivamus vitae cursus erat. Duis est enim, condimentum sit amet metus ut, scelerisque 
-                </p>
-            </div>
-        </div>
-    </div>
-    </section>
-    <section class="green">
-        <div class="container">
-
-            <div class="colonnes row">
-                <div class="texte_et_titre col-lg-8 col-md-6 col-sm-12 col-xs-12">
-                    <h3>LE CUISINIER</h3>
-            
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus eleifend rhoncus. 
-                    Morbi ut diam eu enim lobortis imperdiet non dapibus dui. Ut tristique eget velit vitae imperdiet. 
-                    Vivamus vitae cursus erat. Duis est enim, condimentum sit amet metus ut, scelerisque</p>
-                    
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                    <img class="about" src="{{ asset('assets/img/legumes.jpg') }}">
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="brown">
-
-    <div class="container">
-        <div class="colonnes row ">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                <img class="about" src="{{ asset('assets/img/legumes.jpg') }}">
-            </div>
-            <div class="texte_et_titre col-lg-8 col-md-6 col-sm-6 col-xs-12">
+            <div class="texte_et_titre1 col-lg-7 col-md-6 col-sm-6 col-xs-12">
                 <h3>NOTRE ENGAGEMENT</h3>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus eleifend rhoncus. </p>
-                    <p>Morbi ut diam eu enim lobortis imperdiet non dapibus dui. Ut tristique eget velit vitae imperdiet. </p>
+                <p>    Morbi ut diam eu enim lobortis imperdiet non dapibus dui. Ut tristique eget velit vitae imperdiet.
                     Vivamus vitae cursus erat. Duis est enim, condimentum sit amet metus ut, scelerisque 
+                </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus eleifend rhoncus. </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus eleifend rhoncus. </p>
+
             </div>
         </div>
     </div>
-    </section>
+</section>
+<section class="green">
+    <div class="container">
+
+        <div class="colonnes row">
+            <div class="texte_et_titre col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <h3>LE CUISINIER</h3>
+        
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus eleifend rhoncus. </p>
+                <p>    Morbi ut diam eu enim lobortis imperdiet non dapibus dui. Ut tristique eget velit vitae imperdiet.
+                    Vivamus vitae cursus erat. Duis est enim, condimentum sit amet metus ut, scelerisque 
+                </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus eleifend rhoncus. </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus eleifend rhoncus. </p>
+                
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+                <img class="about" src="{{ asset('assets/img/legumes.jpg') }}">
+            </div>
+        </div>
+</section>
+<section class="brown">
+
+        <div class="colonnes1 row ">
+            <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
+                <img class="about" src="{{ asset('assets/img/legumes.jpg') }}">
+            </div>
+            <div class="texte_et_titre1 col-lg-7 col-md-6 col-sm-6 col-xs-12">
+                <h3>LE GERANT</h3>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus eleifend rhoncus. </p>
+                <p>    Morbi ut diam eu enim lobortis imperdiet non dapibus dui. Ut tristique eget velit vitae imperdiet.
+                    Vivamus vitae cursus erat. Duis est enim, condimentum sit amet metus ut, scelerisque 
+                </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus eleifend rhoncus. </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus eleifend rhoncus. </p>
+
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
