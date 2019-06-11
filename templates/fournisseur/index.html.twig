@@ -31,7 +31,7 @@
                 <td>{{ fournisseur.nom }}</td>
                 <td>{{ fournisseur.content }}</td>
                 <td>{{ fournisseur.imageSrc }}</td>
-                <td>{{ fournisseur.datePublication ? fournisseur.datePublication|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ fournisseur.datePublication ? fournisseur.datePublication|date('d-m-Y H:i:s') : '' }}</td>
                 <td>
                     <button type="button" class="btn btn-secondary"><a href="{{ path('fournisseur_show', {'id': fournisseur.id}) }}" class="text-light">Voir</a></button>
                     <hr>

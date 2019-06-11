@@ -31,7 +31,7 @@
                 <td>{{ message.username }}</td>
                 <td>{{ message.email }}</td>
                 <td>{{ message.content }}</td>
-                <td>{{ message.dateMessage ? message.dateMessage|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ message.dateMessage ? message.dateMessage|date('d-m-Y H:i:s') : '' }}</td>
                 <td>
                     <button type="button" class="btn btn-secondary"><a href="{{ path('message_show', {'id': message.id}) }}" class="text-light">Voir</a></button>
                 </td>
