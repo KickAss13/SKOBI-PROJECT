@@ -11,6 +11,7 @@ use App\Entity\User;
 use App\Form\UserSubscribeType;
 use App\Entity\Message;
 use App\Form\MessageType;
+use App\Repository\EventRepository;
 
 
 class VitrineController extends AbstractController
@@ -36,12 +37,13 @@ class VitrineController extends AbstractController
     }
 
     /**
-     * @Route("/event", name="event")
+     * @Route("/event", name="event", methods={"GET"})
      */
-    public function event()
+    public function event(EventRepository $eventRepository): Response
     {
         return  $this->render('vitrine/event.html.twig', [
             'controller_name' => 'VitrineController',
+            'events' => $eventRepository->findBy([], ["id" => "DESC"]),
         ]);
     }
 

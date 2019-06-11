@@ -18,8 +18,10 @@
             <tr>
                 <th>Id</th>
                 <th>Titre</th>
-                <th>Description évènement/th>
+                <th>Description évènement</th>
                 <th>Source Image</th>
+                <th>Catégorie</th>
+                <th>Date Evenement</th>              
                 <th>Date Publication</th>
                 <th>actions</th>
             </tr>
@@ -31,16 +33,20 @@
                 <td>{{ event.titre }}</td>
                 <td>{{ event.content }}</td>
                 <td>{{ event.imageSrc }}</td>
-                <td>{{ event.datePublication ? event.datePublication|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ event.category }}</td>
+                <td>{{ event.dateEvent ? event.dateEvent|date('d-m-Y H:i') : '' }}</td>                
+                <td>{{ event.datePublication ? event.datePublication|date('d-m-Y H:i:s') : '' }}</td>
                 <td>
                     <button type="button" class="btn btn-secondary"><a href="{{ path('event_show', {'id': event.id}) }}" class="text-light">Voir</a></button>
                     <hr>
                     <button type="button" class="btn btn-secondary"><a href="{{ path('event_edit', {'id': event.id}) }}" class="text-light">Modifier</a></button>
+                    <hr>
+                    {{ include('event/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Aucun évènement enregistré</td>
             </tr>
         {% endfor %}
         </tbody>

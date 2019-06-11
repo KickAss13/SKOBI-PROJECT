@@ -43,6 +43,16 @@ class Event
      */
     private $datePublication;
 
+    /**
+     * @ORM\Column(type="string", length=160)
+     */
+    private $category;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $dateEvent;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +113,30 @@ class Event
     public function setDatePublication(\DateTimeInterface $datePublication): self
     {
         $this->datePublication = $datePublication;
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(string $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getDateEvent(): ?\DateTimeInterface
+    {
+        return $this->dateEvent;
+    }
+
+    public function setDateEvent(\DateTimeInterface $dateEvent): self
+    {
+        $this->dateEvent = $dateEvent;
 
         return $this;
     }

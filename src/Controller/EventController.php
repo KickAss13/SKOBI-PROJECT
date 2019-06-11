@@ -39,20 +39,24 @@ class EventController extends AbstractController
             //CODE POUR GERER LA DATE
             $event->setDatePublication(new \DateTime);
 
+            //CODE POUR ATTRIBUER UN ROLE A L'UTILISATEUR
+            //$event->setCategory("A_VENIR");
+
             //CODE POUR GERER L'UPLOAD
             $fichierUploade = $event->getImageUpload();
             $fileName = $fichierUploade->getClientOriginalName();
             $fileName = strtolower($fileName);
             $nomSansExtension = pathinfo($fileName, PATHINFO_FILENAME);
-            $extension = pathinfo($fileName, PATHINFO_EXTENSION);            
+            $extension = pathinfo($fileName, PATHINFO_EXTENSION);
             $nomSansExtension = preg_replace("/[^a-zA-Z0-9-\.]/i", "-", $nomSansExtension);
             $nomSansExtension = trim($nomSansExtension);
             $extension = preg_replace("/[^a-zA-Z0-9-\.]/i", "-", $extension);
-            $extension = trim($extension);            
-            $fileName = "$nomSansExtension.$extension";           
+            $extension = trim($extension);
+            $fileName = "$nomSansExtension.$extension";
             $fichierUploade->move(
-                $this->getParameter('dossier_public') . "/assets/upload/event",  
-                $fileName);                                                
+                $this->getParameter('dossier_public') . "/assets/upload/event",
+                $fileName
+            );
             $event->setImageSrc("assets/upload/event/$fileName");
 
             //CODE POUR GERER LE FEEDBACK
@@ -109,7 +113,7 @@ class EventController extends AbstractController
      */
     public function delete(Request $request, Event $event): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$event->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $event->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($event);
             $entityManager->flush();
