@@ -15,46 +15,34 @@
     </head>
     <body>
         <header>
-            <nav>
-                <ul>
-                    <li><a href="{{ path('index') }}">Accueil</a></li>
-                    <li><a href="{{ path('article') }}">Article</a></li>
-                    <li><a href="{{ path('event') }}">Event</a></li>
-                    <li><a href="{{ path('about') }}">About</a></li>
-                    <li><a href="{{ path('fournisseur') }}">Fournisseur</a></li>
-                    <li><a href="{{ path('contact') }}">Contact</a></li>
-                </ul>
-            </nav>
 
-    {% if app.user %}
-        {% if app.user.role == 'ROLE_ADMIN' %}
-            <nav>
-                <ul>
-                    <li><a href="{{ path('article_index') }}">Admin Article</a></li>
-                    <li><a href="{{ path('event_index') }}">Admin Event</a></li>
-                    <li><a href="{{ path('fournisseur_index') }}">Admin Fournisseur</a></li>
-                    <li><a href="{{ path('message_index') }}">Admin Message</a></li>
-                    <li><a href="{{ path('user_index') }}">Admin User</a></li>
-                </ul>
-            </nav>
-        {% endif %}
-    {% endif %}
-
+            <div class="connect">
         {% if app.user %}        
-            <nav>
-                <ul>
+                <ul class="list-unstyled d-flex flex-row justify-content-end">
                     <li> {{ app.user.username }}</li>
                     <li><a href="{{ path('logout') }}">Logout</a></li>
                 </ul>
-            </nav>
         {% else %}
-            <nav>
-                <ul>
-                    <li><a href="{{ path('login') }}">Login</a></li>
-                    <li><a href="{{ path('subscribe') }}">Subscribe</a></li>
+                <ul class="list-unstyled d-flex flex-row justify-content-end">
+                    <li><a href="{{ path('login') }}">Se connecter - </a></li> 
+                    <li><a href="{{ path('subscribe') }}">S'inscrire</a></li>
                 </ul>
-            </nav>
         {% endif %}
+            </div>
+
+            <div>
+                <nav>
+                    <ul class="list-unstyled d-flex flex-row justify-content-center">
+                        <li><a href="{{ path('article') }}">Nos produits</a></li>
+                        <li><a href="{{ path('fournisseur') }}">Nos fournisseurs</a></li>
+                        <li><a href="{{ path('fournisseur') }}">Nos recettes</a></li>
+                        <li><a href="{{ path('index') }}"><img src="{{ asset('assets/img/logo_skobi.jpg')}}" class="logo"></a></li>
+                        <li><a href="{{ path('event') }}">Evènements</a></li>
+                        <li><a href="{{ path('about') }}">A propos</a></li>                   
+                        <li><a href="{{ path('contact') }}">Contactez-nous</a></li>
+                    </ul>
+                </nav>
+            </div>
 
         </header>
         <main>

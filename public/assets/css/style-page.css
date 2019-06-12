@@ -1,5 +1,5 @@
 footer {
-    background-color:black;
+    background-color:#3E270B;
     height:200px;
     padding-top:40px;
 }
@@ -14,35 +14,42 @@ footer li .facebook {
    
 }
 
-nav ul {
-    display:flex;
-    padding-left:0;
-    list-style:none;
-    width:100%;
-    justify-content:center;
-    flex-wrap:wrap;
+header {
+    background-color:#3E270B;
+    height: 120px;
 }
 
-nav li {
-    min-width:120px;
-    text-align:center;
+header h2 a {
+    color: yellowgreen;
+    font-size: 50px;
 }
 
-nav a {
-    color: green;
-    text-decoration:none;
+header ul li a {
+    font-size: 12px;
+    color: white;
+    padding-left: 5px;
+}
+
+header nav ul li a {
+    font-size: 20px;
+    color: white;
+    padding-left: 60px;
+    font-weight: bold;
     text-transform:uppercase;
-    font-weight:900;
-    padding-top:2rem;
 }
 
-nav a:hover {
-    color: #CD853F;;
+header .connect {
+    margin-right: 30px;
+    padding-top: 15px;
 }
 
-header nav li {
-    padding:0.25rem;
-    padding-top:4rem;
-    border-bottom: 4px solid transparent;
-    margin: 20px;
+header nav {
+    margin-top: -15px;
 }
+
+header .logo {
+    width: 100px;
+    margin-top: -30px;
+}
+
+
