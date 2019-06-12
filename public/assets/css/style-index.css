@@ -42,18 +42,15 @@ nav a:hover {
 
 header nav li {
     padding:0.25rem;
-    padding-top:4rem;
+    padding-top:20px;
     border-bottom: 4px solid transparent;
     margin: 20px;
 }
 
-header li .compte {
-    border: 1px solid black;
-}
-
 .logo img {
     width: 100px;
-    margin-top: -15px;
+  
+    margin-left: 900px;;
 }
 
 header h1 {

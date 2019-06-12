@@ -19,11 +19,6 @@ header {
     height: 120px;
 }
 
-header h2 a {
-    color: yellowgreen;
-    font-size: 50px;
-}
-
 header ul li a {
     font-size: 12px;
     color: white;

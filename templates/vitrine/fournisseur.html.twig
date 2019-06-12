@@ -12,18 +12,26 @@
 {# Code pour afficher les fournisseurs #}
         {% for fournisseur in fournisseurs %}
             <section>
-                <div>(id={{ fournisseur.id }})
+                <div>
+                    (id={{ fournisseur.id }})
                 </div>
-                <h3>{{ fournisseur.nom }}
-                </h3>
+                <h3>{{ fournisseur.nom }}</h3>
+
                 <figure class="row justify-content-center">
+<<<<<<< HEAD
                     <img class="fournisseur col-lg-6 col-md-6" src="{{ fournisseur.imageSrc }}">
                 <div id="cache" class="col-lg-6 col-md-6"><p>{{ fournisseur.content }}</p>
                 </div>
+=======
+                    <img class="fournisseur col-lg-6 col-md-6" src="{{fournisseur.imageSrc}}">
+                    <div id="cache" class="col-lg-6 col-md-6">
+                        <p>{{ fournisseur.content }}</p>
+                    </div>
+>>>>>>> b4886843f258db46d889d2daf74aae4f76089e53
                 </figure>
-                <div>{{ fournisseur.datePublication ? fournisseur.datePublication|date('Y-m-d H:i:s') : '' }}
+                <div>
+                    {{ fournisseur.datePublication ? fournisseur.datePublication|date('Y-m-d H:i:s') : '' }}
                 </div>                
-
             </section>
         {% else %}
             <section>
