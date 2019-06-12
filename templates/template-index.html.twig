@@ -15,25 +15,28 @@
     <body>
     
         <header>
-            <nav>
-                <ul>  
-                
-                    <li><a href="{{ path('article') }}">NOS PRODUITS</a></li>
-                    <li><a href="{{ path('fournisseur') }}">NOS FOURNISSEURS</a></li>
-                    <li> <figure class="logo"><a href="{{ path('index') }}"><img src="{{ asset('assets/img/logo.png') }}"></a></figure> </li>
-                    <li><a href="{{ path('event') }}">EVENEMENTS</a></li>
-                    <li><a href="{{ path('contact') }}">CONTACT</a></li>
-                </ul>
-            </nav> 
-            <div class="compte" text-color:"success">
+<div class="compte" text-color:"success">
                     {% if app.user %}   
                     <li> {{ app.user.username }}</li>
                     <li><a href="{{ path('logout') }}">Logout</a></li>
                     {% else %}
-                    <a href="{{ path('login') }}">Se connecter - </a>
-                    <a href="{{ path('subscribe') }}">S'inscrire</a>
+                    <a class="text-light" href="{{ path('login') }}">Se connecter - </a>
+                    <a class="text-light" href="{{ path('subscribe') }}">S'inscrire</a>
                     {% endif %}
                     </div>
+        
+            <nav >
+                <ul>   
+                    <li><a href="{{ path('article') }}">NOS PRODUITS</a></li>
+                    <li><a href="{{ path('fournisseur') }}">NOS FOURNISSEURS</a></li>
+                    <li><a href="{{ path('fournisseur') }}">NOS RECETTES</a></li>
+                    <li><figure class="logo"><a href="{{ path('index') }}"><img src="{{ asset('assets/img/logo_skobi.jpg') }}"></a></figure></li>
+                    <li><a href="{{ path('about') }}">A PROPOS</a></li>
+                    <li><a href="{{ path('event') }}">EVENEMENTS</a></li>
+                    <li><a href="{{ path('contact') }}">CONTACTEZ-NOUS</a></li>
+                </ul>
+            </nav> 
+            
 
     {% if app.user %}
         {% if app.user.role == 'ROLE_ADMIN' %}
@@ -49,8 +52,8 @@
         {% endif %}
     {% endif %}
         <h1> SKOBI </h1>
-        <p class="p1"> Régalez vos clients avec les produits SKOBI </p>
-        <p class="p2"> N'attendez plus passez vos commandes !!! </p>
+        <p class="p1"> Votre fermenterie artisanale de sauces et condiments apéritif  </p>
+        <p class="p2"> Silence, ça fermente !  </p>
 
         </header>
 
