@@ -1,13 +1,14 @@
-{{ form_start(form) }}
+<div class="d-flex justify-content-center">
+    {{ form_start(form) }}
     {{ form_row(form.username, { 'label': 'Nom' }) }}
     {{ form_row(form.email) }}
     {{ form_row(form.content, { 'label': 'Message' }) }}
 
-    <div class="d-flex justify-content-center">
-        <button class="btn btn-secondary">{{ button_label|default('Sauvegarder') }}</button>
-        <button type="button" class="btn btn-secondary"><a href="{{ path('message_index') }}" class="text-light">Retour à l'index</a></button>
-    </div>
+    <button class="btn btn-secondary">{{ button_label|default('Sauvegarder') }}</button>
+    <button type="button" class="btn btn-secondary"><a href="{{ path('message_index') }}" class="text-light">Retour à l'index</a></button>
     <div>
         {{ messageFeedback ?? "" }}
     </div>
-{{ form_end(form) }}
+    {{ form_end(form) }}
+</div>
+

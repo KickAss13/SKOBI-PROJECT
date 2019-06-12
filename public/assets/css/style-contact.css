@@ -4,4 +4,9 @@ body {
 
 button {
     margin-right:30px;
+    margin-top:30px;
+}
+
+form {
+    width:400px;
 }
