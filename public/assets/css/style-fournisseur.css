@@ -1,4 +1,27 @@
-.fournisseur{
+.fournisseur 
+{
     height:300px;
+    filter: grayscale(90%);
+    filter: contrast(15%);
+    text-align:center;
 }
-p{font-size:48px;}
+
+p 
+{
+    font-size:24px;
+}
+
+#cache 
+{
+    position:absolute;
+    top:130px;
+    z-index:2;
+    
+
+}
+
+section
+{
+    position:relative;
+
+}
