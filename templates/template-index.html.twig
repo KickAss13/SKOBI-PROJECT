@@ -15,28 +15,26 @@
     <body>
     
         <header>
-<div class="compte" text-color:"success">
-                    {% if app.user %}   
-                    <li> {{ app.user.username }}</li>
-                    <li><a href="{{ path('logout') }}">Logout</a></li>
-                    {% else %}
+            <div class="compte" text-color:"success">
+                {% if app.user %}   
+                {{ app.user.username }}
+                <a href="{{ path('logout') }}">Logout</a>
+                {% else %}
                     <a class="text-light" href="{{ path('login') }}">Se connecter - </a>
                     <a class="text-light" href="{{ path('subscribe') }}">S'inscrire</a>
                     {% endif %}
-                    </div>
-        <li><figure class="logo"><a href="{{ path('index') }}"><img src="{{ asset('assets/img/logo_skobi.jpg') }}"></a></figure></li>
-            <nav >
-                <ul>   
-                    <li><a href="{{ path('article') }}">NOS PRODUITS</a></li>
-                    <li><a href="{{ path('fournisseur') }}">NOS FOURNISSEURS</a></li>
-                    <li><a href="{{ path('about') }}">A PROPOS</a></li>
-                    <li><a href="{{ path('event') }}">EVENEMENTS</a></li>
-                    <li><a href="{{ path('contact') }}">CONTACTEZ-NOUS</a></li>
-                </ul>
+            </div>
+            <figure class="logo"><a href="{{ path('index') }}"><img src="{{ asset('assets/img/logo_skobi.jpg') }}"></a></figure>
+            <nav class="d-flex justify-content-center">
+                <a href="{{ path('article') }}">Nos produits</a>
+                <a href="{{ path('fournisseur') }}">Nos fournisseurs</a>
+                <a href="{{ path('about') }}">A propos</a>
+                <a href="{{ path('event') }}">Evènements</a>
+                <a href="{{ path('contact') }}">Contactez-nous</a>   
             </nav> 
             
 
-    {% if app.user %}
+   {#} {% if app.user %}
         {% if app.user.role == 'ROLE_ADMIN' %}
             <nav>
                 <ul>
@@ -49,6 +47,7 @@
             </nav>
         {% endif %}
     {% endif %}
+    {#}
         <h1> SKOBI </h1>
         <p class="p1"> Votre fermenterie artisanale de sauces et condiments apéritif  </p>
         <p class="p2"> Silence, ça fermente !  </p>
@@ -59,10 +58,8 @@
             {% block body %}{% endblock %}
         </main>
         <footer>
-            <ul class="d-flex justify-content-center list-unstyled" >
-                <li><a href="#" class="facebook"><img src="{{ asset('assets/img/facebook.png') }}"></a></li>
-                <li><a href="#"><img src="{{ asset('assets/img/Twitter.png') }}"></a></li>
-            </ul>
+            <a href="#" class="facebook"><img src="{{ asset('assets/img/facebook.png') }}"></a>
+            <a href="#"><img src="{{ asset('assets/img/Twitter.png') }}"></a>
 
             <a id="white" href="#" class="d-flex justify-content-center text-light"> @Conditions d'utilisation</a> 
         </footer>

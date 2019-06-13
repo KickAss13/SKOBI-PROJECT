@@ -6,50 +6,31 @@ body * {
 
 header {
     background-image: url("../img/photo1.jpg"); 
-    height: 800px;
+    height: 50rem;
     background-size: cover;
     background-repeat: no-repeat;
     filter: grayscale(85%);
     filter: contrast(85%);
 }
 
-nav ul {
-    display:flex;
-    padding-left:0;
-    list-style:none;
-    width:100%;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-nav li {
-    min-width:120px;
-    text-align:center;
-}
-
 nav a {
     color: white;
     font-size: 22px;
     text-decoration:none;
-    text-transform:uppercase;
+    text-transform: uppercase;
     font-weight:900;
+    padding-right: 1.5rem;
     padding-top:2rem;
 }
 
 nav a:hover {
-    color: #3E270B;;
+    color: #BFa587;
 }
 
-header nav li {
-    padding:0.25rem;
-    padding-top:20px;
-    border-bottom: 4px solid transparent;
-    margin: 20px;
-}
 
 .logo img {
     width: 100px;
-  
+    margin-top: 2%;
     margin-left: 900px;;
 }
 
@@ -60,9 +41,7 @@ header h1 {
     color: white;
     margin-top: 90px;
 }
-header nav {
-    margin-bottom: 30px;
-}
+
 
 header .p1 {
     color: white;
@@ -105,7 +84,7 @@ footer img{
     height:50px;
     margin-top: 20px;
 }
-footer li .facebook {
+footer .facebook {
    padding-right: 25px;
    
 }
