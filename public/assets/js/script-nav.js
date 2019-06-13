@@ -15,7 +15,7 @@ $(function () {
 }); */
 
 
-/*
+
 $('.menu-scroll').hide();
 
 $(window).scroll(function () {
@@ -28,5 +28,5 @@ $(window).scroll(function () {
         $('.menu-scroll').slideUp('slow');
     }
 });
-*/
+
 
