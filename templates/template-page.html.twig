@@ -15,14 +15,15 @@
     <body>
         <header>   
             <nav id="navlog" class="d-flex justify-content-end">
-        {% if app.user %}        
+            {% if app.user %}        
                     <a href="#">{{ app.user.username }}</a>
                     <a href="{{ path('logout') }}">Logout</a>
-        {% else %}
+            {% else %}
                     <a href="{{ path('login') }}">Se connecter - </a>
                     <a href="{{ path('subscribe') }}">S'inscrire</a>
-        {% endif %}
+            {% endif %}
             </nav>
+
             <div class="d-flex flex-row justify-content-center">
                 <a href="{{ path('index') }}"><img src="{{ asset('assets/img/logo_skobi.jpg')}}" class="logo"></a>
             
@@ -34,6 +35,7 @@
                     <a href="{{ path('contact') }}">Contact</a>
                 </nav>
             </div>
+        </div>
         
         </header>
 
@@ -41,12 +43,11 @@
             {% block body %}{% endblock %}
         </main>
         <footer>
-            <ul class="d-flex justify-content-center list-unstyled" >
-                <li><a href="#" class="facebook"><img src="{{ asset('assets/img/facebook.png') }}"></a></li>
-                <li><a href="#"><img src="{{ asset('assets/img/Twitter.png') }}"></a></li>
-            </ul>
-
-            <a id="white" href="#" class="d-flex justify-content-center text-light"> @Conditions d'utilisation</a> 
+            <nav class="d-flex justify-content-center" >
+                <a href="#"><img src="{{ asset('assets/img/facebook.png') }}"></a>
+                <a href="#"><img src="{{ asset('assets/img/Twitter.png') }}"></a>
+            </nav>
+            <p><a href="#" class="d-flex justify-content-center text-light"> Conditions d'utilisation</a><p>
         </footer>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
@@ -56,6 +57,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-        {% block javascripts %}<script src="{{asset('assets/js/script-nav.js') }}"></script>{% endblock %}
+        {% block javascripts %}{% endblock %}
+        <script src="{{asset('assets/js/script-nav.js') }}"></script>
     </body>
 </html>
