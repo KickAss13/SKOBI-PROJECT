@@ -23,7 +23,7 @@
                     <a href="{{ path('subscribe') }}">S'inscrire</a>
             {% endif %}
             </nav>
-            
+
             <div class="d-flex flex-row justify-content-center">
                 <a href="{{ path('index') }}"><img src="{{ asset('assets/img/logo_skobi.jpg')}}" class="logo"></a>
             
@@ -35,6 +35,7 @@
                     <a href="{{ path('contact') }}">Contact</a>
                 </nav>
             </div>
+        </div>
         
         </header>
 
@@ -56,6 +57,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-        {% block javascripts %}<script src="{{asset('assets/js/script-nav.js') }}"></script>{% endblock %}
+        {% block javascripts %}{% endblock %}
+        <script src="{{asset('assets/js/script-nav.js') }}"></script>
     </body>
 </html>
