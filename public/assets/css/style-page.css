@@ -1,22 +1,21 @@
 footer {
     background-color:#AB8E6C;
-    height:200px;
-    padding-top:40px;
+    padding-bottom: 3rem;
 }
 
 footer img {
-    height:50px;
-    margin-top: 20px;
+    height: 3rem;
+    margin-top: 3rem;
+    padding-right: 1rem;
 }
 
-footer li .facebook {
-   padding-right: 25px;
-   
+footer p {
+    font-size: 1rem;
+    margin-top: 2rem;
 }
 
 header {
     background-color:#BFa587;
-    height: 6rem;
 }
 
 header #navlog a {
@@ -39,7 +38,34 @@ header #navbar {
 
 header .logo {
     width: 5rem;
-    margin-top: -1rem;
+    margin-top: -1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/*POUR LES TABLETTES */
+/*Pour tous les médias de type écran ET de largeur maximale 1024px ET minimale 505px */
+@media screen and (min-width:505px) and (max-width: 1024px) {
+
+    header #navbar a {
+        font-size: 1.2rem;
+        color: white;
+        font-weight: bold;
+        text-transform:uppercase;
+        padding-left: 2rem;
+    }
+}
+
+/*POUR LES MOBILES*/
+/*Pour tous les médias de type screen ET de largeur maximale 504px */
+@media screen and (max-width: 504px) {
+
+    header #navbar a {
+        font-size: 1.2rem;
+        color: white;
+        font-weight: bold;
+        text-transform:uppercase;
+        padding-left: 2rem;
+    }
 }
 
 

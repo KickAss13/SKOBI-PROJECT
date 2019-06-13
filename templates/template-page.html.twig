@@ -15,14 +15,15 @@
     <body>
         <header>   
             <nav id="navlog" class="d-flex justify-content-end">
-        {% if app.user %}        
+            {% if app.user %}        
                     <a href="#">{{ app.user.username }}</a>
                     <a href="{{ path('logout') }}">Logout</a>
-        {% else %}
+            {% else %}
                     <a href="{{ path('login') }}">Se connecter - </a>
                     <a href="{{ path('subscribe') }}">S'inscrire</a>
-        {% endif %}
+            {% endif %}
             </nav>
+            
             <div class="d-flex flex-row justify-content-center">
                 <a href="{{ path('index') }}"><img src="{{ asset('assets/img/logo_skobi.jpg')}}" class="logo"></a>
             
@@ -41,12 +42,11 @@
             {% block body %}{% endblock %}
         </main>
         <footer>
-            <ul class="d-flex justify-content-center list-unstyled" >
-                <li><a href="#" class="facebook"><img src="{{ asset('assets/img/facebook.png') }}"></a></li>
-                <li><a href="#"><img src="{{ asset('assets/img/Twitter.png') }}"></a></li>
-            </ul>
-
-            <a id="white" href="#" class="d-flex justify-content-center text-light"> @Conditions d'utilisation</a> 
+            <nav class="d-flex justify-content-center" >
+                <a href="#"><img src="{{ asset('assets/img/facebook.png') }}"></a>
+                <a href="#"><img src="{{ asset('assets/img/Twitter.png') }}"></a>
+            </nav>
+            <p><a href="#" class="d-flex justify-content-center text-light"> Conditions d'utilisation</a><p>
         </footer>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
