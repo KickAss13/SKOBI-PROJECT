@@ -9,16 +9,15 @@
 }
 
 .about {
-    height:300px;
+    width:90%;
     /*margin-top:120px;*/
-    /*margin-left:60px;*/
     margin-right:80px;
     margin-bottom:60px;
 }
 
 p {
     font-family: 'Raleway', sans-serif;
-    font-size:21px;
+    font-size:1.2rem;
 }
 
 h3 {
@@ -32,30 +31,25 @@ h3 {
     border-style:solid;
     border-width:1px;
     border-color:grey;
+    margin-bottom:30px;
+    padding-bottom:30px;
 }
 
 .texte_et_titre {
     border-style:solid;
     border-width:1px;
     border-color:grey;
-    height:300px;
+    margin-bottom:30px;
+
 }
 
-@media screen and (max-width: 980px) {
-    .about {
-        width:300px;
-        /*margin-top:120px;*/
-        /*margin-left:60px;*/
-        margin-right:80px;
-        margin-bottom:60px;
-    }
+.marge {
+    margin-left:30px;
 }
 
-p {
-    font-family: 'Raleway', sans-serif;
-    font-size:21px;
-    margin-bottom:0px;
+@media screen and (max-width: 625px) {
+    .texte_et_titre {
+        margin-left:30px;
+  }
 }
-
-
 
