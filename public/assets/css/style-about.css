@@ -19,7 +19,6 @@
 p {
     font-family: 'Raleway', sans-serif;
     font-size:21px;
-    margin-bottom:0px;
 }
 
 h3 {
@@ -33,7 +32,6 @@ h3 {
     border-style:solid;
     border-width:1px;
     border-color:grey;
-    height:320px;
 }
 
 .texte_et_titre {
@@ -41,15 +39,23 @@ h3 {
     border-width:1px;
     border-color:grey;
     height:300px;
-
 }
 
-header {
-    background-color:#3E270B;
+@media screen and (max-width: 980px) {
+    .about {
+        width:300px;
+        /*margin-top:120px;*/
+        /*margin-left:60px;*/
+        margin-right:80px;
+        margin-bottom:60px;
+    }
 }
 
-footer {
-    background-color:#3E270B;
+p {
+    font-family: 'Raleway', sans-serif;
+    font-size:21px;
+    margin-bottom:0px;
 }
+
 
 
