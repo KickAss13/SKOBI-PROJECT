@@ -10,34 +10,39 @@
     <h1>Fournisseurs</h1>
 
 {# Code pour afficher les fournisseurs #}
+    <div class="row">
         {% for fournisseur in fournisseurs %}
+
+        <div class="col-lg-6 col-md-6 marge" style="background-image:url({{asset(fournisseur.imageSrc) }});background-repeat:no-repeat;background-size: cover;
+        background-size: 70%;  filter: drop-shadow(8px 8px 10px black);
+">
             <section>
                 <div>
                     (id={{ fournisseur.id }})
                 </div>
                 <h3>{{ fournisseur.nom }}</h3>
 
-                <figure class="row justify-content-center">
-                    <div class="col-lg-5 col-md-6 marge">
-                        <img class="fournisseur" src="{{fournisseur.imageSrc}}">
-                    </div>
-                    <div id="cache" class="col-lg-4 col-md-6">
-                        <p>{{ fournisseur.content }}</p>
-                    </div>
+                <figure>
+                    <p class="cache2">{{ fournisseur.content }}</p>                
                 </figure>
                 <div>
                     {{ fournisseur.datePublication ? fournisseur.datePublication|date('Y-m-d H:i:s') : '' }}
                 </div>                
             </section>
+        </div>
+
         {% else %}
-            <section>
-                <h3>Aucun fournisseur trouvé</h3>
-            </section>
+            <div class="col-lg-6 col-md-6 marge" style="background-image:url({{asset(fournisseur.imageSrc) }});background-repeat:no-repeat;">
+                <section>
+                    <h3>Aucun fournisseur trouvé</h3>
+                </section>
+            </div>
         {% endfor %}
+    </div>
 
 {% block javascripts %}
 
-<script src="{{asset('assets/js/script-fournisseur.js') }}"></script>
+<!--<script src="{{asset('assets/js/script-fournisseur.js') }}"></script>-->
 {% endblock %}
 
 {% endblock %}
