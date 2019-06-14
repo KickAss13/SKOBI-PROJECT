@@ -13,29 +13,54 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        <header>   
-            <nav id="navlog" class="d-flex justify-content-end">
-            {% if app.user %}        
-                    <a href="#">{{ app.user.username }}</a>
-                    <a href="{{ path('logout') }}">Logout</a>
-            {% else %}
-                    <a href="{{ path('login') }}">Se connecter - </a>
-                    <a href="{{ path('subscribe') }}">S'inscrire</a>
-            {% endif %}
-            </nav>
-
-            <div class="d-flex flex-row justify-content-center">
-                <a href="{{ path('index') }}"><img src="{{ asset('assets/img/logo_skobi.jpg')}}" class="logo"></a>
-            
-                <nav id="navbar">                  
-                    <a href="{{ path('article') }}">Nos produits</a>
-                    <a href="{{ path('fournisseur') }}">Nos fournisseurs</a>
-                    <a href="{{ path('event') }}">Evènements</a>
-                    <a href="{{ path('about') }}">A propos</a>                  
-                    <a href="{{ path('contact') }}">Contact</a>
+        <header> 
+            <div class="menu-principal">  
+                <nav id="navlog" class="d-flex justify-content-end">
+                {% if app.user %}        
+                        <a href="#">{{ app.user.username }}</a>
+                        <a href="{{ path('logout') }}">Logout</a>
+                {% else %}
+                        <a href="{{ path('login') }}">Se connecter - </a>
+                        <a href="{{ path('subscribe') }}">S'inscrire</a>
+                {% endif %}
                 </nav>
+
+                <div class="d-flex flex-row justify-content-center">
+                    <a href="{{ path('index') }}"><img src="{{ asset('assets/img/logo_skobi.jpg')}}" class="logo"></a>
+                
+                    <nav id="navbar">                  
+                        <a href="{{ path('article') }}">Nos produits</a>
+                        <a href="{{ path('fournisseur') }}">Nos fournisseurs</a>
+                        <a href="{{ path('event') }}">Evènements</a>
+                        <a href="{{ path('about') }}">A propos</a>                  
+                        <a href="{{ path('contact') }}">Contact</a>
+                    </nav>
+                </div>
             </div>
-        </div>
+
+            <div class="menu-scroll">  
+                <nav id="navlog" class="d-flex justify-content-end">
+                {% if app.user %}        
+                        <a href="#">{{ app.user.username }}</a>
+                        <a href="{{ path('logout') }}">Logout</a>
+                {% else %}
+                        <a href="{{ path('login') }}">Se connecter - </a>
+                        <a href="{{ path('subscribe') }}">S'inscrire</a>
+                {% endif %}
+                </nav>
+
+                <div class="d-flex flex-row justify-content-center">
+                    <a href="{{ path('index') }}"><img src="{{ asset('assets/img/logo_skobi.jpg')}}" class="logo"></a>
+                
+                    <nav id="navbar">                  
+                        <a href="{{ path('article') }}">Nos produits</a>
+                        <a href="{{ path('fournisseur') }}">Nos fournisseurs</a>
+                        <a href="{{ path('event') }}">Evènements</a>
+                        <a href="{{ path('about') }}">A propos</a>                  
+                        <a href="{{ path('contact') }}">Contact</a>
+                    </nav>
+                </div>
+            </div>
         
         </header>
 

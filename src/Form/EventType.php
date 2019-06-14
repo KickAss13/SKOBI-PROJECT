@@ -17,6 +17,7 @@ class EventType extends AbstractType
             ->add('imageUpload')
             ->add('category')
             ->add('dateEvent')
+            ->add('adress')
             //->add('imageSrc')
             // ->add('datePublication')
         ;

@@ -35,6 +35,10 @@
                 <th class="bg-secondary text-white">Date Publication</th>
                 <td>{{ event.datePublication ? event.datePublication|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
+            <tr>
+                <th class="bg-secondary text-white">Adresse évènement</th>
+                <td>{{ event.adress }}</td>
+            </tr>
         </tbody>
     </table>
 </div>

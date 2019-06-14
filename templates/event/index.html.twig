@@ -21,7 +21,8 @@
                 <th>Description évènement</th>
                 <th>Source Image</th>
                 <th>Catégorie</th>
-                <th>Date Evenement</th>              
+                <th>Date Evenement</th> 
+                <th>Adresse Evenement</th>              
                 <th>Date Publication</th>
                 <th>actions</th>
             </tr>
@@ -34,7 +35,8 @@
                 <td>{{ event.content }}</td>
                 <td>{{ event.imageSrc }}</td>
                 <td>{{ event.category }}</td>
-                <td>{{ event.dateEvent ? event.dateEvent|date('d-m-Y H:i') : '' }}</td>                
+                <td>{{ event.dateEvent ? event.dateEvent|date('d-m-Y H:i') : '' }}</td>   
+                <td>{{ event.adress }}</td>             
                 <td>{{ event.datePublication ? event.datePublication|date('d-m-Y H:i:s') : '' }}</td>
                 <td>
                     <button type="button" class="btn btn-secondary"><a href="{{ path('event_show', {'id': event.id}) }}" class="text-light">Voir</a></button>
