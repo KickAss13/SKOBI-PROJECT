@@ -13,6 +13,20 @@ header {
     filter: contrast(85%);
 }
 
+nav ul {
+    display:flex;
+    padding-left:0;
+    list-style:none;
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+nav li {
+    min-width:120px;
+    text-align:center;
+}
+
 nav a {
     color: white;
     font-size: 1.5rem;
@@ -24,7 +38,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #BFa587;
+    color: #3E270B;;
 }
 
 header h1 {
@@ -33,6 +47,25 @@ header h1 {
     font-weight: bold;
     color: white;
     margin-top: 7rem;
+}
+header nav {
+    margin-bottom: 30px;
+}
+
+header .p1 {
+    color: white;
+    font-size: 2rem;
+    font-style: italic;
+    text-align: center;
+    margin-top: 5rem;;
+}
+header .p2 {
+    color: white; 
+    font-size: 2.3rem;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10rem;
+    
 }
 
 header .linklogo {

@@ -15,11 +15,11 @@
     <body>
     
         <header>
-            <div class="compte" text-color:"success">
-                {% if app.user %}   
-                {{ app.user.username }}
-                <a href="{{ path('logout') }}">Logout</a>
-                {% else %}
+<div class="compte" text-color:"success">
+                    {% if app.user %}   
+                    <li> {{ app.user.username }}</li>
+                    <li><a href="{{ path('logout') }}">Logout</a></li>
+                    {% else %}
                     <a class="text-light" href="{{ path('login') }}">Se connecter - </a>
                     <a class="text-light" href="{{ path('subscribe') }}">S'inscrire</a>
                     {% endif %}
@@ -34,7 +34,7 @@
             </nav> 
             
 
-   {#} {% if app.user %}
+    {% if app.user %}
         {% if app.user.role == 'ROLE_ADMIN' %}
             <nav>
                 <ul>
@@ -47,7 +47,6 @@
             </nav>
         {% endif %}
     {% endif %}
-    {#}
         <h1> SKOBI </h1>
         <p class="p1"> Votre fermenterie artisanale de sauces et condiments apéritif  </p>
         <p class="p2"> Silence, ça fermente !  </p>
@@ -58,8 +57,10 @@
             {% block body %}{% endblock %}
         </main>
         <footer>
-            <a href="#" class="facebook"><img src="{{ asset('assets/img/facebook.png') }}"></a>
-            <a href="#"><img src="{{ asset('assets/img/Twitter.png') }}"></a>
+            <ul class="d-flex justify-content-center list-unstyled" >
+                <li><a href="#" class="facebook"><img src="{{ asset('assets/img/facebook.png') }}"></a></li>
+                <li><a href="#"><img src="{{ asset('assets/img/Twitter.png') }}"></a></li>
+            </ul>
 
             <a id="white" href="#" class="d-flex justify-content-center text-light"> @Conditions d'utilisation</a> 
         </footer>

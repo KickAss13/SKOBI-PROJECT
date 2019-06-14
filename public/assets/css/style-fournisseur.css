@@ -1,5 +1,5 @@
 .fournisseur {
-    height:300px;
+    width:600px;
     filter: grayscale(90%);
     filter: contrast(15%);
     text-align:center;    
@@ -11,11 +11,15 @@ p {
 
 #cache {
     position:absolute;
-    top:130px;
+    top:70%;
     z-index:2;
 }
 
 section {
     position:relative;
 
+}
+
+.marge {
+    padding-left:0%;
 }
