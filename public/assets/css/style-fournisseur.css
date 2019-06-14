@@ -48,7 +48,10 @@ section {
     opacity:1;
 }
 
+.marge:hover {
+    filter:grayscale(100%);
+}
+
 .col-lg-6 {
     padding-right:0px;
-
 }
