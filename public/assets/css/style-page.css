@@ -28,6 +28,10 @@ header #navlog a {
     padding-right: 1rem;
 }
 
+header .menu-scroll {
+    background-color:#BFa587;
+}
+
 header #navbar a {
     font-size: 1.5rem;
     color: white;

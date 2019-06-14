@@ -2,26 +2,53 @@
 
 {% block title %}Evènements{% endblock %}
 
+{% block stylesheets %}<link rel="stylesheet" href="{{asset('assets/css/style-event.css') }}">{% endblock %}
+
 {% block body %}
 
-<h1>Evènements</h1>
+{% set idEvent = 1 %}
 
 <h3>Evènements à venir:</h3>
 
 {# Code pour afficher les évènements à venir #}
 {% for event in events %}
     {% if event.category == 'A_VENIR' %}
-    <section>
-        <div>{{event.titre}}</div>
-        <div>{{event.content}}</div>
-        <div>{{event.dateEvent ? event.dateEvent|date('d-m-Y H:i') : ''}}</div>
-        <figure><img src="{{event.imageSrc}}"></figure>
-    </section>
+        {% if idEvent%2 == 1 %}
+            <section class="d-flex justify-content-center">
+                <br><br>
+                <div class="container">
+                    <img src="{{event.imageSrc}}" class="img-left-event">
+                </div>
+                <div class="container cadre-event-right">
+                    <h4>{{event.titre}}</h4>
+                    <hr>
+                    <p>{{event.content}}</p>
+                    <p>{{event.description}}</p>
+                    <p class="date_event-left font-weight-bolder">{{event.dateEvent}}</p>
+                    <p class="font-weight-bold">Adresse : {{event.adress}}</p>       
+                </div>
+            </section>
+            {% set idEvent = idEvent + 1 %}
+            <br><br><br>
+        {% else %}
+            <section class="d-flex justify-content-center">
+                <div class="container cadre-event-left">
+                    <h4>{{event.titre}}</h4>
+                    <hr>
+                    <p>{{event.content}}</p>
+                    <p>{{event.description}}</p>
+                    <p class="date_event-right font-weight-bolder">{{event.dateEvent}}</p>
+                    <p class="font-weight-bold">Adresse : {{event.adress}}</p>
+                </div>
+                <div class="container">
+                    <img src="{{event.imageSrc}}" class="img-right-event">
+                </div>
+            </section>
+            {% set idEvent = idEvent + 1 %}
+            <br><br><br>
+        {% endif %}
+    {% else %}
     {% endif %}
-{% else %}
-    <section>
-        <p>Aucun évènement prévu</p>
-    </section>
 {% endfor %}
 
 
@@ -30,18 +57,44 @@
 {# Code pour afficher les évènements passés #}
 {% for event in events %}
     {% if event.category == 'E_PASSE' %}
-    <section>
-        <div>{{event.titre}}</div>
-        <div>{{event.content}}</div>
-        <div>{{event.dateEvent ? event.dateEvent|date('d-m-Y H:i') : ''}}</div>
-        <figure><img src="{{event.imageSrc}}"></figure>
-    </section>
+        {% if idEvent%2 == 1 %}
+            <section class="d-flex justify-content-center">
+                <br><br>
+                <div class="container">
+                    <img src="{{event.imageSrc}}" class="img-left-event">
+                </div>
+                <div class="container cadre-event-right">
+                    <h4>{{event.titre}}</h4>
+                    <hr>
+                    <p>{{event.content}}</p>
+                    <p>{{event.description}}</p>
+                    <p class="date_event-left font-weight-bolder">{{event.dateEvent}}</p>
+                    <p class="font-weight-bold">Adresse : {{event.adress}}</p>       
+                </div>
+            </section>
+            {% set idEvent = idEvent + 1 %}
+            <br><br><br>
+        {% else %}
+            <section class="d-flex justify-content-center">
+                <div class="container cadre-event-left">
+                    <h4>{{event.titre}}</h4>
+                    <hr>
+                    <p>{{event.content}}</p>
+                    <p>{{event.description}}</p>
+                    <p class="date_event-right font-weight-bolder">{{event.dateEvent}}</p>
+                    <p class="font-weight-bold">Adresse : {{event.adress}}</p>
+                </div>
+                <div class="container">
+                    <img src="{{event.imageSrc}}" class="img-right-event">
+                </div>
+            </section>
+            {% set idEvent = idEvent + 1 %}
+            <br><br><br>
+        {% endif %}
+    {% else %}
     {% endif %}
-{% else %}
-    <section>
-        <p>Aucun évènement prévu</p>
-    </section>
 {% endfor %}
 
+<br><br><br><br><br>
 
 {% endblock %}
