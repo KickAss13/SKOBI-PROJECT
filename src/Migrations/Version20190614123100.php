@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190611093607 extends AbstractMigration
+final class Version20190614123100 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,8 +22,7 @@ final class Version20190611093607 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('DROP TABLE sauce');
-        $this->addSql('ALTER TABLE event ADD category VARCHAR(160) NOT NULL, ADD date_event DATETIME NOT NULL');
+        $this->addSql('ALTER TABLE event CHANGE date_event date_event VARCHAR(160) NOT NULL');
     }
 
     public function down(Schema $schema) : void
@@ -31,7 +30,6 @@ final class Version20190611093607 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('CREATE TABLE sauce (id INT AUTO_INCREMENT NOT NULL, nom_sauce VARCHAR(160) NOT NULL COLLATE utf8mb4_unicode_ci, description LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = \'\' ');
-        $this->addSql('ALTER TABLE event DROP category, DROP date_event');
+        $this->addSql('ALTER TABLE event CHANGE date_event date_event DATETIME NOT NULL');
     }
 }

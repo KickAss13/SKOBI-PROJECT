@@ -3,7 +3,7 @@ body {
 }
 
 footer {
-    background-color:#AB8E6C;
+    background-color:#BFa587;
     padding-bottom: 3rem;
 }
 
@@ -26,6 +26,10 @@ header #navlog a {
     font-size: 1rem;
     color: white;
     padding-right: 1rem;
+}
+
+header .menu-scroll {
+    background-color:#BFa587;
 }
 
 header #navbar a {
