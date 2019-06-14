@@ -1,5 +1,5 @@
 .fournisseur {
-    width:70%;
+    width:600px;
     filter: grayscale(90%);
     filter: contrast(15%);
     text-align:center;    
@@ -18,4 +18,8 @@ p {
 section {
     position:relative;
 
+}
+
+.marge {
+    padding-left:0%;
 }

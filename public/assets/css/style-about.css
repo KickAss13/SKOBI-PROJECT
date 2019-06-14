@@ -47,9 +47,13 @@ h3 {
     margin-left:30px;
 }
 
-@media screen and (max-width: 625px) {
+@media screen and (max-width: 990px) {
     .texte_et_titre {
         margin-left:30px;
+  }
+  
+  html {
+    font-size:140%;
   }
 }
 
