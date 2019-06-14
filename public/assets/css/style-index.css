@@ -13,6 +13,20 @@ header {
     filter: contrast(85%);
 }
 
+nav ul {
+    display:flex;
+    padding-left:0;
+    list-style:none;
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+nav li {
+    min-width:120px;
+    text-align:center;
+}
+
 nav a {
     color: white;
     font-size: 1.5rem;
@@ -24,7 +38,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #BFa587;
+    color: #3E270B;;
 }
 
 header h1 {
@@ -34,7 +48,9 @@ header h1 {
     color: white;
     margin-top: 7rem;
 }
-
+header nav {
+    margin-bottom: 30px;
+}
 
 header .p1 {
     color: white;
@@ -64,11 +80,44 @@ header .logo {
 
 h2 {
     font-size: 50px;
-    font-family: 'Ruge Boogie', cursive;
+    font-family: 'Acme', sans-serif;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-family: 'Acme', sans-serif;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .bg-light {
     background: #CD853F !important;
+}
+p.engagement {
+    line-height: 2rem;
+    border-style:solid;
+    border-width:1px;
+    border-color:grey;
+    padding: 1.5rem;
+}
+
+
+header .p1 {
+    color: white;
+    font-size: 2rem;
+    font-style: italic;
+    text-align: center;
+    margin-top: 5rem;;
+}
+header .p2 {
+    color: white; 
+    font-size: 2.3rem;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10rem;
+    
 }
 
 header .compte {
