@@ -13,7 +13,9 @@ class ArticleType extends AbstractType
     {
         $builder
             ->add('nom')
+            ->add('slogan')
             ->add('description')
+            ->add('ingredients')
             ->add('prix')
             ->add('imageUpload1')
             ->add('imageUpload2')

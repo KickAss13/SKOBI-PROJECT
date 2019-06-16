@@ -1,28 +1,35 @@
 {% extends 'template-page.html.twig' %}
 
-{% block title %}Article{% endblock %}
+{% block title %}Articles{% endblock %}
+
+{% block stylesheets %}<link rel="stylesheet" href="{{asset('assets/css/style-article.css') }}">{% endblock %}
 
 {% block body %}
 
-    <h1>Nos produits</h1>
+    <h3>Nos produits</h3>
 
 {# Code pour afficher les différents articles #}
-        {% for article in articles %}
-            <section>
-                <div>{{ article.nom }}</div>
-                <div>{{ article.description }}</div>
-                <div>{{ article.prix }}</div>
 
-                <div>{{ article.imagesrc1 }}</div>
-                <div>{{ article.imageSrc2 }}</div>
-                <div>{{ article.imageSrc3 }}</div>
-
-                <figure><img src="{{ article.imageSrc1 }}"></figure>
+    <div class="row">
+        {% for article in articles %} 
+        <div class="col-6 article  container">
+            <section class="cadre-article">
+            <a href="{{ path('template-article', {'id': article.id}) }}">
+                <h4 class="font-weight-bolder">{{ article.nom }}</h4>
+                <p class="slogan">{{ article.slogan }}</p>
+                <div class="d-flex flex-row">
+                    <div class="container">
+                        <img src="{{ article.imageSrc1 }}">
+                    </div>
+                    <div class="container">    
+                        <p class="descript">{{ article.description }}</p>
+                        <p class="ingred">Ingrédients : {{ article.ingredients }}</p>
+                    </div>   
+                </div> 
+            </a>         
             </section>
-        {% else %}
-            <section>
-                <h3>Aucun article trouvé</h3>
-            </section>
+        </div>
         {% endfor %}
+    </div>
 
 {% endblock %}

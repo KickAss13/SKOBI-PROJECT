@@ -74,6 +74,17 @@ class VitrineController extends AbstractController
     }
 
     /**
+     * @Route("/{id}", name="template-article", methods={"GET"})
+     */
+    public function templateArticle(Article $article): Response
+    {
+        return $this->render('vitrine/template-article.html.twig', [
+            'controller_name' => 'VitrineController',
+            'article' => $article,
+        ]);
+    }
+
+    /**
      * @Route("/contact", name="contact")
      */
     public function contact(Request  $request): Response

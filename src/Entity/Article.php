@@ -62,6 +62,16 @@ class Article
      */
     private $imageUpload3;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $slogan;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $ingredients;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -169,6 +179,30 @@ public function getImageUpload1()
     public function setImageUpload3($imageUpload3)
     {
         $this->imageUpload3 = $imageUpload3;
+        return $this;
+    }
+
+    public function getSlogan(): ?string
+    {
+        return $this->slogan;
+    }
+
+    public function setSlogan(?string $slogan): self
+    {
+        $this->slogan = $slogan;
+
+        return $this;
+    }
+
+    public function getIngredients(): ?string
+    {
+        return $this->ingredients;
+    }
+
+    public function setIngredients(?string $ingredients): self
+    {
+        $this->ingredients = $ingredients;
+
         return $this;
     }
 }
