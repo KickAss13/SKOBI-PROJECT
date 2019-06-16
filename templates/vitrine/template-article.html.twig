@@ -10,20 +10,17 @@
 
         <h4>{{ article.slogan }}</h4>
 
-        <section class="cadre-article">
-           
-                <h4 class="font-weight-bolder">{{ article.nom }}</h4>
-                <p class="slogan">{{ article.slogan }}</p>
-                <div class="d-flex flex-row">
-                    <div class="container">
-                        <img src="{{ article.imageSrc1 }}">
-                    </div>
-                    <div class="container">    
-                        <p class="descript">{{ article.description }}</p>
-                        <p class="ingred">Ingrédients : {{ article.ingredients }}</p>
-                    </div>   
-                </div> 
-                  
-        </section>
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-4">
+                <img src="{{ article.imageSrc1 }}">
+            </div>
+            <div class="col-4 d-flex flex-column">
+                <p class="descript">{{ article.description }}</p>
+                <p class="ingred">Ingrédients : {{ article.ingredients }}</p>
+                <p class="vitam">Apports nutritionnels : </p>
+            </div>
+        </div>
 
 {% endblock %}

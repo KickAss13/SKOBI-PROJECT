@@ -12,9 +12,9 @@
 
     <div class="row">
         {% for article in articles %} 
-        <div class="col-6 article  container">
+        <div class="col-6 article container">
             <section class="cadre-article">
-            <a href="{{ path('template-article', {'id': article.id}) }}">
+            <a href="{{ path('template_article', {'id': article.id}) }}">
                 <h4 class="font-weight-bolder">{{ article.nom }}</h4>
                 <p class="slogan">{{ article.slogan }}</p>
                 <div class="d-flex flex-row">

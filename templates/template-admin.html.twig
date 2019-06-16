@@ -29,12 +29,13 @@
         {% if app.user.role == 'ROLE_ADMIN' %}
             <nav>
                 <ul class="list-unstyled d-flex flex-row justify-content-around">
-                    <li><a href="{{ path('index') }}" class="font-weight-bolder"><img src="{{ asset('assets/img/logo-back-index.svg') }}" width="30px"><span>Retour au site</span></a></li>
-                    <li><a href="{{ path('user_index') }}" class="font-weight-bolder">Gérer Utilisateurs</a></li>
-                    <li><a href="{{ path('article_index') }}" class="font-weight-bolder">Gérer Produits</a></li>
-                    <li><a href="{{ path('event_index') }}" class="font-weight-bolder">Gérer Evenements</a></li>
-                    <li><a href="{{ path('fournisseur_index') }}" class="font-weight-bolder">Gérer Fournisseurs</a></li>
-                    <li><a href="{{ path('message_index') }}" class="font-weight-bolder">Gérer Messages</a></li>                
+                    <li><a href="{{ path('index') }}" class="font-weight-bolder"><img src="{{ asset('assets/img/logo-back-index.png') }}" width="30px"><span>Retour au site</span></a></li>
+                    <li><a href="{{ path('user_index') }}" class="font-weight-bolder">Utilisateurs</a></li>
+                    <li><a href="{{ path('article_index') }}" class="font-weight-bolder">Produits</a></li>
+                    <li><a href="{{ path('event_index') }}" class="font-weight-bolder">Evenements</a></li>
+                    <li><a href="{{ path('fournisseur_index') }}" class="font-weight-bolder">Fournisseurs</a></li>
+                    <li><a href="{{ path('vitamine_index') }}" class="font-weight-bolder">Apports nutritionnels</a></li>
+                    <li><a href="{{ path('message_index') }}" class="font-weight-bolder">Messages</a></li>                
                 </ul>
             </nav>
         {% endif %}
@@ -58,7 +59,7 @@
         <footer>
 
             <div class="d-flex justify-content-center">
-                <a href="#"><img src="{{ asset('assets/img/logo-back-index.svg') }}" width="20px"><span>Retour au site</span></a>
+                <a href="#"><img src="{{ asset('assets/img/logo-back-index.png') }}" width="30px"><span>Retour au site</span></a>
             </div>
             
 

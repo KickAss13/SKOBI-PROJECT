@@ -1,0 +1,19 @@
+{% extends 'template-admin.html.twig' %}
+
+{% block title %}Modifier apport nutritionnel{% endblock %}
+
+{% block body %}
+<br><br>
+
+<div class="d-flex justify-content-center">
+    <h1>Modifier apport nutritionnel</h1>
+</div>
+
+<br><br>
+
+<div class="container">
+    {{ include('vitamine/_form.html.twig', {'button_label': 'Modifier'}) }}
+</div>
+
+    
+{% endblock %}

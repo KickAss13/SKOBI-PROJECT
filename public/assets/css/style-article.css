@@ -28,7 +28,7 @@ main a:hover {
 .cadre-article {
     border-style:solid;
     border-width:1px;
-    border-color:grey;
+    border-color:black;
     width: 80%;
     height: 120%;
     margin: 0 auto;
@@ -37,7 +37,7 @@ main a:hover {
 .cadre-article:hover {
     border-style:solid;
     border-width:1px;
-    border-color:grey;
+    border-color:black;
     width: 90%;
     height: 130%;
     margin: 0 auto;
