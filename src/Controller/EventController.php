@@ -95,6 +95,24 @@ class EventController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            //CODE POUR GERER L'UPLOAD
+            $fichierUploade = $event->getImageUpload();
+            $fileName = $fichierUploade->getClientOriginalName();
+            $fileName = strtolower($fileName);
+            $nomSansExtension = pathinfo($fileName, PATHINFO_FILENAME);
+            $extension = pathinfo($fileName, PATHINFO_EXTENSION);
+            $nomSansExtension = preg_replace("/[^a-zA-Z0-9-\.]/i", "-", $nomSansExtension);
+            $nomSansExtension = trim($nomSansExtension);
+            $extension = preg_replace("/[^a-zA-Z0-9-\.]/i", "-", $extension);
+            $extension = trim($extension);
+            $fileName = "$nomSansExtension.$extension";
+            $fichierUploade->move(
+                $this->getParameter('dossier_public') . "/assets/upload/event",
+                $fileName
+            );
+            $event->setImageSrc("assets/upload/event/$fileName");
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('event_index', [

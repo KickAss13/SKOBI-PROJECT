@@ -1,18 +1,26 @@
 {% extends 'template-page.html.twig' %}
 
-{% block title %}Hello SecurityController!{% endblock %}
+{% block title %}Se connecter{% endblock %}
+
+{% block stylesheets %}<link rel="stylesheet" href="{{asset('assets/css/style-login.css') }}">{% endblock %}
 
 {% block body %}
 
-<section>
-    <h3>FORMULAIRE DE LOGIN</h3>
+<h3>Connectez-vous</h3>
+
+<div class="container">
     <form action="{{ path('login') }}" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username ?? "" }}">
-    
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="_password">
-    
+
+        <div class="form-group">
+            <label for="username" class="font-weight-bolder label1">Nom d'utilisateur :</label>
+            <input type="text" id="username" name="_username" value="{{ last_username ?? "" }}" class="form-control" placeholder="Entrez-ici votre nom d'utilisateur...">
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="font-weight-bolder label2">Mot de passe:</label>
+            <input type="password" id="password" name="_password" class="form-control" placeholder="Entrez-ici votre mot de passe...">
+        </div>
+
        <input type="hidden" name="_csrf_token"
             value="{{ csrf_token('authenticate') }}">
         {#
@@ -21,13 +29,14 @@
             <input type="hidden" name="_target_path" value="/account" />
         #}
     
-        <button type="submit">login</button>
+        <button type="submit" class="btn btn-light">Se connecter</button>
     
         {% if (error ?? false) %}
             <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
     
+        <p>Pas encore membre ? <a href="{{ path('subscribe') }}">Rejoignez-nous !</a></p>
     </form>
-</section>
+</div>
 
 {% endblock %}
