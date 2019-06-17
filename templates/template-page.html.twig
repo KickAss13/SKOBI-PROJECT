@@ -19,9 +19,9 @@
                 <nav id="navlog" class="d-flex justify-content-end">
                 {% if app.user %}        
                         <a href="#">Bienvenue {{ app.user.username }} !</a>
-                        <a href="{{ path('logout') }}">Logout</a>
+                        <a href="{{ path('logout') }}">Se déconnecter</a>
                 {% else %}
-                        <a href="{{ path('login') }}">Se connecter - </a>
+                        <a href="{{ path('login') }}">Se connecter</a>
                         <a href="{{ path('subscribe') }}">S'inscrire</a>
                 {% endif %}
                 </nav>
@@ -42,10 +42,10 @@
             <div class="menu-scroll fixed-top">  
                 <nav id="navlog" class="d-flex justify-content-end">
                 {% if app.user %}        
-                        <a href="#">{{ app.user.username }}</a>
-                        <a href="{{ path('logout') }}">Logout</a>
+                        <a href="#">Bienvenue {{ app.user.username }} !</a>
+                        <a href="{{ path('logout') }}">Se déconnecter</a>
                 {% else %}
-                        <a href="{{ path('login') }}">Se connecter - </a>
+                        <a href="{{ path('login') }}">Se connecter</a>
                         <a href="{{ path('subscribe') }}">S'inscrire</a>
                 {% endif %}
                 </nav>
