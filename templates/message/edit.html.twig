@@ -16,9 +16,14 @@
     {{ include('message/_form.html.twig', {'button_label': 'Modifier'}) }}
 </div>
 
+
+<button type="button" class="btn btn-secondary"><a href="{{ path('message_index') }}" class="text-light">Retour à l'index</a></button>
+
 <div class="d-flex justify-content-center">
         {{ include('message/_delete_form.html.twig') }}
 </div>
+
+
 
 
 
