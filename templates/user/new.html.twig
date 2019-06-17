@@ -16,4 +16,9 @@
     {{ include('user/_form.html.twig') }}
 </div>
 
+<div class="d-flex justify-content-center">
+    <button class="btn btn-secondary">{{ button_label|default('Sauvegarder') }}</button>
+    <button type="button" class="btn btn-secondary"><a href="{{ path('user_index') }}" class="text-light">Retour à l'index</a></button>
+</div>
+
 {% endblock %}

@@ -4,8 +4,6 @@
     {{ form_row(form.email) }}
     {{ form_row(form.content, { 'label': 'Message' }) }}
 
-    <button class="btn btn-secondary">{{ button_label|default('Sauvegarder') }}</button>
-    <button type="button" class="btn btn-secondary"><a href="{{ path('message_index') }}" class="text-light">Retour à l'index</a></button>
     <div>
         {{ messageFeedback ?? "" }}
     </div>
