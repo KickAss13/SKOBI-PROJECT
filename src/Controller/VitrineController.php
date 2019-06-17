@@ -140,4 +140,15 @@ class VitrineController extends AbstractController
             'form' =>  $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/{id}", name="template_article", methods={"GET"})
+     */
+    public function templateArticle(Article $article): Response
+    {
+        return $this->render('vitrine/template-article.html.twig', [
+            'controller_name' => 'VitrineController',
+            'article' => $article,
+        ]);
+    }
 }

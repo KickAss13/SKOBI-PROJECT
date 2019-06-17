@@ -49,7 +49,7 @@ class Event
     private $category;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="string", length=160)
      */
     private $dateEvent;
 
@@ -57,6 +57,11 @@ class Event
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $adress;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $description;
 
     public function getId(): ?int
     {
@@ -134,12 +139,12 @@ class Event
         return $this;
     }
 
-    public function getDateEvent(): ?\DateTimeInterface
+    public function getDateEvent(): ?string
     {
         return $this->dateEvent;
     }
 
-    public function setDateEvent(\DateTimeInterface $dateEvent): self
+    public function setDateEvent(string $dateEvent): self
     {
         $this->dateEvent = $dateEvent;
 
@@ -154,6 +159,18 @@ class Event
     public function setAdress(?string $adress): self
     {
         $this->adress = $adress;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

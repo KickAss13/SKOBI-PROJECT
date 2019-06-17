@@ -14,6 +14,7 @@ class EventType extends AbstractType
         $builder
             ->add('titre')
             ->add('content')
+            ->add('description')
             ->add('imageUpload')
             ->add('category')
             ->add('dateEvent')

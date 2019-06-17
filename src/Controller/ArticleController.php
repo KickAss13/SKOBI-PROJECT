@@ -118,6 +118,55 @@ class ArticleController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            //CODE POUR GERER L'UPLOAD1
+            $fichierUploade1 = $article->getImageUpload1();
+            $fileName1 = $fichierUploade1->getClientOriginalName();
+            $fileName1 = strtolower($fileName1);          
+            $nomSansExtension1 = pathinfo($fileName1, PATHINFO_FILENAME);
+            $extension1 = pathinfo($fileName1, PATHINFO_EXTENSION);            
+            $nomSansExtension1 = preg_replace("/[^a-zA-Z0-9-\.]/i", "-", $nomSansExtension1);
+            $nomSansExtension1 = trim($nomSansExtension1);
+            $extension1 = preg_replace("/[^a-zA-Z0-9-\.]/i", "-", $extension1);
+            $extension1 = trim($extension1);            
+            $fileName1 = "$nomSansExtension1.$extension1";           
+            $fichierUploade1->move(
+                $this->getParameter('dossier_public') . "/assets/upload/article",  
+                $fileName1);                                                
+            $article->setImageSrc1("assets/upload/article/$fileName1");
+
+            //CODE POUR GERER L'UPLOAD2
+            $fichierUploade2 = $article->getImageUpload2();
+            $fileName2 = $fichierUploade2->getClientOriginalName();
+            $fileName2 = strtolower($fileName2);
+            $nomSansExtension2 = pathinfo($fileName2, PATHINFO_FILENAME);
+            $extension2 = pathinfo($fileName2, PATHINFO_EXTENSION);            
+            $nomSansExtension2 = preg_replace("/[^a-zA-Z0-9-\.]/i", "-", $nomSansExtension2);
+            $nomSansExtension2 = trim($nomSansExtension2);
+            $extension2 = preg_replace("/[^a-zA-Z0-9-\.]/i", "-", $extension2);
+            $extension2 = trim($extension2);            
+            $fileName2 = "$nomSansExtension2.$extension2";           
+            $fichierUploade2->move(
+                $this->getParameter('dossier_public') . "/assets/upload/article",  
+                $fileName2);                                                
+            $article->setImageSrc2("assets/upload/article/$fileName2");
+
+            //CODE POUR GERER L'UPLOAD3
+            $fichierUploade3 = $article->getImageUpload3();
+            $fileName3 = $fichierUploade3->getClientOriginalName();
+            $fileName3 = strtolower($fileName3);
+            $nomSansExtension3 = pathinfo($fileName3, PATHINFO_FILENAME);
+            $extension3 = pathinfo($fileName3, PATHINFO_EXTENSION);            
+            $nomSansExtension3 = preg_replace("/[^a-zA-Z0-9-\.]/i", "-", $nomSansExtension3);
+            $nomSansExtension3 = trim($nomSansExtension3);
+            $extension3 = preg_replace("/[^a-zA-Z0-9-\.]/i", "-", $extension3);
+            $extension3 = trim($extension3);            
+            $fileName3 = "$nomSansExtension3.$extension3";           
+            $fichierUploade3->move(
+                $this->getParameter('dossier_public') . "/assets/upload/article",  
+                $fileName3);                                                
+            $article->setImageSrc3("assets/upload/article/$fileName3");
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('article_index', [

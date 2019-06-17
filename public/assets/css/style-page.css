@@ -19,25 +19,31 @@ footer p {
 }
 
 header {
-    background-color:#BFa587;
+    background-color: white;
+    border-style:solid;
+    border-width:1px;
+    border-color:black;
+    border-style: double;
 }
 
 header #navlog a {
     font-size: 1rem;
-    color: white;
+    color: #B3BE84;
+    font-weight: bold;
     padding-right: 1rem;
 }
 
 header #navbar a {
-    font-size: 1.5rem;
-    color: white;
+    font-size: 1.2rem;
+    color: black;
     font-weight: bold;
     text-transform:uppercase;
-    padding-left: 2rem;
+    padding-left: 5rem;
 }
 
 header #navbar {
     margin-left: 3rem;
+    margin-top: 0.5rem;
 }
 
 header .logo {
@@ -46,13 +52,21 @@ header .logo {
     margin-bottom: 0.5rem;
 }
 
+header .menu-scroll {
+    background-color: white;
+    border-style:solid;
+    border-width:1px;
+    border-color:black;
+    border-style: double;
+}
+
 /*POUR LES TABLETTES */
 /*Pour tous les médias de type écran ET de largeur maximale 1024px ET minimale 505px */
 @media screen and (min-width:505px) and (max-width: 1024px) {
 
     header #navbar a {
         font-size: 1.2rem;
-        color: white;
+        color: black;
         font-weight: bold;
         text-transform:uppercase;
         padding-left: 1.5rem;
@@ -70,7 +84,7 @@ header .logo {
 
     header #navbar a {
         font-size: 1.2rem;
-        color: white;
+        color: black;
         font-weight: bold;
         text-transform:uppercase;
         padding-left: 2rem;

@@ -18,6 +18,7 @@
             <tr>
                 <th>Id</th>
                 <th>Titre</th>
+                <th>Contenu évènement</th>
                 <th>Description évènement</th>
                 <th>Source Image</th>
                 <th>Catégorie</th>
@@ -33,9 +34,10 @@
                 <td>{{ event.id }}</td>
                 <td>{{ event.titre }}</td>
                 <td>{{ event.content }}</td>
+                <td>{{ event.description }}</td>
                 <td>{{ event.imageSrc }}</td>
                 <td>{{ event.category }}</td>
-                <td>{{ event.dateEvent ? event.dateEvent|date('d-m-Y H:i') : '' }}</td>   
+                <td>{{ event.dateEvent}}</td>   
                 <td>{{ event.adress }}</td>             
                 <td>{{ event.datePublication ? event.datePublication|date('d-m-Y H:i:s') : '' }}</td>
                 <td>
