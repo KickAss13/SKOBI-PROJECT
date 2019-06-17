@@ -8,13 +8,13 @@
 
 {% set idEvent = 1 %}
 
-<h3>Evènements à venir:</h3>
+<h3>Evènements à venir</h3>
 
 {# Code pour afficher les évènements à venir #}
 {% for event in events %}
     {% if event.category == 'A_VENIR' %}
         {% if idEvent%2 == 1 %}
-            <section class="d-flex justify-content-center">
+            <section class="d-flex justify-content-center section-left-event">
                 <br><br>
                 <div class="container">
                     <img src="{{event.imageSrc}}" class="img-left-event">
@@ -31,7 +31,7 @@
             {% set idEvent = idEvent + 1 %}
             <br><br><br>
         {% else %}
-            <section class="d-flex justify-content-center">
+            <section class="d-flex justify-content-center section-right-event">
                 <div class="container cadre-event-left">
                     <h4>{{event.titre}}</h4>
                     <hr>
@@ -52,13 +52,13 @@
 {% endfor %}
 
 
-<h3>Evènements passés:</h3>
+<h3>Evènements passés</h3>
 
 {# Code pour afficher les évènements passés #}
 {% for event in events %}
     {% if event.category == 'E_PASSE' %}
         {% if idEvent%2 == 1 %}
-            <section class="d-flex justify-content-center">
+            <section class="d-flex justify-content-center section-left-event">
                 <br><br>
                 <div class="container">
                     <img src="{{event.imageSrc}}" class="img-left-event">
@@ -75,7 +75,7 @@
             {% set idEvent = idEvent + 1 %}
             <br><br><br>
         {% else %}
-            <section class="d-flex justify-content-center">
+            <section class="d-flex justify-content-center section-right-event">
                 <div class="container cadre-event-left">
                     <h4>{{event.titre}}</h4>
                     <hr>
