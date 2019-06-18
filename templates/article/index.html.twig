@@ -25,6 +25,7 @@
                 <th>Source image 1</th>
                 <th>Source image 2</th>
                 <th>Source image 3</th>
+                <th>Apports nutritionnels</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -40,6 +41,11 @@
                 <td>{{ article.imageSrc1 }}</td>
                 <td>{{ article.imageSrc2 }}</td>
                 <td>{{ article.imageSrc3 }}</td>
+                <td>
+                    {% for vitamine in article.vitamines %}
+                            <div>{{ vitamine.nom }}</div>
+                    {% endfor %}
+                </td>
                 <td>
                     <button type="button" class="btn btn-secondary"><a href="{{ path('article_show', {'id': article.id}) }}" class="text-light">Voir</a></button>
                     <hr>

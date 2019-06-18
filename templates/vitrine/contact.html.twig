@@ -6,7 +6,12 @@
 
 {% block body %}
     <div class="example-wrapper">
-        <h1>CONTACT</h1>
-        {{ include('message/_form.html.twig') }}    
+        <h3>Contact</h3>
+        <p class="contact">Pour toutes informations veuillez remplir le formulaire ci-dessous. Nous nous engageons à vous repondre dans les plus brefs delais!</p>
+        <div class="d-flex justify-content-center">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-xs-6">
+        {{ include('message/_form.html.twig') }} 
+            </div>
+        </div>   
     </div>
 {% endblock %}

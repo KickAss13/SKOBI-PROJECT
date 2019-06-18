@@ -50,6 +50,14 @@
                 <th class="bg-secondary text-white">Source image 3</th>
                 <td>{{ article.imageSrc3 }}</td>
             </tr>
+            <tr>
+                <th class="bg-secondary text-white">Apports nutritionnels</th>
+                <td>
+                    {% for vitamine in article.vitamines %}
+                            <div>{{ vitamine.nom }}</div>
+                    {% endfor %}
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>

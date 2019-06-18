@@ -1,3 +1,20 @@
 .btn{
+    display: block;
     background-color: #B3BE84;
+    color: white;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    margin-bottom: 7rem;
+}
+h3 {
+    text-align: center;
+    text-transform:uppercase;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+p.contact {
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
 }
