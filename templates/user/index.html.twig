@@ -12,14 +12,12 @@
 
     <br><br>
 
-<div class="container d-flex justify-content-center">
+<div class="d-flex justify-content-center">
     <table class="table table-bordered table-hover">
         <thead class="thead-light">
             <tr>
-                <th>Id</th>
                 <th>Nom d'utilisateur</th>
                 <th>Email</th>
-                <th>Password</th>
                 <th>Nom</th>
                 <th>Prenom</th>
                 <th>Adresse</th>
@@ -32,10 +30,8 @@
         <tbody>
         {% for user in users %}
             <tr>
-                <td>{{ user.id }}</td>
                 <td>{{ user.username }}</td>
                 <td>{{ user.email }}</td>
-                <td>{{ user.password }}</td>
                 <td>{{ user.nom }}</td>
                 <td>{{ user.prenom }}</td>
                 <td>{{ user.adresse }}</td>

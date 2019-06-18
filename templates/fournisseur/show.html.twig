@@ -15,10 +15,6 @@
     <table class="table table-bordered table-hover">
         <tbody>
             <tr>
-                <th class="bg-secondary text-white">Id</th>
-                <td>{{ fournisseur.id }}</td>
-            </tr>
-            <tr>
                 <th class="bg-secondary text-white">Nom fournisseur</th>
                 <td>{{ fournisseur.nom }}</td>
             </tr>
@@ -28,11 +24,7 @@
             </tr>
             <tr>
                 <th class="bg-secondary text-white">Source image</th>
-                <td>{{ fournisseur.imageSrc }}</td>
-            </tr>
-            <tr>
-                <th class="bg-secondary text-white">Date Publication</th>
-                <td>{{ fournisseur.datePublication ? fournisseur.datePublication|date('Y-m-d H:i:s') : '' }}</td>
+                <td><img src="{{ fournisseur.imageSrc }}"></td>
             </tr>
         </tbody>
     </table>

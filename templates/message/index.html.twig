@@ -12,11 +12,10 @@
 
     <br><br>
 
-<div class="container d-flex justify-content-center">
+<div class=" d-flex justify-content-center">
     <table class="table table-bordered table-hover">
         <thead class="thead-light">
             <tr>
-                <th>Id</th>
                 <th>Nom expéditeur</th>
                 <th>Email</th>
                 <th>Contenu message</th>
@@ -27,13 +26,14 @@
         <tbody>
         {% for message in messages %}
             <tr>
-                <td>{{ message.id }}</td>
                 <td>{{ message.username }}</td>
                 <td>{{ message.email }}</td>
                 <td>{{ message.content }}</td>
                 <td>{{ message.dateMessage ? message.dateMessage|date('d-m-Y H:i:s') : '' }}</td>
                 <td>
                     <button type="button" class="btn btn-secondary"><a href="{{ path('message_show', {'id': message.id}) }}" class="text-light">Voir</a></button>
+                    <hr>
+                   {{ include('message/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}

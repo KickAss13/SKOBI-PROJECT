@@ -35,6 +35,11 @@ header span {
     margin-left: 10px;
 }
 
+main {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
 footer {
     background-color:black;
     height:300px;

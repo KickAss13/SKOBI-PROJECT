@@ -16,16 +16,12 @@
     <table class="table table-bordered table-hover">
         <tbody>
             <tr>
-                <th class="bg-secondary text-white">Id</th>
-                <td>{{ vitamine.id }}</td>
-            </tr>
-            <tr>
                 <th class="bg-secondary text-white">Nom apport nutritionnel</th>
                 <td>{{ vitamine.nom }}</td>
             </tr>
             <tr>
                 <th class="bg-secondary text-white">ImageSrc</th>
-                <td>{{ vitamine.imageSrc }}</td>
+                <td><img src="{{ vitamine.imageSrc }}"></td>
             </tr>
         </tbody>
     </table>

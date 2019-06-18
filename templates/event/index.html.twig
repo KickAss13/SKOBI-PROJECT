@@ -12,11 +12,10 @@
 
     <br><br>
 
-<div class="container d-flex justify-content-center">
+<div class=" d-flex justify-content-center">
     <table class="table table-bordered table-hover">
         <thead class="thead-light">
             <tr>
-                <th>Id</th>
                 <th>Titre</th>
                 <th>Contenu évènement</th>
                 <th>Description évènement</th>
@@ -24,22 +23,19 @@
                 <th>Catégorie</th>
                 <th>Date Evenement</th> 
                 <th>Adresse Evenement</th>              
-                <th>Date Publication</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for event in events %}
             <tr>
-                <td>{{ event.id }}</td>
                 <td>{{ event.titre }}</td>
                 <td>{{ event.content }}</td>
                 <td>{{ event.description }}</td>
-                <td>{{ event.imageSrc }}</td>
+                <td><img src="{{ event.imageSrc }}"></td>
                 <td>{{ event.category }}</td>
                 <td>{{ event.dateEvent}}</td>   
                 <td>{{ event.adress }}</td>             
-                <td>{{ event.datePublication ? event.datePublication|date('d-m-Y H:i:s') : '' }}</td>
                 <td>
                     <button type="button" class="btn btn-secondary"><a href="{{ path('event_show', {'id': event.id}) }}" class="text-light">Voir</a></button>
                     <hr>

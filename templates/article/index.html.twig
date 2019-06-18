@@ -12,11 +12,10 @@
 
     <br><br>
 
-<div class="container d-flex justify-content-center">
+<div class="d-flex justify-content-center">
     <table class="table  table-bordered table-hover">
         <thead class="thead-light">
             <tr>
-                <th>Id</th>
                 <th>Nom produit</th>
                 <th>Sous-titre</th>
                 <th>Description</th>
@@ -32,15 +31,14 @@
         <tbody>
         {% for article in articles %}
             <tr>
-                <td>{{ article.id }}</td>
                 <td>{{ article.nom }}</td>
                 <td>{{ article.slogan }}</td>
                 <td>{{ article.description }}</td>
                 <td>{{ article.ingredients }}</td>
                 <td>{{ article.prix }}</td>
-                <td>{{ article.imageSrc1 }}</td>
-                <td>{{ article.imageSrc2 }}</td>
-                <td>{{ article.imageSrc3 }}</td>
+                <td><img src="{{ article.imageSrc1 }}"></td>
+                <td><img src="{{ article.imageSrc2 }}"></td>
+                <td><img src="{{ article.imageSrc3 }}"></td>
                 <td>
                     {% for vitamine in article.vitamines %}
                             <div>{{ vitamine.nom }}</div>
