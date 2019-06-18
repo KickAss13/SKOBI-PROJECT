@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Article;
 use App\Entity\Vitamine;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -22,8 +23,8 @@ class ArticleType extends AbstractType
             ->add('imageUpload2')
             ->add('imageUpload3')
             ->add('vitamines', EntityType::class, [
-                'class' => Groupe::class,
-                'choice_label' => 'nomVitamine',
+                'class' => Vitamine::class,
+                'choice_label' => 'nom',
                 'multiple' => true,
                 'expanded' => true,
             ])
