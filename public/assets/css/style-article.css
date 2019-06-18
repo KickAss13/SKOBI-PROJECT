@@ -1,11 +1,11 @@
-h3 {
+main h3 {
     text-align: center;
     text-transform:uppercase;
     margin-top: 5%;
     margin-bottom: 5%;
 }
 
-h4 {
+main h4 {
     text-align: center;
     text-transform: uppercase;
     margin-top: 5%;
@@ -61,6 +61,11 @@ main img {
 .ingred {
     color: #B3BE84;
     margin-top: 10%;
+}
+
+main span {
+    color: #BFa587;
+    font-weight: bold;
 }
 
 /*POUR LES TABLETTES */
