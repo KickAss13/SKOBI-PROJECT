@@ -5,7 +5,7 @@ body * {
 }
 
 header {
-    background-image: url("../img/photo1.jpg"); 
+    background-image: url("../img/IMG_5335.jpg"); 
     background-size: cover;
     text-align: center;
     background-repeat: no-repeat;
@@ -44,7 +44,7 @@ nav a:hover {
 header h1 {
     text-align: center;
     font-size: 10rem;
-    font-weight: bold;
+    font-weight: 900;
     color: white;
     margin-top: 7rem;
 }
@@ -64,6 +64,7 @@ header .p2 {
     font-size: 2.3rem;
     font-weight: bold;
     text-align: center;
+    margin-top:3rem;
     padding-bottom: 10rem;
     
 }
@@ -82,7 +83,7 @@ header .p1 {
     font-size: 2rem;
     font-style: italic;
     text-align: center;
-    margin-top: 5rem;;
+    margin-top: 10rem;;
 }
 header .p2 {
     color: white; 
@@ -214,9 +215,13 @@ p.numero {
 .lien {
     color: black;
 } 
- footer {
+footer {
     background-color:#BFa587;
     padding-bottom: 3rem;
+}
+
+footer a {
+    color: white;
 }
 
 footer img {
