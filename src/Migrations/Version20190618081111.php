@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190617104037 extends AbstractMigration
+final class Version20190618081111 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,9 @@ final class Version20190617104037 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE event ADD description LONGTEXT DEFAULT NULL, CHANGE date_event date_event VARCHAR(160) NOT NULL');
+        $this->addSql('CREATE TABLE article_vitamine (article_id INT NOT NULL, vitamine_id INT NOT NULL, INDEX IDX_38D6A7867294869C (article_id), INDEX IDX_38D6A786978C9592 (vitamine_id), PRIMARY KEY(article_id, vitamine_id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
+        $this->addSql('ALTER TABLE article_vitamine ADD CONSTRAINT FK_38D6A7867294869C FOREIGN KEY (article_id) REFERENCES article (id) ON DELETE CASCADE');
+        $this->addSql('ALTER TABLE article_vitamine ADD CONSTRAINT FK_38D6A786978C9592 FOREIGN KEY (vitamine_id) REFERENCES vitamine (id) ON DELETE CASCADE');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +32,6 @@ final class Version20190617104037 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE event DROP description, CHANGE date_event date_event DATETIME NOT NULL');
+        $this->addSql('DROP TABLE article_vitamine');
     }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -71,6 +73,16 @@ class Article
      * @ORM\Column(type="text", nullable=true)
      */
     private $ingredients;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Vitamine", inversedBy="articles")
+     */
+    private $vitamines;
+
+    public function __construct()
+    {
+        $this->vitamines = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -202,6 +214,32 @@ public function getImageUpload1()
     public function setIngredients(?string $ingredients): self
     {
         $this->ingredients = $ingredients;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Vitamine[]
+     */
+    public function getVitamines(): Collection
+    {
+        return $this->vitamines;
+    }
+
+    public function addVitamine(Vitamine $vitamine): self
+    {
+        if (!$this->vitamines->contains($vitamine)) {
+            $this->vitamines[] = $vitamine;
+        }
+
+        return $this;
+    }
+
+    public function removeVitamine(Vitamine $vitamine): self
+    {
+        if ($this->vitamines->contains($vitamine)) {
+            $this->vitamines->removeElement($vitamine);
+        }
 
         return $this;
     }

@@ -1,0 +1,32 @@
+h3 {
+    text-align: center;
+    text-transform:uppercase;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+form {
+    border-style:solid;
+    border-width:1px;
+    border-color:#B3BE84;
+    width: 70%;
+    margin: 0 auto;
+    background-color: #B3BE84;
+    margin-bottom: 13%;
+}
+
+.form-control {
+    width: 70%;
+}
+
+label {
+    margin-top: 5%;
+    margin-left: 15%;
+    color: white;
+    font-size: 120%;
+    font-weight: bolder;
+}
+
+input {
+    margin: 0 auto;
+}

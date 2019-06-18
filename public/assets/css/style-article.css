@@ -16,6 +16,11 @@ h4 {
     margin-bottom: 10%;
 }
 
+main {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
 main a {
     color: black;
 }
@@ -34,16 +39,6 @@ main a:hover {
     margin: 0 auto;
 }
 
-.cadre-article:hover {
-    border-style:solid;
-    border-width:1px;
-    border-color:black;
-    width: 90%;
-    height: 130%;
-    margin: 0 auto;
-    margin-bottom: -10%;
-}
-
 .slogan {
     text-align: center;
     font-size: 150%;  
@@ -51,10 +46,11 @@ main a:hover {
 }
 
 main img {
-    width: 80%;
-    height: 90%;
-    margin-left: 15%;
-    margin-top: 10%;
+    width: 240px;
+    height: 220px;
+    margin-left: 13%;
+    margin-top: 18%;
+
 }
 
 .descript {

@@ -2,12 +2,16 @@
 
 {% block title %}S'inscrire{% endblock %}
 
+{% block stylesheets %}<link rel="stylesheet" href="{{asset('assets/css/style-subscribe.css') }}">{% endblock %}
+
 {% block body %}
 
 <div>
-    <h1>S'INSCRIRE</h1>
+    <h3>Inscrivez-vous</h3>
 
+    <div class="container">
     {{ include('user/_form.html.twig') }}
+    </div>
  
 </div>
 
