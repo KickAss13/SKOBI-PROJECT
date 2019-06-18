@@ -1,6 +1,13 @@
+h3 {
+    text-align: center;
+    text-transform:uppercase;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
 .fournisseur {
     width:600px;
-    filter: grayscale(90%);
+    filter: grayscale(100%);
     filter: contrast(15%);
     text-align:center;    
 }
@@ -25,14 +32,19 @@
 .taille {
     position:relative;
     height:300px;
-    width:480px;
+    width:100%;
+    /*width:480px;*/
     overflow:hidden;
     margin-right:0px;
+    margin:0;
+    
 }
 
 .marge {
     height:400px;
-    padding-left:5%;
+    /*padding-left:2.5%;
+    padding-right:2.5%;*/
+
 }
 
 .cache {
@@ -61,7 +73,7 @@
 }
 
 .image {
-    height:100%;
+    max-width:100%;
 }
 
 .centrage_fournisseurs {
@@ -70,7 +82,7 @@
 
 @media screen and (min-width: 990px) and (max-width: 1199px) {
     .marge {
-        padding-left:25%;
+        /*padding-left:25%;*/
         margin-right:10px;
 
     }
@@ -78,6 +90,67 @@
         margin-right:10px;        
     }
 }
+
+@media screen and (min-width: 991px) and (max-width: 1024px) {
+    .marge {
+        /*margin-right:20%;*/
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .marge {
+        padding-left:0%;
+        padding-right:0%;
+
+    }
+    .image {
+        display:block;
+
+    }
+}
+
+@media screen and (min-width: 840px) and (max-width: 983px) {
+    .marge {
+        padding-left:0%;
+        padding-right:0%;
+
+    }
+    .section_ou_img {
+        padding-left:11%;
+    }
+
+}
+
+@media screen and (max-width: 990px) {
+    .taille {
+        /*overflow:visible;*/
+        text-align:center;
+    }
+    .image {
+        margin-right:auto;
+        margin-left:auto;
+    }
+}
+
+.row_fournisseur {
+    margin:0;
+    padding:0 2.5%;
+  
+}
+
+/*@media screen and (max-width: 1486px) {
+    .taille{
+        height:225px;
+    }
+}*/
+
+.image {
+    height:300px;
+    object-fit: cover;
+}
+
+
+
 
     
 
