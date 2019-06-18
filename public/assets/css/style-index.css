@@ -102,19 +102,27 @@ header .compte {
 }
 
 h2 {
-    font-size: 6.5rem;
-    font-family: 'Kurale', serif;
+    font-size: 3.8rem;
     margin-top: 2.5rem;
     margin-bottom: 7rem;
     color: #BFa587;
+    font-weight: 900;
+}
+h2.contact{
+    font-size: 3.8rem;
+    margin-top: 2.5rem;
+    margin-bottom: 5rem;
+    color: #BFa587;
+    font-weight: 900;
 }
 
 h3 {
     text-transform: uppercase;
-    font-size: 3.5rem;
+    font-size: 4rem;
     color: #B3BE84;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    font-weight: 900;
 }
 
 .bg-light {
@@ -182,9 +190,30 @@ section.partie-5{
     margin-right: 11rem;
     margin-bottom: 5rem;
 }
-section.partie-5 .img-fluid{ 
+section.partie-5 .img-fluid{
+    margin-top: 2rem; 
     width: 25%;
 }
+p.text{
+    font-style: italic;
+    padding: 2rem;
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+p.contact{
+    text-decoration: underline;
+    margin-top: 5rem;
+    color: black;
+}
+p.numero {
+    margin-top: 5rem;
+    color: black;
+}
+.lien {
+    color: black;
+} 
  footer {
     background-color:#BFa587;
     padding-bottom: 3rem;

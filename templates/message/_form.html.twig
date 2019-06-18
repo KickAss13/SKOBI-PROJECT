@@ -1,10 +1,10 @@
 
     {{ form_start(form) }}
-    {{ form_row(form.username, { 'label': 'Nom' }) }}
-    {{ form_row(form.email) }}
-    {{ form_row(form.content, { 'label': 'Message' }) }}
+    {{ form_row(form.username, { 'label': 'Nom' , 'attr': {'placeholder':'Entrez ici votre nom...'} }) }}
+    {{ form_row(form.email,  {'attr': {'placeholder':'Entrez ici votre email...'} }) }}
+    {{ form_row(form.content, { 'label': 'Message' , 'attr': {'placeholder':'Entrez ici votre message...'}}) }}
     
-
+    
     <button class="btn btn-secondary">{{ button_label|default('Sauvegarder') }}</button>
 
     <div>
