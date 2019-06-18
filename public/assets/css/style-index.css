@@ -102,40 +102,49 @@ header .compte {
 }
 
 h2 {
-    font-size: 50px;
+    font-size: 6.5rem;
     font-family: 'Kurale', serif;
     margin-top: 2.5rem;
-    margin-bottom: 10rem;
+    margin-bottom: 7rem;
+    color: #BFa587;
 }
 
 h3 {
     text-transform: uppercase;
-    font-family: 'Acme', sans-serif;
+    font-size: 3.5rem;
+    color: #B3BE84;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
 .bg-light {
-    background: #CD853F !important;
+    background: #BFa587 !important;
 }
 p.engagement {
     line-height: 2rem;
-    
     font-family: 'Open Sans', sans-serif;
     padding: 1.5rem;
 }
+.image {
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+}
 .encadre {
     border-width:1px;
-    border-color:grey;
-    border-style:solid;
-    margin-top: 3rem;
+    border-right:solid #BFa587;
+    margin-top: 3rem; 
+}
+.encadre4 {
+    border: none;
 }
 section.partie-1{
     margin-bottom: 5rem;
 }
 
 section.partie-2{
-    margin: 13rem;
+    margin: 2.5rem;
 }
 section.partie-3 {
     margin-bottom: 5rem;
@@ -174,7 +183,7 @@ section.partie-5{
     margin-bottom: 5rem;
 }
 section.partie-5 .img-fluid{ 
-    width: 30%;
+    width: 25%;
 }
  footer {
     background-color:#BFa587;
@@ -224,14 +233,23 @@ footer p {
  } 
 @media screen and (min-width:505px) and (max-width: 1024px) {
     p.engagement {
-        border-style:solid;
-        font-size: 2.5rem;
-        line-height: 2.6rem;
+        font-size: 2rem;
+        line-height: 3.6rem;
+        padding: 1.5rem;
+        margin-bottom: 3.5rem;
+        padding-bottom: 2rem;
+        margin: 2rem;
+        
+    }
+    .encadre {
         border-width:1px;
         border-color:grey;
-        padding: 2rem;
-        margin-bottom: 3.5rem;
+        border-style:solid;
+        margin-top: 3rem;
         
+    }
+    .image {
+        margin-top: 4rem;
     }
 }
 /*
