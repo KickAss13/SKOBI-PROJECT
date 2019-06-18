@@ -2,28 +2,10 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-footer {
-    background-color:#BFa587;
-    padding-bottom: 3rem;
-}
-
-footer img {
-    height: 3rem;
-    margin-top: 3rem;
-    padding-right: 1rem;
-}
-
-footer p {
-    font-size: 1rem;
-    margin-top: 2rem;
-}
-
 header {
     background-color: white;
-    border-style:solid;
-    border-width:1px;
-    border-color:black;
-    border-style: double;
+    border-bottom: 1px double black;
+    border-top: 1px solid black;   
 }
 
 header #navlog a {
@@ -54,10 +36,28 @@ header .logo {
 
 header .menu-scroll {
     background-color: white;
-    border-style:solid;
-    border-width:1px;
-    border-color:black;
-    border-style: double;
+    border-bottom: 1px double black;
+    border-top: 1px solid black; 
+}
+
+footer {
+    background-color:#BFa587;
+    padding-bottom: 3rem;
+}
+
+footer a {
+    color: white;
+}
+
+footer img {
+    height: 3rem;
+    margin-top: 3rem;
+    padding-right: 1rem;
+}
+
+footer p {
+    font-size: 1rem;
+    margin-top: 2rem;
 }
 
 /*POUR LES TABLETTES */

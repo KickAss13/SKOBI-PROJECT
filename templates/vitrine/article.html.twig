@@ -12,7 +12,7 @@
 
     <div class="row">
         {% for article in articles %} 
-        <div class="col-6 article container">
+        <div class="col-lg-6 col-sm-12 col-md-12 article container">
             <section class="cadre-article">
             <a href="{{ path('template_article', {'id': article.id}) }}">
                 <h4 class="font-weight-bolder">{{ article.nom }}</h4>

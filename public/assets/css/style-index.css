@@ -120,11 +120,15 @@ h3 {
 }
 p.engagement {
     line-height: 2rem;
-    border-style:solid;
+    
     font-family: 'Open Sans', sans-serif;
+    padding: 1.5rem;
+}
+.encadre {
     border-width:1px;
     border-color:grey;
-    padding: 1.5rem;
+    border-style:solid;
+    margin-top: 3rem;
 }
 section.partie-1{
     margin-bottom: 5rem;
@@ -136,6 +140,7 @@ section.partie-2{
 section.partie-3 {
     margin-bottom: 5rem;
 }
+/*
 section.partie-4{
     display: block;
     text-align: center;
@@ -155,17 +160,22 @@ section.partie-4{
     line-height: 2rem;
     border-style:solid;
     font-family: 'Open Sans', sans-serif;
-    border-width:1px;
+    border-width: 0.75rem;
+    border-radius: 10% 10% 10% 10%;
     border-color:grey;
     padding: 1.5rem;
 }
-
+*/
 section.partie-5{
     display: block;
     text-align: center;
+    margin-left: 11rem;
+    margin-right: 11rem;
     margin-bottom: 5rem;
 }
-
+section.partie-5 .img-fluid{ 
+    width: 30%;
+}
  footer {
     background-color:#BFa587;
     padding-bottom: 3rem;
@@ -214,14 +224,17 @@ footer p {
  } 
 @media screen and (min-width:505px) and (max-width: 1024px) {
     p.engagement {
-        line-height: 2rem;
         border-style:solid;
-        font-family: 'Raleway', sans-serif;
+        font-size: 2.5rem;
+        line-height: 2.6rem;
         border-width:1px;
         border-color:grey;
-        padding: 1.5rem;
+        padding: 2rem;
+        margin-bottom: 3.5rem;
+        
     }
 }
+/*
 @media screen and (min-width:505px) and (max-width: 1024px) {
     section.partie-4{
         display: block;
@@ -235,15 +248,20 @@ footer p {
         border-radius: 50%!important;
         vertical-align: middle;
         width: 90%;
-        height: 15%;
+        height: 45%;
         margin-bottom: 5rem;
     }
     .apropos {
-        line-height: 2rem;
+        line-height: 2.6rem;
         border-style:solid;
-        font-family: 'Open Sans', sans-serif;
+        font-size: 2.5rem;
         border-width:1px;
         border-color:grey;
         padding: 1.5rem;
+        margin-bottom: 4.5rem;
     }
+}
+*/
+.contact_row{
+    margin: 0;
 }

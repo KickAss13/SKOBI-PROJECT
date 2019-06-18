@@ -52,6 +52,80 @@ h4 {
     background-color: #B3BE84;
 }
 
+/*POUR LES TABLETTES */
+/*Pour tous les médias de type écran ET de largeur maximale 1024px ET minimale 505px */
+@media screen and (min-width:505px) and (max-width: 1024px) {
+
+    .section-left-event {
+        display: block !important; 
+        flex-direction: column;
+    }
+
+    .cadre-event-right {
+        margin: 0 auto;
+        margin-top: 3%;
+        margin-bottom: 7%;
+    }
+
+    .img-left-event {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .section-right-event {
+        flex-direction: column-reverse;
+    }
+
+    .cadre-event-left {
+        margin: 0 auto;
+        margin-top: 3%;
+        margin-bottom: 5%;
+    }
+
+    .img-right-event {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+}
+
+/*POUR LES MOBILES*/
+/*Pour tous les médias de type screen ET de largeur maximale 504px */
+@media screen and (max-width: 504px) {
+
+    .section-left-event {
+        display: block !important; 
+        flex-direction: column;
+    }
+
+    .cadre-event-right {
+        margin: 0 auto;
+        margin-top: 3%;
+        margin-bottom: 5%;
+    }
+
+    .img-left-event {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .section-right-event {
+        flex-direction: column-reverse;
+    }
+
+    .cadre-event-left {
+        margin: 0 auto;
+        margin-top: 3%;
+        margin-bottom: 5%;
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+}
 
 
 
