@@ -7,31 +7,23 @@
 {% endblock %}
 
 {% block body %}
-    <h1 class="centrage_fournisseurs">Nos fournisseurs</h1>
+    <h3>Nos fournisseurs</h3>
 
 {# Code pour afficher les fournisseurs #}
-    <div class="container marge_gauche">
-        <div class="row">
+        <div class="row justify-content-center row_fournisseur">
             {% for fournisseur in fournisseurs %}
 
-                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 marge"> 
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 marge"> 
                 
-                    <section>
-                        <div>
-                            (id={{ fournisseur.id }})
-                        </div>
-                        <h3>{{ fournisseur.nom }}</h3>
-
+                    <section class="section_ou_img">
                         <figure class="taille">
 
-                            <img class="image" src="{{fournisseur.imageSrc}}">
+                            <img class="image img-fluid" src="{{fournisseur.imageSrc}}">
                             <p class="cache2">{{ fournisseur.content }}</p>                
 
                         </figure>
 
-                        <div>
-                            {{ fournisseur.datePublication ? fournisseur.datePublication|date('Y-m-d H:i:s') : '' }}
-                        </div>                
+                                     
                     </section>
                 </div>
 
@@ -43,7 +35,6 @@
                 </div>
             {% endfor %}
         </div>
-    </div>
 
 {% block javascripts %}
 
