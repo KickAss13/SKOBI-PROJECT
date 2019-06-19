@@ -214,17 +214,7 @@ footer p {
     margin-top: 2rem;
 }
 
-.cadre-article {
-    border-style:solid;
-    border-width:1px;
-    border-color:black;
-    width: 700px;
-    height: 400px;
-}
 
-.descript {
-    max-width: 100%;
-}
 
 @media screen and (min-width:505px) and (max-width: 1024px) {
     header nav a {
