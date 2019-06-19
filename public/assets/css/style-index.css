@@ -271,3 +271,34 @@ footer p {
 .contact_row{
     margin: 0;
 }
+
+/* flexslider */
+.flexslider .slides img {
+    height:250px;
+    object-fit:cover;
+
+}
+.flexslider {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+
+}
+
+.flexslider a {
+   text-decoration: none;
+   color: #B3BE84;
+}
+.flex-caption.nom{
+    color: black;
+}
+.flex-caption.slogan{
+    font-weight: bolder;
+}
+.flex-caption.description{
+    color: black;
+}
+span {
+    color: #B3BE84;
+    font-weight: bold;
+}

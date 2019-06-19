@@ -2,18 +2,36 @@
 
 {% block title %}SKOBI{% endblock %}
 
+
 {% block stylesheets %} <link rel="stylesheet" href="{{asset('assets/css/style-index.css') }}">{% endblock %}
 
 
 {% block body %}
 <div class="container-fluid">
     <section class="partie-1">
-    <h2 class="text-center">Nos Produits</h2>
-             
-        <div>
-       
+        <!-- Place somewhere in the <body> of your page -->
+        <h2 class="text-center">Nos Produits</h2>
+        <div class="flexslider">
+            <ul class="slides">
+                {% for article in articles %} 
+                    <li data-thumb="{{ asset(article.imageSrc1) }}">
+                        <a href="{{ path('template_article', {'id': article.id}) }}">
+                        <h4 class="flex-caption nom text-center">{{ article.nom }}</h4>
+                        <p class="flex-caption slogan text-center">{{ article.slogan }}</p>
+                        <div class="d-flex flex-row">
+                            <div class="container">
+                                <img src="{{ asset(article.imageSrc1) }}">
+                            </div>
+                            <div class="container">
+                                <p class="flex-caption description">{{ article.description }}</p>
+                                <p class="flex-caption description"><span>Ingrédients : </span>{{ article.ingredients }}</p>
+                            </div>
+                        </div>
+                        </a>  
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
-        
     </section>
 
     <section class="partie-2">
@@ -120,6 +138,7 @@
 
 
 </div>
+
 
 
 
