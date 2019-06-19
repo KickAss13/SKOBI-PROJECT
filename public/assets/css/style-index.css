@@ -2,6 +2,7 @@ body * {
     box-sizing:border-box;
     font-family: 'Raleway', sans-serif;
 
+
 }
 
 header {
@@ -27,7 +28,7 @@ header nav li {
     text-align:center;
 }
 
-header nav a {
+header .nav-princip a {
     color: white;
     font-size: 1.5rem;
     text-decoration:none;
@@ -95,14 +96,6 @@ header .p2 {
     
 }
 
-header .compte {
-    text-align: right;
-    font-size: 1rem;
-   /* margin-top: 1rem; */
-    margin-right: 2rem;
-    font-weight: bolder;
-}
-
 header #navlog a {
     font-size: 1rem;
     color: white;
@@ -155,8 +148,8 @@ header .subscribe-button {
     background-color: #B3BE84;
 }
 
-header .menu-scroll #navlog a {
-    text-transform: capitalize;
+header #navlog a {
+    text-transform: none;
 }
 
 h2 {
@@ -316,8 +309,7 @@ footer p {
         border-width:1px;
         border-color:grey;
         border-style:solid;
-        margin-top: 3rem;
-        
+        margin-top: 3rem;      
     }
     .image {
         margin-top: 4rem;
@@ -361,45 +353,44 @@ span {
 }
 
 .nom-event {
-    margin-top: 4%;
+
     font-weight: bold;
-    color: white;
+    color: #B3BE84;
     font-size: 150%;
 }
 
 .img-event {
-    width: 600px;
+    width: 60%;
+    margin-left: 20%;
     margin-top: 5%;
-    margin-left: 5%;
 }
 
 .content-event {
-    margin-top: 5%;
-    margin-left: 3%;
+
     font-weight: bold;
     font-size: 110%;
-    line-height: 2;
+    line-height: 1.5;
+    margin-top: 5%;
 }
 
 .flexslider2 {
-    background-color: #B3BE84;
-    border-style:solid;
-    border-width:1px;
-    border-color:black;
-    width: 1200px;
-    height: 500px;
-    margin: 0 auto;
+
+
 }
 
 .adress-event {
-    margin-top: 10%;
-    margin-left: 5%;
+
     font-weight: bold;
-    color: white;
+    color: #B3BE84;
+    margin-top: 3%;
+   text-align: center;
 }
 
-.date-event {
-    margin-left: 5%;
-    font-weight: bold;
-    color: white;
+.partie-3 li {
+    border-width:1px;
+    border-color:black;
+    border-right-style: dotted;
 }
+        
+
+

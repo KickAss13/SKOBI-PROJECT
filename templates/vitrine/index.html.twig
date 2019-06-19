@@ -70,29 +70,26 @@
             </div>
     </section>
 
+
     <section class="partie-3">
         <!-- Place somewhere in the <body> of your page -->
         <h2 class="text-center">Evènements</h2>
         <div class="flexslider2">
             <ul class="slides">
                 {% for event in events %} 
+                {% if event.category == 'A_VENIR' %}
                     <li data-thumb="{{ asset(event.imageSrc) }}">
-                        <h4 class="flex-caption nom-event text-center">{{ event.titre }}</h4>
-                        <div class="d-flex flex-row">
-                            <div class="container">
-                                <img src="{{ asset(event.imageSrc) }}" class="img-event">
-                            </div>
-                            <div class="container">
+                        <h4 class="flex-caption nom-event text-center">{{ event.titre }}</h4>                           
+                                <img src="{{ asset(event.imageSrc) }}" class="img-event" class="text-center">                            
                                 <p class="flex-caption content-event text-center">{{ event.content }}</p>
-                                <p class="flex-caption adress-event">{{ event.adress}}</p>
-                                <p class="flex-caption date-event">{{ event.dateEvent }}</p>
-                            </div>
-                        </div> 
+                                <p class="flex-caption adress-event">{{ event.adress}}<br>{{ event.dateEvent }}</p>       
                     </li>
+                {% endif %}
                 {% endfor %}
             </ul>
-        </div>
+        </div> 
     </section>
+
 
     <section class="partie-5">
         <h2 class="text-center contact">Contact</h2>

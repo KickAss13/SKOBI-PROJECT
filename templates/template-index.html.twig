@@ -14,19 +14,9 @@
     <body>
     
 <header>
-            <div class="compte" text-color:"success">
-                    {% if app.user %}   
-                    <li> {{ app.user.username }}</li>
-                    <li><a href="{{ path('logout') }}">Logout</a></li>
-                    {% else %}
-                    <a class="text-light" href="{{ path('login') }}">Se connecter - </a>
-                    <a class="text-light" href="{{ path('subscribe') }}">S'inscrire</a>
-                    {% endif %}
-            </div>
-
             <a href="{{ path('index') }}" class="linklogo"><img src="{{ asset('assets/img/logo_skobi.png') }}" class="logo"></a>
 
-            <nav class="d-flex justify-content-center">
+            <nav class="d-flex justify-content-center nav-princip">
                 <a href="{{ path('article') }}">Nos produits</a>
                 <a href="{{ path('fournisseur') }}">Nos fournisseurs</a>
                 <a href="{{ path('event') }}">Evènements</a>
@@ -136,9 +126,9 @@ $(function() {
     animation: "slide",
     animationLoop: false,
     itemWidth: 210,
-    itemMargin: 5,
+    itemMargin: 10,
     minItems: 1,
-    maxItems: 1
+    maxItems: 2
   });
 });
         </script>
