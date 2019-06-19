@@ -12,6 +12,31 @@
 
     <br><br>
 
+<div class="container">
+    <p>Utilisation:</p>
+    <p>Sur cette page vous retrouvez les différentes sauces affichées sur le site dans la section "Nos Produits".<br>
+    La colonne "Nom produit" indique le nom de la sauce.<br>
+    La colonne "Sous titre" indique la phrase d'accroche sous le titre sur la section consacrée à l'article.<br>
+    La colonne "Description evenement" indique la description de la sauce.<br>
+    La colonne "Ingrédients" indique la liste des ingrédients présents dans la sauce.<br>
+    Les trois colonnes "Source Image" affichent les images associée à la sauce. Chaque sauce dispose de trois images.<br>
+    L'image dans la colonne "Source Image 1" sera celle affichée sur la page "Nos produits", les autres figureront sur le site<br>
+    sur la page consacrée à l'article uniquement.
+    La colonne "Apports nutritionnels" indique la liste des apports nutritionnels associés à la sauce.<br>
+    
+    <p>Le bouton "Voir" dans la colonne "actions" permet d'afficher sur la page uniquement les informations liées à la sauce choisie.<br>
+    Le bouton "Modifier" dans la colonne "actions" permet d'accéder à un formulaire de modification des différentes informations liées à <br>
+    la sauce. Une fois enregistrées, les modifications seront aussitôt visibles sur le site. <br>
+    Le bouton "Supprimer dans la colonne "actions" permet de supprimer du tableau l'article correspondant.<br>
+    Attention ! Cette manipulation est irréversible, l'article sera définitivement perdu, et n'apparaitra plus sur le site. Si vous souhaitez<br>
+    qu'il apparaisse à nouveau, il faudra le rentrer manuellement dans la base de données via le bouton "Créer nouveau".<br>
+    Le bouton "Créer nouveau" en bas de cette page permet d'accéder à un formulaire de création d'un nouvel article, sur lequel il vous sera <br>
+    demandé de rentrer les informations liées à cet article. Une fois créé, l'article apparaitra sur le site dans la section choisie.<br>
+    Sur cet écran, il est possible de cocher autant d'apports nutritionnels quer vous le souhaitez.</p>
+</div>
+
+    <br><br>
+
 <div class="d-flex justify-content-center">
     <table class="table  table-bordered table-hover">
         <thead class="thead-light">
@@ -36,9 +61,9 @@
                 <td>{{ article.description }}</td>
                 <td>{{ article.ingredients }}</td>
                 <td>{{ article.prix }}</td>
-                <td><img src="{{ article.imageSrc1 }}"></td>
-                <td><img src="{{ article.imageSrc2 }}"></td>
-                <td><img src="{{ article.imageSrc3 }}"></td>
+                <td><img src="{{ asset(article.imageSrc1) }}" class="img-fluid"></td>
+                <td><img src="{{ asset(article.imageSrc2) }}" class="img-fluid"></td>
+                <td><img src="{{ asset(article.imageSrc3) }}" class="img-fluid"></td>
                 <td>
                     {% for vitamine in article.vitamines %}
                             <div>{{ vitamine.nom }}</div>

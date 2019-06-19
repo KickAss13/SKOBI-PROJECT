@@ -24,7 +24,7 @@
         {% for vitamine in vitamines %}
             <tr>
                 <td>{{ vitamine.nom }}</td>
-                <td><img src="{{ vitamine.imageSrc }}"></td>
+                <td><img src="{{ asset(vitamine.imageSrc) }}" class="img-fluid"></td>
                 <td>
                     <button type="button" class="btn btn-secondary"><a href="{{ path('vitamine_show', {'id': vitamine.id}) }}" class="text-light">Voir</a></button>
                     <hr>

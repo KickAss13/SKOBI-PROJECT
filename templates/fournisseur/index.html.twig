@@ -27,7 +27,7 @@
             <tr>
                 <td>{{ fournisseur.nom }}</td>
                 <td>{{ fournisseur.content }}</td>
-                <td><img src="{{ fournisseur.imageSrc }}"></td>
+                <td><img src="{{ asset(fournisseur.imageSrc) }}" class="img-fluid"></td>
                 <td>
                     <button type="button" class="btn btn-secondary"><a href="{{ path('fournisseur_show', {'id': fournisseur.id}) }}" class="text-light">Voir</a></button>
                     <hr>
