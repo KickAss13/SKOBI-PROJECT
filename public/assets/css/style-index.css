@@ -294,6 +294,7 @@ footer p {
 }
 .flex-caption.slogan{
     font-weight: bolder;
+    font-size: 120%;
 }
 .flex-caption.description{
     color: black;
@@ -301,4 +302,48 @@ footer p {
 span {
     color: #B3BE84;
     font-weight: bold;
+}
+
+.nom-event {
+    margin-top: 4%;
+    font-weight: bold;
+    color: white;
+    font-size: 150%;
+}
+
+.img-event {
+    width: 600px;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.content-event {
+    margin-top: 5%;
+    margin-left: 3%;
+    font-weight: bold;
+    font-size: 110%;
+    line-height: 2;
+}
+
+.flexslider2 {
+    background-color: #B3BE84;
+    border-style:solid;
+    border-width:1px;
+    border-color:black;
+    width: 1200px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.adress-event {
+    margin-top: 10%;
+    margin-left: 5%;
+    font-weight: bold;
+    color: white;
+}
+
+.date-event {
+    margin-left: 5%;
+    font-weight: bold;
+    color: white;
 }

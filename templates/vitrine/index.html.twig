@@ -71,48 +71,29 @@
     </section>
 
     <section class="partie-3">
+        <!-- Place somewhere in the <body> of your page -->
         <h2 class="text-center">Evènements</h2>
-            <div class="row">
-                <div class="col-6">
-                    <img class="" src="" alt="" >
-                    <h3></h3>
-                    <p></p>
-                    </div>
-                <div class="col-6">
-                    <img class="" src="" alt="" >
-                    <h3></h3>
-                    <p></p>
-                </div>
-                <div class="col-6">
-                    <img class="" src="" alt="" >
-                    <h3></h3>
-                    <p></p>
-                </div>
+        <div class="flexslider2">
+            <ul class="slides">
+                {% for event in events %} 
+                    <li data-thumb="{{ asset(event.imageSrc) }}">
+                        <h4 class="flex-caption nom-event text-center">{{ event.titre }}</h4>
+                        <div class="d-flex flex-row">
+                            <div class="container">
+                                <img src="{{ asset(event.imageSrc) }}" class="img-event">
+                            </div>
+                            <div class="container">
+                                <p class="flex-caption content-event text-center">{{ event.content }}</p>
+                                <p class="flex-caption adress-event">{{ event.adress}}</p>
+                                <p class="flex-caption date-event">{{ event.dateEvent }}</p>
+                            </div>
+                        </div> 
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
-            
-
-
-            </div>
     </section>
-<!--
-     <section class="partie-4">
-        <h2 class="text-center">A propos</h2>
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-                    <img class="rounded-circle" src="assets/img/photo6.jpg" alt="cuisinier" >
-                    <p class="apropos">Julien a 23 ans et il est cuisinier de formation. C’est lui qui est chargé d’élaborer les recettes si bonnes de nos sauces. Vous pouvez compter sur lui pour qu’elles soient délicieuses car il a travaillé dans de nombreux établissements étoilés !</p>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-                    <img class="rounded-circle" src="assets/img/photo7.jpg" alt="manager" >
-                    <p class="apropos">David a 24 ans et poursuit des études en management après un parcours académique scientifique. Il est en charge de la gestion administrative, stratégique et financière de Skobi.</p>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-                    <img class="rounded-circle" src="assets/img/photo8.jpg" alt="valeurs" >
-                    <p class="apropos">La fusion de leurs idées, de leurs convictions, de leurs valeurs et de leurs forces leur permet aujourd’hui d’assumer pleinement le projet dont ils sont porteurs. Ils croient en une alimentation durable, respectueuse de son environnement mais également à la revalorisation de tous les acteurs qui permettent la production de leurs sauces. </p>
-                </div>
-            </div>          
-    </section>
-     --> 
+
     <section class="partie-5">
         <h2 class="text-center contact">Contact</h2>
             <p class="text">Retrouvez-nous sur Facebook et Instagram : @skobifermenterie où vous pourrez suivre nos aventures grâce au hashtag #skobipourlavie</p>
