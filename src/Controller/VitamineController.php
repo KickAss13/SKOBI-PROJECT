@@ -21,7 +21,7 @@ class VitamineController extends AbstractController
     public function index(VitamineRepository $vitamineRepository): Response
     {
         return $this->render('vitamine/index.html.twig', [
-            'vitamines' => $vitamineRepository->findAll(),
+            'vitamines' => $vitamineRepository->findBy([], ['id' => 'DESC']),
         ]);
     }
 
@@ -104,7 +104,7 @@ class VitamineController extends AbstractController
                 $fileName
             );
             $vitamine->setImageSrc("assets/upload/vitamine/$fileName");
-            
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('vitamine_index', [
@@ -123,7 +123,7 @@ class VitamineController extends AbstractController
      */
     public function delete(Request $request, Vitamine $vitamine): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$vitamine->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $vitamine->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($vitamine);
             $entityManager->flush();

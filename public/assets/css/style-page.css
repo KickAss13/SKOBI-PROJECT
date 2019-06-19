@@ -10,10 +10,16 @@ header {
 
 header #navlog a {
     font-size: 1rem;
-    color: #B3BE84;
+    color: white;
     font-weight: bold;
-    padding-right: 1rem;
+    padding-right: 10px;
+    padding-left: 10px;
 }
+
+header #navlog {
+    margin-top: 1%;
+    margin-right: 1%;
+} 
 
 header #navbar a {
     font-size: 1.2rem;
@@ -25,12 +31,11 @@ header #navbar a {
 
 header #navbar {
     margin-left: 3rem;
-    margin-top: 0.5rem;
 }
 
 header .logo {
     width: 5rem;
-    margin-top: -1.2rem;
+    margin-top: -1.8rem;
     margin-bottom: 0.5rem;
 }
 
@@ -38,6 +43,20 @@ header .menu-scroll {
     background-color: white;
     border-bottom: 1px double black;
     border-top: 1px solid black; 
+}
+
+header .connect-button {
+    border-style:solid;
+    border-width:1px;
+    border-color:black;
+    background-color: #B3BE84;
+}
+
+header .subscribe-button {
+    border-style:solid;
+    border-width:1px;
+    border-color:black;
+    background-color: #B3BE84;
 }
 
 footer {

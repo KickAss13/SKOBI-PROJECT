@@ -2,7 +2,6 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}{% endblock %}</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -21,12 +20,20 @@
         <header> 
             <div class="menu-principal">  
                 <nav id="navlog" class="d-flex justify-content-end">
-                {% if app.user %}        
+                {% if app.user %}  
+                    <div class="connect-button">     
                         <a href="#">Bienvenue {{ app.user.username }} !</a>
+                    </div>
+                    <div class="subscribe-button">
                         <a href="{{ path('logout') }}">Se déconnecter</a>
+                    </div>
                 {% else %}
+                    <div class="connect-button">
                         <a href="{{ path('login') }}">Se connecter</a>
+                    </div>
+                    <div class="subscribe-button">
                         <a href="{{ path('subscribe') }}">S'inscrire</a>
+                    </div>
                 {% endif %}
                 </nav>
 
@@ -46,11 +53,19 @@
             <div class="menu-scroll fixed-top">  
                 <nav id="navlog" class="d-flex justify-content-end">
                 {% if app.user %}        
+                    <div class="connect-button">     
                         <a href="#">Bienvenue {{ app.user.username }} !</a>
+                    </div>
+                    <div class="subscribe-button">
                         <a href="{{ path('logout') }}">Se déconnecter</a>
+                    </div>
                 {% else %}
-                        <a href="{{ path('login') }}">Se connecter</a>
+                        <div class="connect-button">
+                            <a href="{{ path('login') }}">Se connecter</a>
+                        </div>
+                        <div class="subscribe-button">
                         <a href="{{ path('subscribe') }}">S'inscrire</a>
+                        </div>
                 {% endif %}
                 </nav>
 

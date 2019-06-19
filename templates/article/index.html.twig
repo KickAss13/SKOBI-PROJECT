@@ -19,8 +19,8 @@
     La colonne "Sous titre" indique la phrase d'accroche sous le titre sur la section consacrée à l'article.<br>
     La colonne "Description evenement" indique la description de la sauce.<br>
     La colonne "Ingrédients" indique la liste des ingrédients présents dans la sauce.<br>
-    Les trois colonnes "Source Image" affichent les images associée à la sauce. Chaque sauce dispose de trois images.<br>
-    L'image dans la colonne "Source Image 1" sera celle affichée sur la page "Nos produits", les autres figureront sur le site<br>
+    Les trois colonnes "Image" affichent les images associée à la sauce. Chaque sauce dispose de trois images.<br>
+    L'image dans la colonne "Image 1" sera celle affichée sur la page "Nos produits", les autres figureront sur le site<br>
     sur la page consacrée à l'article uniquement.
     La colonne "Apports nutritionnels" indique la liste des apports nutritionnels associés à la sauce.<br>
     
@@ -46,9 +46,9 @@
                 <th>Description</th>
                 <th>Ingrédients</th>
                 <th>Prix</th>
-                <th>Source image 1</th>
-                <th>Source image 2</th>
-                <th>Source image 3</th>
+                <th>Image 1</th>
+                <th>Image 2</th>
+                <th>Image 3</th>
                 <th>Apports nutritionnels</th>
                 <th>actions</th>
             </tr>
@@ -56,7 +56,7 @@
         <tbody>
         {% for article in articles %}
             <tr>
-                <td>{{ article.nom }}</td>
+                <td class="font-weight-bold">{{ article.nom }}</td>
                 <td>{{ article.slogan }}</td>
                 <td>{{ article.description }}</td>
                 <td>{{ article.ingredients }}</td>

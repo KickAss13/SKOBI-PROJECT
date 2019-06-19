@@ -21,7 +21,7 @@ class FournisseurController extends AbstractController
     public function index(FournisseurRepository $fournisseurRepository): Response
     {
         return $this->render('fournisseur/index.html.twig', [
-            'fournisseurs' => $fournisseurRepository->findAll(),
+            'fournisseurs' => $fournisseurRepository->findBy([], ['id' => 'DESC']),
         ]);
     }
 
@@ -92,7 +92,7 @@ class FournisseurController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            
+
             //CODE POUR GERER L'UPLOAD
             $fichierUploade = $fournisseur->getImageUpload();
             $fileName = $fichierUploade->getClientOriginalName();

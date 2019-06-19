@@ -59,7 +59,7 @@
                 <td>{{ user.adresse }}</td>
                 <td>{{ user.telephone }}</td>
                 <td>{{ user.role }}</td>
-                <td>{{ user.dateInscription ? user.dateInscription|date('d-m-Y H:i:s') : '' }}</td>
+                <td>{{ user.dateInscription ? user.dateInscription|date('d-m-Y H:i') : '' }}</td>
                 <td>
                    <button type="button" class="btn btn-secondary"><a href="{{ path('user_show', {'id': user.id}) }}" class="text-light">Voir</a></button>
                    <hr>

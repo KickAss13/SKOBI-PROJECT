@@ -39,6 +39,22 @@ main a:hover {
     margin: 0 auto;
 }
 
+.cadre-article:hover {
+    background-color: #B3BE84;
+}
+
+.cadre-article:hover .slogan {
+    color: white;
+}
+
+.cadre-article:hover .ingred {
+    color: white;
+}
+
+.cadre-article:hover span {
+    color: white;
+}
+
 .slogan {
     text-align: center;
     font-size: 150%;  
@@ -67,6 +83,8 @@ main span {
     color: #BFa587;
     font-weight: bold;
 }
+
+
 
 /*POUR LES TABLETTES */
 /*Pour tous les médias de type écran ET de largeur maximale 1024px ET minimale 505px */
