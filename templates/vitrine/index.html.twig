@@ -7,27 +7,31 @@
 
 {% block body %}
 <div class="container-fluid">
-<section class="partie-1">
+    <section class="partie-1">
     <h2 class="text-center">Nos Produits</h2>
-        <div class="row">
-            <div class="col-6">    
-           
-            </div>
-            <div class="col-6">
-            <br>
-            <br>
-            <br>
-            </div>
-            <div class="col-6">
-            <br>
-            <br>
-            <br>
-            </div>
-            <div class="col-6">
-            <br><br>
-            <br>
-            </div>
+       
+    <marquee>
+        <div class="d-flex flex-row">
+        {% for article in articles %} 
+        <a href="{{ path('template_article', {'id': article.id}) }}">
+            <section class="cadre-article">
+                    <h4 class="font-weight-bolder text-center">{{ article.nom }}</h4>
+                    <p class="text-center">{{ article.slogan }}</p>
+                    <div class="d-flex flex-row">
+                        <div class="container">
+                            <img src="{{ article.imageSrc1 }}">
+                        </div>
+                        <div class="container">    
+                            <p class="descript">{{ article.description }}</p>
+                            <p class="ingred"><span>Ingrédients : </span>{{ article.ingredients }}</p>
+                        </div>   
+                    </div>         
+            </section>
+        </a> 
+        {% endfor %}
         </div>
+    </marquee>
+
     </section>
 
     <section class="partie-2">

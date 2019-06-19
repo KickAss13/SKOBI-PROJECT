@@ -23,10 +23,11 @@ class VitrineController extends AbstractController
     /**
      * @Route("/", name="index")
      */
-    public function index()
+    public function index(ArticleRepository $articleRepository): Response
     {
         return  $this->render('vitrine/index.html.twig', [
             'controller_name' => 'VitrineController',
+            'articles' => $articleRepository->findAll(),
         ]);
     }
 
