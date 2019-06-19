@@ -31,11 +31,12 @@ header #navbar a {
 
 header #navbar {
     margin-left: 3rem;
+    margin-top: -0.6%;
 }
 
 header .logo {
     width: 5rem;
-    margin-top: -1.8rem;
+    margin-top: -2rem;
     margin-bottom: 0.5rem;
 }
 

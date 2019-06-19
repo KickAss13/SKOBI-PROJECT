@@ -103,6 +103,62 @@ header .compte {
     font-weight: bolder;
 }
 
+header #navlog a {
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+header #navlog {
+    margin-top: 1%;
+    margin-right: 1%;
+} 
+
+header #navbar a {
+    font-size: 1.2rem;
+    color: black;
+    font-weight: bold;
+    text-transform:uppercase;
+    padding-left: 5rem;
+}
+
+header #navbar {
+    margin-left: 3rem;
+    margin-top: -2%;
+}
+
+header .logo2 {
+    width: 5rem;
+    margin-top: -3.7rem;
+    margin-bottom: 0.5rem;
+}
+
+header .menu-scroll {
+    background-color: white;
+    border-bottom: 1px double black;
+    border-top: 1px solid black; 
+}
+
+header .connect-button {
+    border-style:solid;
+    border-width:1px;
+    border-color:black;
+    background-color: #B3BE84;
+}
+
+header .subscribe-button {
+    border-style:solid;
+    border-width:1px;
+    border-color:black;
+    background-color: #B3BE84;
+}
+
+header .menu-scroll #navlog a {
+    text-transform: capitalize;
+}
+
 h2 {
     font-size: 3.8rem;
     margin-top: 2.5rem;

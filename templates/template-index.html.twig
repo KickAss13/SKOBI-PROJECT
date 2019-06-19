@@ -13,8 +13,8 @@
     </head>
     <body>
     
-        <header>
-<div class="compte" text-color:"success">
+<header>
+            <div class="compte" text-color:"success">
                     {% if app.user %}   
                     <li> {{ app.user.username }}</li>
                     <li><a href="{{ path('logout') }}">Logout</a></li>
@@ -23,7 +23,9 @@
                     <a class="text-light" href="{{ path('subscribe') }}">S'inscrire</a>
                     {% endif %}
             </div>
+
             <a href="{{ path('index') }}" class="linklogo"><img src="{{ asset('assets/img/logo_skobi.png') }}" class="logo"></a>
+
             <nav class="d-flex justify-content-center">
                 <a href="{{ path('article') }}">Nos produits</a>
                 <a href="{{ path('fournisseur') }}">Nos fournisseurs</a>
@@ -31,6 +33,38 @@
                 <a href="{{ path('about') }}">A propos</a>
                 <a href="{{ path('contact') }}">Contact</a>   
             </nav> 
+
+            <div class="menu-scroll fixed-top">  
+                <nav id="navlog" class="d-flex justify-content-end">
+                {% if app.user %}        
+                    <div class="connect-button">     
+                        <a href="#">Bienvenue {{ app.user.username }} !</a>
+                    </div>
+                    <div class="subscribe-button">
+                        <a href="{{ path('logout') }}">Se déconnecter</a>
+                    </div>
+                {% else %}
+                        <div class="connect-button">
+                            <a href="{{ path('login') }}">Se connecter</a>
+                        </div>
+                        <div class="subscribe-button">
+                        <a href="{{ path('subscribe') }}">S'inscrire</a>
+                        </div>
+                {% endif %}
+                </nav>
+
+                <div class="d-flex flex-row justify-content-center">
+                    <a href="{{ path('index') }}"><img src="{{ asset('assets/img/logo_skobi.png')}}" class="logo2"></a>
+                
+                    <nav id="navbar">                  
+                        <a href="{{ path('article') }}">Nos produits</a>
+                        <a href="{{ path('fournisseur') }}">Nos fournisseurs</a>
+                        <a href="{{ path('event') }}">Evènements</a>
+                        <a href="{{ path('about') }}">A propos</a>                  
+                        <a href="{{ path('contact') }}">Contact</a>
+                    </nav>
+                </div>
+            </div>
             
 
     {% if app.user %}
@@ -110,5 +144,6 @@ $(function() {
         </script>
 
         {% block javascripts %}{% endblock %}
+        <script src="{{asset('assets/js/script-nav-index.js') }}"></script>
     </body>
 </html>
