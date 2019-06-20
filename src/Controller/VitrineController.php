@@ -144,6 +144,16 @@ class VitrineController extends AbstractController
     }
 
     /**
+     * @Route("/profil", name="profil")
+     */
+    public function profil()
+    {
+        return  $this->render('vitrine/profil.html.twig', [
+            'controller_name' => 'VitrineController',
+        ]);
+    }
+
+    /**
      * @Route("/{id}", name="template_article", methods={"GET"})
      */
     public function templateArticle(Article $article): Response

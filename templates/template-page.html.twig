@@ -21,12 +21,21 @@
             <div class="menu-principal">  
                 <nav id="navlog" class="d-flex justify-content-end">
                 {% if app.user %}  
+                    {% if app.user.role == 'ROLE_ADMIN' %}
                     <div class="connect-button">     
-                        <a href="#">Bienvenue {{ app.user.username }} !</a>
+                        <a href="{{ path('article_index') }}">Bienvenue {{ app.user.username }} !</a>
                     </div>
                     <div class="subscribe-button">
                         <a href="{{ path('logout') }}">Se déconnecter</a>
                     </div>
+                    {% else %}
+                    <div class="connect-button">     
+                        <a href="{{ path('profil') }}">Bienvenue {{ app.user.username }} !</a>
+                    </div>
+                    <div class="subscribe-button">
+                        <a href="{{ path('logout') }}">Se déconnecter</a>
+                    </div>
+                    {% endif %}
                 {% else %}
                     <div class="connect-button">
                         <a href="{{ path('login') }}">Se connecter</a>
@@ -52,20 +61,29 @@
 
             <div class="menu-scroll fixed-top">  
                 <nav id="navlog" class="d-flex justify-content-end">
-                {% if app.user %}        
+                {% if app.user %}  
+                    {% if app.user.role == 'ROLE_ADMIN' %}
+                    <div class="connect-button">     
+                        <a href="{{ path('article_index') }}">Bienvenue {{ app.user.username }} !</a>
+                    </div>
+                    <div class="subscribe-button">
+                        <a href="{{ path('logout') }}">Se déconnecter</a>
+                    </div>
+                    {% else %}
                     <div class="connect-button">     
                         <a href="#">Bienvenue {{ app.user.username }} !</a>
                     </div>
                     <div class="subscribe-button">
                         <a href="{{ path('logout') }}">Se déconnecter</a>
                     </div>
+                    {% endif %}
                 {% else %}
-                        <div class="connect-button">
-                            <a href="{{ path('login') }}">Se connecter</a>
-                        </div>
-                        <div class="subscribe-button">
+                    <div class="connect-button">
+                        <a href="{{ path('login') }}">Se connecter</a>
+                    </div>
+                    <div class="subscribe-button">
                         <a href="{{ path('subscribe') }}">S'inscrire</a>
-                        </div>
+                    </div>
                 {% endif %}
                 </nav>
 
@@ -89,7 +107,7 @@
         </main>
         <footer>
             <nav class="d-flex justify-content-center" >
-                <a href="#"><img src="{{ asset('assets/img/facebook.png') }}"></a>
+                <a href="https://www.facebook.com/skobi.fermenterie/"><img src="{{ asset('assets/img/facebook.png') }}"></a>
                 <a href="#"><img src="{{ asset('assets/img/instagram.png') }}"></a>
                 <a href="#"><img src="{{ asset('assets/img/Twitter.png') }}"></a>
             </nav>

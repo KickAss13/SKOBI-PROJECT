@@ -1,0 +1,47 @@
+{% extends 'template-page.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('assets/css/style-profil.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h3>Profil</h3>
+
+<div class="container d-flex justify-content-center">
+    <table class="table table-bordered table-hover">
+        <tbody>
+            <tr>
+                <th class="text-white">Nom d'utilisateur</th>
+                <td>{{ app.user.username }}</td>
+            </tr>
+            <tr>
+                <th class="text-white">Email</th>
+                <td>{{ app.user.email }}</td>
+            </tr>
+            <tr>
+                <th class="text-white">Nom</th>
+                <td>{{ app.user.nom }}</td>
+            </tr>
+            <tr>
+                <th class="text-white">Prenom</th>
+                <td>{{ app.user.prenom }}</td>
+            </tr>
+            <tr>
+                <th class="text-white">Adresse</th>
+                <td>{{ app.user.adresse }}</td>
+            </tr>
+            <tr>
+                <th class="text-white">Telephone</th>
+                <td>{{ app.user.telephone }}</td>
+            </tr>
+            <tr>
+                <th class="text-white">Date Inscription</th>
+                <td>{{ app.user.dateInscription ? app.user.dateInscription|date('Y-m-d H:i') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
