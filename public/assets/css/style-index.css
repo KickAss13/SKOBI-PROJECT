@@ -36,6 +36,7 @@ header .nav-princip a {
     font-weight: 900;
     padding-right: 1.7rem;
     padding-top:2rem;
+    text-shadow: black 1px 0 10px;
 }
 
 nav a:hover {
@@ -48,6 +49,7 @@ header h1 {
     font-weight: bolder;
     color: white;
     margin-top: 7rem;
+    text-shadow: black 1px 0 10px;
 }
 
 
@@ -57,7 +59,8 @@ header .p1 {
     font-size: 2rem;
     font-style: italic;
     text-align: center;
-    margin-top: 5rem;;
+    margin-top: 5rem;
+    text-shadow: black 1px 0 10px;
 }
 header .p3 {
     color: white; 
@@ -66,7 +69,7 @@ header .p3 {
     text-align: center;
     margin-top:3rem;
     padding-bottom: 10rem;
-    
+    text-shadow: black 1px 0 10px;
 }
 
 header .linklogo {
@@ -341,27 +344,28 @@ span {
 }
 
 
-  @media screen and (min-width:505px) and (max-width: 1024px) {
-      p.engagement {
-          font-size: 2rem;
-          line-height: 3.6rem;
-          padding: 1.5rem;
-          margin-bottom: 3.5rem;
-          padding-bottom: 2rem;
-          margin: 2rem;
-          
-      }
-      .encadre {
-          border-width:1px;
-          border-color:grey;
-          border-style:solid;
-          margin-top: 3rem;      
-      }
-      .image {
-          margin-top: 4rem;
-      }
-  
-      header #navbar a {
+@media screen and (min-width:505px) and (max-width: 1024px) {
+    p.engagement {
+        font-size: 2rem;
+        line-height: 3.6rem;
+        padding: 1.5rem;
+        margin-bottom: 3.5rem;
+        padding-bottom: 2rem;
+        margin: 2rem;
+        
+    }
+
+    .encadre {
+        border-width:1px;
+        border-color:grey;
+        border-style:solid;
+        margin-top: 3rem;      
+    }
+    .image {
+        margin-top: 4rem;
+    }
+
+    header #navbar a {
         font-size: 1rem;
         color: black;
         font-weight: bold;
@@ -371,7 +375,7 @@ span {
   
       header #navbar {
         padding-right: 1rem;
-        margin-top: -0.7rem;
+        margin-top: 0.7rem;
     }
   
       header nav a {
@@ -386,23 +390,9 @@ span {
       header .logo {
           width: 6rem;
       } 
-  
-      .content-event {
-          font-size: 150%;
-          line-height: 1.5;
-          margin-top: 3%;
-      }
-      
-      .flexslider2 {
-      
-          border-style:solid;
-          border-width:1px;
-          border-color:black;
-          width: 90%;
-          height: 90%;
-          background-color: #B3BE84;
-      }
-  }
+
+    
+}
 
 
 

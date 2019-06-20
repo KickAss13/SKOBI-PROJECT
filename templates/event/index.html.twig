@@ -58,7 +58,7 @@
         <tbody>
         {% for event in events %}
             <tr>
-                <td>{{ event.titre }}</td>
+                <td class="font-weight-bold">{{ event.titre }}</td>
                 <td>{{ event.content }}</td>
                 <td><img src="{{ asset(event.imageSrc) }}" class="img-fluid"></td>
                 <td>{{ event.category }}</td>
