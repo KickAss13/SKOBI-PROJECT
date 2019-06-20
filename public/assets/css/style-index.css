@@ -49,9 +49,7 @@ header h1 {
     color: white;
     margin-top: 7rem;
 }
-header nav {
-    margin-bottom: 30px;
-}
+
 
 header .p1 {
     color: white;
@@ -119,12 +117,13 @@ header #navbar a {
 
 header #navbar {
     margin-left: 3rem;
-    margin-top: -2%;
+    margin-top: -10px;
+    padding-bottom: 10px;
 }
 
 header .logo2 {
     width: 5rem;
-    margin-top: -3.7rem;
+    margin-top: -2.5rem;
     margin-bottom: 0.5rem;
 }
 
@@ -341,31 +340,7 @@ span {
     width: 100%;
 }
 
-@media screen and (min-width:504px) {
-    header   nav a {
-           color: white;
-           font-size: 1.2rem;
-           text-decoration:none;
-           text-transform: uppercase;
-           font-weight: 900;
-           padding-right: 1.7rem;
-           padding-top:2rem;
-       }
-       header .logo {
-           width: 6rem;
-       } 
-       
-       header #navbar {
-          font-size: 1.2rem;
-          color: black;
-          font-weight: bold;
-          text-transform:uppercase;
-          padding-left: 1rem;
-          padding-right: 1rem;
-          margin-top: 0.7rem;
-      }
-  
-   } 
+
   @media screen and (min-width:505px) and (max-width: 1024px) {
       p.engagement {
           font-size: 2rem;
@@ -387,17 +362,17 @@ span {
       }
   
       header #navbar a {
-          font-size: 1rem;
-          color: black;
-          font-weight: bold;
-          text-transform:uppercase;
-          padding-left: 1rem;
-      }
+        font-size: 1rem;
+        color: black;
+        font-weight: bold;
+        text-transform:uppercase;
+        padding-left: 1rem;
+    }
   
       header #navbar {
-          padding-right: 1rem;
-          margin-top: -0.7rem;
-      }
+        padding-right: 1rem;
+        margin-top: -0.7rem;
+    }
   
       header nav a {
           color: white;
