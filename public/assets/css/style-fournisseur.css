@@ -28,6 +28,7 @@ h3 {
     overflow:hidden;
     margin-right:0px;
     margin:0;
+    padding-left:10%;
     
 }
 
@@ -47,6 +48,8 @@ h3 {
     opacity:0;
     position:absolute;
     top:3%;
+    left:15%;
+    right:3%;
 }
 
 .taille:hover .cache2 {
@@ -143,6 +146,24 @@ h3 {
 .marge_haut_haut {
     margin-top:5%;
 }
+
+@media screen and (max-width: 1478px) {
+    .cache2 {
+        font-size:125%;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .cache2 {
+        opacity:1;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .cache2{
+        font-size:110%;
+    }
+}
+
 
 
 

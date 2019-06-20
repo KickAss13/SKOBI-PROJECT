@@ -26,20 +26,29 @@
 
             <div class="menu-scroll fixed-top">  
                 <nav id="navlog" class="d-flex justify-content-end">
-                {% if app.user %}        
+                {% if app.user %}  
+                    {% if app.user.role == 'ROLE_ADMIN' %}
                     <div class="connect-button">     
-                        <a href="#">Bienvenue {{ app.user.username }} !</a>
+                        <a href="{{ path('article_index') }}">Bienvenue {{ app.user.username }} !</a>
                     </div>
                     <div class="subscribe-button">
                         <a href="{{ path('logout') }}">Se déconnecter</a>
                     </div>
+                    {% else %}
+                    <div class="connect-button">     
+                        <a href="{{ path('profil') }}">Bienvenue {{ app.user.username }} !</a>
+                    </div>
+                    <div class="subscribe-button">
+                        <a href="{{ path('logout') }}">Se déconnecter</a>
+                    </div>
+                    {% endif %}
                 {% else %}
-                        <div class="connect-button">
-                            <a href="{{ path('login') }}">Se connecter</a>
-                        </div>
-                        <div class="subscribe-button">
+                    <div class="connect-button">
+                        <a href="{{ path('login') }}">Se connecter</a>
+                    </div>
+                    <div class="subscribe-button">
                         <a href="{{ path('subscribe') }}">S'inscrire</a>
-                        </div>
+                    </div>
                 {% endif %}
                 </nav>
 
@@ -56,20 +65,6 @@
                 </div>
             </div>
             
-
-    {% if app.user %}
-        {% if app.user.role == 'ROLE_ADMIN' %}
-            <nav>
-                <ul>
-                    <li><a href="{{ path('article_index') }}">Admin Article</a></li>
-                    <li><a href="{{ path('event_index') }}">Admin Event</a></li>
-                    <li><a href="{{ path('fournisseur_index') }}">Admin Fournisseur</a></li>
-                    <li><a href="{{ path('message_index') }}">Admin Message</a></li>
-                    <li><a href="{{ path('user_index') }}">Admin User</a></li>
-                </ul>
-            </nav>
-        {% endif %}
-    {% endif %}
         <h1> SKOBI </h1>
         <p class="p1"> Votre fermenterie artisanale de sauces et condiments apéritif  </p>
         <p class="p3"> Silence, ça fermente !  </p>
@@ -81,7 +76,7 @@
         </main>
         <footer>
             <nav class="d-flex justify-content-center" >
-                <a href="#"><img src="{{ asset('assets/img/facebook.png') }}"></a>
+                <a href="https://www.facebook.com/skobi.fermenterie/" target="blank"><img src="{{ asset('assets/img/facebook.png') }}"></a>
                 <a href="#"><img src="{{ asset('assets/img/instagram.png') }}"></a>
                 <a href="#"><img src="{{ asset('assets/img/Twitter.png') }}"></a>
             </nav>
@@ -110,13 +105,13 @@ $(function() {
 
 // Can also be used with $(document).ready()
 $(function() {
-  $('.flexslider').flexslider({
+  $('.flexslider1').flexslider({
     animation: "slide",
     animationLoop: false,
     itemWidth: 210,
     itemMargin: 5,
-    minItems: 2,
-    maxItems: 3
+    minItems: 1,
+    maxItems: Math.round(screen.width / 600)
   });
 });
         </script>
@@ -128,7 +123,7 @@ $(function() {
     itemWidth: 210,
     itemMargin: 10,
     minItems: 1,
-    maxItems: 2
+    maxItems: 1
   });
 });
         </script>

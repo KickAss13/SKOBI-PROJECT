@@ -71,7 +71,7 @@
                     </div>
                     {% else %}
                     <div class="connect-button">     
-                        <a href="#">Bienvenue {{ app.user.username }} !</a>
+                        <a href="{{ path('profil') }}">Bienvenue {{ app.user.username }} !</a>
                     </div>
                     <div class="subscribe-button">
                         <a href="{{ path('logout') }}">Se déconnecter</a>
@@ -107,7 +107,7 @@
         </main>
         <footer>
             <nav class="d-flex justify-content-center" >
-                <a href="https://www.facebook.com/skobi.fermenterie/"><img src="{{ asset('assets/img/facebook.png') }}"></a>
+                <a href="https://www.facebook.com/skobi.fermenterie/" target="blank"><img src="{{ asset('assets/img/facebook.png') }}"></a>
                 <a href="#"><img src="{{ asset('assets/img/instagram.png') }}"></a>
                 <a href="#"><img src="{{ asset('assets/img/Twitter.png') }}"></a>
             </nav>

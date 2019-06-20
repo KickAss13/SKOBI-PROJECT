@@ -11,7 +11,7 @@
     <section class="partie-1">
         <!-- Place somewhere in the <body> of your page -->
         <h2 class="text-center">Nos Produits</h2>
-        <div class="flexslider">
+        <div class="flexslider flexslider1">
             <ul class="slides">
                 {% for article in articles %} 
                     <li data-thumb="{{ asset(article.imageSrc1) }}">
@@ -74,13 +74,13 @@
     <section class="partie-3">
         <!-- Place somewhere in the <body> of your page -->
         <h2 class="text-center">Evènements</h2>
-        <div class="flexslider2">
+        <div class="flexslider flexslider2">
             <ul class="slides">
                 {% for event in events %} 
                 {% if event.category == 'A_VENIR' %}
                     <li data-thumb="{{ asset(event.imageSrc) }}">
                         <h4 class="flex-caption nom-event text-center">{{ event.titre }}</h4>                           
-                                <img src="{{ asset(event.imageSrc) }}" class="img-event" class="text-center">                            
+                                <img src="{{ asset(event.imageSrc) }}" class="img-event" >                            
                                 <p class="flex-caption content-event text-center">{{ event.content }}</p>
                                 <p class="flex-caption adress-event">{{ event.adress}}<br>{{ event.dateEvent }}</p>       
                     </li>
@@ -97,14 +97,14 @@
             <div class="row contact_row">
                 <div class="col">
                     <img class="img-fluid" src="assets/img/photophone.png" alt="image du telephone" >
-                    <p class="numero">06.75.64.64.57</p>
+                    <p class="numero"><a class="lien" href="tel:0675646457">06.75.64.64.57</a></p>
                 </div>
                 <div class="col">
                     <a href="{{ path('contact') }}"><img class="img-fluid"  src="assets/img/mailphoto.png" alt="image du mail"></a>
-                    <p class="contact">contact@skobi.fr</p>
+                    <p class="contact"><a class="lien" href="mailto:contact@skobi.fr">contact@skobi.fr</a></p>
                 </div>
                 <div class="col">
-                    <img class="img-fluid" src="assets/img/facebookphoto.png" alt="image de l'adresse" >
+                    <a href="https://www.facebook.com/skobi.fermenterie/" target="blank"><img class="img-fluid" src="assets/img/facebookphoto.png" alt="image de l'adresse" ></a>
                     <p class="contact"><a class="lien" href="https://www.facebook.com/skobi.fermenterie/" target="blank">@skobi</a></p>
                 </div>   
             </div>

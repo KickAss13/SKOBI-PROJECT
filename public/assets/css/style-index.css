@@ -262,60 +262,7 @@ footer p {
     font-size: 1rem;
     margin-top: 2rem;
 }
-
-
-
-@media screen and (min-width:505px) and (max-width: 1024px) {
-    header nav a {
-         color: white;
-         font-size: 1.2rem;
-         text-decoration:none;
-         text-transform: uppercase;
-         font-weight: 900;
-         padding-right: 1.7rem;
-         padding-top:2rem;
-     } 
-     header .logo {
-         width: 6rem;
-     }  
- }
  
- 
- @media screen and (min-width:504px) {
-  header   nav a {
-         color: white;
-         font-size: 1.2rem;
-         text-decoration:none;
-         text-transform: uppercase;
-         font-weight: 900;
-         padding-right: 1.7rem;
-         padding-top:2rem;
-     }
-     header .logo {
-         width: 6rem;
-     }   
- } 
-@media screen and (min-width:505px) and (max-width: 1024px) {
-    p.engagement {
-        font-size: 2rem;
-        line-height: 3.6rem;
-        padding: 1.5rem;
-        margin-bottom: 3.5rem;
-        padding-bottom: 2rem;
-        margin: 2rem;
-        
-    }
-    .encadre {
-        border-width:1px;
-        border-color:grey;
-        border-style:solid;
-        margin-top: 3rem;      
-    }
-    .image {
-        margin-top: 4rem;
-    }
-}
-
 .contact_row{
     margin: 0;
 }
@@ -353,44 +300,138 @@ span {
 }
 
 .nom-event {
-
+    margin-top: 3%;
     font-weight: bold;
-    color: #B3BE84;
+    color: white;
     font-size: 150%;
 }
 
 .img-event {
-    width: 60%;
-    margin-left: 20%;
-    margin-top: 5%;
+ margin-top: 3%;
+ padding-left: 10%;
+ padding-right: 10%;
 }
 
 .content-event {
-
-    font-weight: bold;
-    font-size: 110%;
+    font-size: 100%;
     line-height: 1.5;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
 .flexslider2 {
 
-
+    border-style:solid;
+    border-width:1px;
+    border-color:black;
+    width: 60%;
+    height: 80%;
+    background-color: #B3BE84;
 }
 
 .adress-event {
 
     font-weight: bold;
-    color: #B3BE84;
+    color: white;
     margin-top: 3%;
    text-align: center;
 }
 
-.partie-3 li {
-    border-width:1px;
-    border-color:black;
-    border-right-style: dotted;
+.flexslider .slides .img-event {
+    height: 500%;
+    width: 100%;
 }
+
+@media screen and (min-width:504px) {
+    header   nav a {
+           color: white;
+           font-size: 1.2rem;
+           text-decoration:none;
+           text-transform: uppercase;
+           font-weight: 900;
+           padding-right: 1.7rem;
+           padding-top:2rem;
+       }
+       header .logo {
+           width: 6rem;
+       } 
+       
+       header #navbar {
+          font-size: 1.2rem;
+          color: black;
+          font-weight: bold;
+          text-transform:uppercase;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          margin-top: 0.7rem;
+      }
+  
+   } 
+  @media screen and (min-width:505px) and (max-width: 1024px) {
+      p.engagement {
+          font-size: 2rem;
+          line-height: 3.6rem;
+          padding: 1.5rem;
+          margin-bottom: 3.5rem;
+          padding-bottom: 2rem;
+          margin: 2rem;
+          
+      }
+      .encadre {
+          border-width:1px;
+          border-color:grey;
+          border-style:solid;
+          margin-top: 3rem;      
+      }
+      .image {
+          margin-top: 4rem;
+      }
+  
+      header #navbar a {
+          font-size: 1rem;
+          color: black;
+          font-weight: bold;
+          text-transform:uppercase;
+          padding-left: 1rem;
+      }
+  
+      header #navbar {
+          padding-right: 1rem;
+          margin-top: -0.7rem;
+      }
+  
+      header nav a {
+          color: white;
+          font-size: 1.2rem;
+          text-decoration:none;
+          text-transform: uppercase;
+          font-weight: 900;
+          padding-right: 1.7rem;
+          padding-top:2rem;
+      } 
+      header .logo {
+          width: 6rem;
+      } 
+  
+      .content-event {
+          font-size: 150%;
+          line-height: 1.5;
+          margin-top: 3%;
+      }
+      
+      .flexslider2 {
+      
+          border-style:solid;
+          border-width:1px;
+          border-color:black;
+          width: 90%;
+          height: 90%;
+          background-color: #B3BE84;
+      }
+  }
+
+
+
+
         
 
 
