@@ -17,17 +17,8 @@ h3 {
     font-size:24px;
     font-weight:bold;
     text-shadow:1px 1px 1px black;
-    opacity:1.5;
-    /*position:absolute;
-    top:0;
-    left:0;*/
+    opacity:1.5;    
 }
-
-/*#cache {
-    position:absolute;
-    top:90%;
-    z-index:2;
-}*/
 
 .taille {
     position:relative;
@@ -44,14 +35,12 @@ h3 {
     height:400px;
     /*padding-left:2.5%;
     padding-right:2.5%;*/
-
 }
 
 .cache {
     position:absolute;
     top:20%;
     z-index:2;
-
 }
 
 .cache2 {
@@ -150,3 +139,13 @@ h3 {
     width:100%;
     object-fit: cover;
 }
+
+.marge_haut_haut {
+    margin-top:5%;
+}
+
+
+
+
+    
+

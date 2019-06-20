@@ -8,22 +8,19 @@
 
 {% block body %}
     <h3>Nos fournisseurs</h3>
-
+    <h4 class="row_fournisseur">Ils respectent tous une agriculture biologique, qui correspond à notre engagement de respectabilité de l'environnement :
+    </h4>
 {# Code pour afficher les fournisseurs #}
-        <div class="row justify-content-center row_fournisseur">
+        <div class="row justify-content-center row_fournisseur marge_haut_haut">
             {% for fournisseur in fournisseurs %}
 
                 <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 marge"> 
                 
                     <section class="section_ou_img">
                         <figure class="taille">
-
                             <img class="image" src="{{fournisseur.imageSrc}}">
-                            <p class="cache2">{{ fournisseur.content }}</p>                
-
-                        </figure>
-
-                                     
+                            <p class="cache2">{{ fournisseur.content }}</p> 
+                        </figure>                                     
                     </section>
                 </div>
 
@@ -42,4 +39,3 @@
 {% endblock %}
 
 {% endblock %}
-
