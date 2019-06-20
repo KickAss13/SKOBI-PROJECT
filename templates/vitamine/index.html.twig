@@ -11,12 +11,39 @@
 
     <br><br>
 
+<div class="container">
+    <button id="help-button" type="button" class="btn btn-secondary"><p id="help">Besoin d'aide ?</p></button>    
+</div>
+
+<div class="container">
+    <p>Besoin d'aide ?</p>
+</div>
+
+<div class="container menu-help">
+    <br><br>
+    <p>Utilisation:</p>
+    <p>Sur cette page vous retrouvez la liste des apports nutritionnels associés à vos produits sur le site.<br>
+    La colonne "Image" affiche l'image associée à l'apport nutritionnel et qui apparait sur le site.<br>
+    
+    <p>Le bouton "Voir" dans la colonne "actions" permet d'afficher sur la page uniquement les informations liées à l'apport choisi.<br>
+    Le bouton "Modifier" dans la colonne "actions" permet d'accéder à un formulaire de modification des différentes informations liées à <br>
+    l'apport nutritionnel correspondant. <br>
+    Le bouton "Supprimer dans la colonne "actions" permet de supprimer du tableau l'apport correspondant.<br>
+    Attention ! Cette manipulation est irréversible, l'apport sera définitivement perdu, et ne pourra plus être associé à aucun produit.<br>
+    Si vous souhaitez qu'il apparaisse à nouveau, il faudra le rentrer manuellement dans la base de données via le bouton "Créer nouveau".<br>
+    Le bouton "Créer nouveau" en bas de cette page permet d'accéder à un formulaire de création d'un nouvel apport, sur lequel il vous sera <Br>
+    demandé de rentrer les informations liées à cet apport. Une fois créé, l'apport sera disponible pour être associé à un article sur la page
+    de modification ou de création d'article.</p>
+</div>
+
+    <br><br>
+
 <div class=" container d-flex justify-content-center">
     <table class="table table-bordered table-hover">
         <thead class="thead-light">
             <tr>
                 <th>Nom apport nutritionnel</th>
-                <th>ImageSrc</th>
+                <th>Image</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -24,7 +51,7 @@
         {% for vitamine in vitamines %}
             <tr>
                 <td>{{ vitamine.nom }}</td>
-                <td><img src="{{ asset(vitamine.imageSrc) }}" class="img-fluid"></td>
+                <td><img src="{{ asset(vitamine.imageSrc) }}" class="img-fluid" width="60px"></td>
                 <td>
                     <button type="button" class="btn btn-secondary"><a href="{{ path('vitamine_show', {'id': vitamine.id}) }}" class="text-light">Voir</a></button>
                     <hr>
